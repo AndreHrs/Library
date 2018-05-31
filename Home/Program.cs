@@ -27,12 +27,12 @@ namespace Home
             //Splash Screen End
 
             Application.Run(new FormLogin());
-            
         }
 
         static void StartForm()
         {
             Application.Run(new Splashscreen());
         }
+        public static string Nama, TipeAkun, PathFoto;
     }
 }

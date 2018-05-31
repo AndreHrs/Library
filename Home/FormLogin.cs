@@ -45,6 +45,9 @@ namespace Home
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Program.TipeAkun = "Admin";
+            Program.Nama = "Andre";
+            Program.PathFoto = @"D:\Mikroskil\Sem 4\OOP C#\ProjectC#\Pic Folders\Andre.jpg";
             formMain form = new formMain("Admin", "Andre", @"D:\Mikroskil\Sem 4\OOP C#\ProjectC#\Pic Folders\Andre.jpg");
             form.Show();
         }

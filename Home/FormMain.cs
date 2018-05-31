@@ -76,5 +76,33 @@ namespace Home
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
         }
+
+        private void manageBook_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormManageBooks formManageB = new FormManageBooks();
+            formManageB.Show();
+        }
+
+        private void filterBookCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormBookList booklist = new FormBookList();
+            booklist.Show();
+        }
+
+        private void filterBookYear_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormBookList booklist = new FormBookList();
+            booklist.Show();
+        }
+
+        private void manageAccount_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormManageAccounts formManageAcc = new FormManageAccounts();
+            formManageAcc.Show();
+        }
     }
 }

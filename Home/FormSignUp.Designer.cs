@@ -36,9 +36,9 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTelephone = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblTelephone = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.mtbTelephone = new System.Windows.Forms.MaskedTextBox();
             this.rtbAddress = new System.Windows.Forms.RichTextBox();
@@ -142,14 +142,12 @@
             this.panel1.Size = new System.Drawing.Size(542, 111);
             this.panel1.TabIndex = 15;
             // 
-            // lblTelephone
+            // txtPassword
             // 
-            this.lblTelephone.AutoSize = true;
-            this.lblTelephone.Location = new System.Drawing.Point(32, 494);
-            this.lblTelephone.Name = "lblTelephone";
-            this.lblTelephone.Size = new System.Drawing.Size(135, 27);
-            this.lblTelephone.TabIndex = 16;
-            this.lblTelephone.Text = "Telephone";
+            this.txtPassword.Location = new System.Drawing.Point(158, 64);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(364, 35);
+            this.txtPassword.TabIndex = 15;
             // 
             // txtUsername
             // 
@@ -158,12 +156,14 @@
             this.txtUsername.Size = new System.Drawing.Size(364, 35);
             this.txtUsername.TabIndex = 15;
             // 
-            // txtPassword
+            // lblTelephone
             // 
-            this.txtPassword.Location = new System.Drawing.Point(158, 64);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(364, 35);
-            this.txtPassword.TabIndex = 15;
+            this.lblTelephone.AutoSize = true;
+            this.lblTelephone.Location = new System.Drawing.Point(32, 494);
+            this.lblTelephone.Name = "lblTelephone";
+            this.lblTelephone.Size = new System.Drawing.Size(135, 27);
+            this.lblTelephone.TabIndex = 16;
+            this.lblTelephone.Text = "Telephone";
             // 
             // txtName
             // 
@@ -327,6 +327,7 @@
             this.Controls.Add(this.btnPickPhoto);
             this.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FormSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

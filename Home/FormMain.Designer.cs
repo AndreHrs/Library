@@ -33,12 +33,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAccountName = new System.Windows.Forms.Label();
+            this.pBoxProfile = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.menuBooks = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.filterBookCategory = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.filterBookYear = new System.Windows.Forms.ToolStripMenuItem();
             this.booksDropdownLocation = new System.Windows.Forms.Panel();
             this.manageDropdownLocation = new System.Windows.Forms.Panel();
             this.menuManage = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -52,16 +56,12 @@
             this.btnBooks = new System.Windows.Forms.Button();
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pBoxProfile = new System.Windows.Forms.PictureBox();
-            this.filterBookCategory = new System.Windows.Forms.ToolStripMenuItem();
-            this.filterBookYear = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).BeginInit();
             this.menuBooks.SuspendLayout();
             this.menuManage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +93,16 @@
             this.lblWelcome.TabIndex = 11;
             this.lblWelcome.Text = "Welcome Guest";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Home.Properties.Resources.Library;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lblAccountName);
@@ -110,6 +120,16 @@
             this.lblAccountName.Size = new System.Drawing.Size(69, 29);
             this.lblAccountName.TabIndex = 11;
             this.lblAccountName.Text = "Guest";
+            // 
+            // pBoxProfile
+            // 
+            this.pBoxProfile.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
+            this.pBoxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBoxProfile.Location = new System.Drawing.Point(0, 0);
+            this.pBoxProfile.Name = "pBoxProfile";
+            this.pBoxProfile.Size = new System.Drawing.Size(146, 146);
+            this.pBoxProfile.TabIndex = 12;
+            this.pBoxProfile.TabStop = false;
             // 
             // panel3
             // 
@@ -136,10 +156,26 @@
             this.menuBooks.Name = "menuBooks";
             this.menuBooks.Size = new System.Drawing.Size(163, 62);
             // 
+            // filterBookCategory
+            // 
+            this.filterBookCategory.Image = global::Home.Properties.Resources.Library;
+            this.filterBookCategory.Name = "filterBookCategory";
+            this.filterBookCategory.Size = new System.Drawing.Size(162, 26);
+            this.filterBookCategory.Text = "By Category";
+            this.filterBookCategory.Click += new System.EventHandler(this.filterBookCategory_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
+            // 
+            // filterBookYear
+            // 
+            this.filterBookYear.Image = global::Home.Properties.Resources.Library;
+            this.filterBookYear.Name = "filterBookYear";
+            this.filterBookYear.Size = new System.Drawing.Size(162, 26);
+            this.filterBookYear.Text = "By Author";
+            this.filterBookYear.Click += new System.EventHandler(this.filterBookYear_Click);
             // 
             // booksDropdownLocation
             // 
@@ -170,6 +206,7 @@
             this.manageBook.Name = "manageBook";
             this.manageBook.Size = new System.Drawing.Size(132, 24);
             this.manageBook.Text = "Books";
+            this.manageBook.Click += new System.EventHandler(this.manageBook_Click);
             // 
             // toolStripSeparator2
             // 
@@ -181,6 +218,7 @@
             this.manageAccount.Name = "manageAccount";
             this.manageAccount.Size = new System.Drawing.Size(132, 24);
             this.manageAccount.Text = "Account";
+            this.manageAccount.Click += new System.EventHandler(this.manageAccount_Click);
             // 
             // btnManage
             // 
@@ -294,40 +332,6 @@
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Home.Properties.Resources.Library;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pBoxProfile
-            // 
-            this.pBoxProfile.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
-            this.pBoxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBoxProfile.Location = new System.Drawing.Point(0, 0);
-            this.pBoxProfile.Name = "pBoxProfile";
-            this.pBoxProfile.Size = new System.Drawing.Size(146, 146);
-            this.pBoxProfile.TabIndex = 12;
-            this.pBoxProfile.TabStop = false;
-            // 
-            // filterBookCategory
-            // 
-            this.filterBookCategory.Image = global::Home.Properties.Resources.Library;
-            this.filterBookCategory.Name = "filterBookCategory";
-            this.filterBookCategory.Size = new System.Drawing.Size(162, 26);
-            this.filterBookCategory.Text = "By Category";
-            // 
-            // filterBookYear
-            // 
-            this.filterBookYear.Image = global::Home.Properties.Resources.Library;
-            this.filterBookYear.Name = "filterBookYear";
-            this.filterBookYear.Size = new System.Drawing.Size(162, 26);
-            this.filterBookYear.Text = "By Author";
-            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
@@ -349,18 +353,19 @@
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "formMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).EndInit();
             this.menuBooks.ResumeLayout(false);
             this.menuManage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).EndInit();
             this.ResumeLayout(false);
 
         }

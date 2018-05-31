@@ -53,6 +53,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ShowPic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowPic.Designer.cs">
+      <DependentUpon>ShowPic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEditBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditBook.Designer.cs">
+      <DependentUpon>FormAddEditBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBookList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBookList.Designer.cs">
+      <DependentUpon>FormBookList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLending.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLending.Designer.cs">
+      <DependentUpon>FormLending.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +88,24 @@
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManageAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManageAccounts.Designer.cs">
+      <DependentUpon>FormManageAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManageBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManageBooks.Designer.cs">
+      <DependentUpon>FormManageBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSignUp.cs">
       <SubType>Form</SubType>
@@ -79,11 +121,32 @@
     <Compile Include="Splashscreen.Designer.cs">
       <DependentUpon>Splashscreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShowPic.resx">
+      <DependentUpon>ShowPic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditBook.resx">
+      <DependentUpon>FormAddEditBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBookList.resx">
+      <DependentUpon>FormBookList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLending.resx">
+      <DependentUpon>FormLending.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManageAccounts.resx">
+      <DependentUpon>FormManageAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManageBooks.resx">
+      <DependentUpon>FormManageBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
@@ -153,6 +216,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Default Pic%28box%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconRemove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconReturn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
