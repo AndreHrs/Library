@@ -39,20 +39,20 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBookTitle = new System.Windows.Forms.TextBox();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
-            this.txtGenre = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtLendDate = new System.Windows.Forms.TextBox();
-            this.txtDeadline = new System.Windows.Forms.TextBox();
-            this.lblFineAmount = new System.Windows.Forms.Label();
             this.btnReturnBook = new System.Windows.Forms.Button();
+            this.txtGenre = new System.Windows.Forms.TextBox();
+            this.txtDeadline = new System.Windows.Forms.TextBox();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.txtLendDate = new System.Windows.Forms.TextBox();
+            this.txtBookTitle = new System.Windows.Forms.TextBox();
+            this.lblFineAmount = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -190,112 +190,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Details";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(166, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 27);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Book Title";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(166, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 27);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Author";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(166, 117);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 27);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Genre";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(7, 35);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(145, 176);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(601, 117);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 27);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Fine";
-            // 
-            // txtBookTitle
-            // 
-            this.txtBookTitle.Location = new System.Drawing.Point(312, 36);
-            this.txtBookTitle.Name = "txtBookTitle";
-            this.txtBookTitle.Size = new System.Drawing.Size(273, 35);
-            this.txtBookTitle.TabIndex = 3;
-            // 
-            // txtAuthor
-            // 
-            this.txtAuthor.Location = new System.Drawing.Point(312, 75);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(273, 35);
-            this.txtAuthor.TabIndex = 3;
-            // 
-            // txtGenre
-            // 
-            this.txtGenre.Location = new System.Drawing.Point(312, 114);
-            this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(273, 35);
-            this.txtGenre.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(601, 39);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 27);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Lend Date";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(601, 80);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 27);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Deadline";
-            // 
-            // txtLendDate
-            // 
-            this.txtLendDate.Location = new System.Drawing.Point(747, 36);
-            this.txtLendDate.Name = "txtLendDate";
-            this.txtLendDate.Size = new System.Drawing.Size(223, 35);
-            this.txtLendDate.TabIndex = 3;
-            // 
-            // txtDeadline
-            // 
-            this.txtDeadline.Location = new System.Drawing.Point(747, 75);
-            this.txtDeadline.Name = "txtDeadline";
-            this.txtDeadline.Size = new System.Drawing.Size(223, 35);
-            this.txtDeadline.TabIndex = 3;
-            // 
-            // lblFineAmount
-            // 
-            this.lblFineAmount.AutoSize = true;
-            this.lblFineAmount.Location = new System.Drawing.Point(742, 117);
-            this.lblFineAmount.Name = "lblFineAmount";
-            this.lblFineAmount.Size = new System.Drawing.Size(74, 27);
-            this.lblFineAmount.TabIndex = 2;
-            this.lblFineAmount.Text = "Rp. 0";
-            // 
             // btnReturnBook
             // 
             this.btnReturnBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -306,6 +200,117 @@
             this.btnReturnBook.TabIndex = 4;
             this.btnReturnBook.Text = "Return Book";
             this.btnReturnBook.UseVisualStyleBackColor = false;
+            // 
+            // txtGenre
+            // 
+            this.txtGenre.Enabled = false;
+            this.txtGenre.Location = new System.Drawing.Point(312, 114);
+            this.txtGenre.Name = "txtGenre";
+            this.txtGenre.Size = new System.Drawing.Size(273, 35);
+            this.txtGenre.TabIndex = 3;
+            // 
+            // txtDeadline
+            // 
+            this.txtDeadline.Enabled = false;
+            this.txtDeadline.Location = new System.Drawing.Point(747, 75);
+            this.txtDeadline.Name = "txtDeadline";
+            this.txtDeadline.Size = new System.Drawing.Size(223, 35);
+            this.txtDeadline.TabIndex = 3;
+            // 
+            // txtAuthor
+            // 
+            this.txtAuthor.Enabled = false;
+            this.txtAuthor.Location = new System.Drawing.Point(312, 75);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(273, 35);
+            this.txtAuthor.TabIndex = 3;
+            // 
+            // txtLendDate
+            // 
+            this.txtLendDate.Enabled = false;
+            this.txtLendDate.Location = new System.Drawing.Point(747, 36);
+            this.txtLendDate.Name = "txtLendDate";
+            this.txtLendDate.Size = new System.Drawing.Size(223, 35);
+            this.txtLendDate.TabIndex = 3;
+            // 
+            // txtBookTitle
+            // 
+            this.txtBookTitle.Enabled = false;
+            this.txtBookTitle.Location = new System.Drawing.Point(312, 36);
+            this.txtBookTitle.Name = "txtBookTitle";
+            this.txtBookTitle.Size = new System.Drawing.Size(273, 35);
+            this.txtBookTitle.TabIndex = 3;
+            // 
+            // lblFineAmount
+            // 
+            this.lblFineAmount.AutoSize = true;
+            this.lblFineAmount.Location = new System.Drawing.Point(742, 117);
+            this.lblFineAmount.Name = "lblFineAmount";
+            this.lblFineAmount.Size = new System.Drawing.Size(74, 27);
+            this.lblFineAmount.TabIndex = 2;
+            this.lblFineAmount.Text = "Rp. 0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(601, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 27);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Fine";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(7, 35);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(145, 176);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(601, 80);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(115, 27);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Deadline";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(166, 117);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 27);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Genre";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(601, 39);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(131, 27);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Lend Date";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(166, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 27);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Author";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(166, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 27);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Book Title";
             // 
             // FormLending
             // 

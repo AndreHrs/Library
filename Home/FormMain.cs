@@ -73,6 +73,9 @@ namespace Home
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Program.Nama = "Guest";
+            Program.PathFoto = @"D:\Mikroskil\Sem 4\OOP C#\ProjectC#\Pic Resource\Png\Default Pic(box).jpg";
+            Program.TipeAkun = "Guest";
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
         }
@@ -100,9 +103,21 @@ namespace Home
 
         private void manageAccount_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormManageAccounts formManageAcc = new FormManageAccounts();
-            formManageAcc.Show();
+            formManageAcc.ShowDialog();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            FormProfile profile = new FormProfile(Program.userSekarang.user);
+            profile.ShowDialog();
+        }
+
+        private void btnLend_Click(object sender, EventArgs e)
+        {
+            FormLending lend = new FormLending();
+            this.Hide();
+            lend.Show();
         }
     }
 }

@@ -13,6 +13,13 @@ namespace Home
 {
     public partial class FormLogin : Form
     {
+        private void cekNull(Control objek)
+        {
+            if (String.IsNullOrEmpty(objek.Text))
+            {
+                objek.Focus();
+            }
+        }
         public FormLogin()
         {
             
@@ -20,7 +27,6 @@ namespace Home
             label1.BackColor = System.Drawing.Color.Transparent;
             label2.BackColor = System.Drawing.Color.Transparent;
             linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            
         }
 
         
@@ -44,19 +50,51 @@ namespace Home
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Program.TipeAkun = "Admin";
-            Program.Nama = "Andre";
-            Program.PathFoto = @"D:\Mikroskil\Sem 4\OOP C#\ProjectC#\Pic Folders\Andre.jpg";
-            formMain form = new formMain("Admin", "Andre", @"D:\Mikroskil\Sem 4\OOP C#\ProjectC#\Pic Folders\Andre.jpg");
-            form.Show();
+            if (String.IsNullOrEmpty(txtUsername.Text) || String.IsNullOrEmpty(txtPassword.Text))
+            {
+                cekNull(txtPassword);
+                cekNull(txtUsername);
+                DialogError dialog = new DialogError();
+                dialog.BackgroundImage = Properties.Resources.blank;
+                dialog.ShowDialog();
+            }
+            else
+            {
+                koneksiSql koneksi = new koneksiSql();
+                string username = txtUsername.Text.Trim(), password = txtPassword.Text.Trim();
+                koneksi.validasiLogin(username, password);
+
+                if (koneksi.validasiLogin(username, password))
+                {
+                    CurrentUser user = koneksi.returnUser(username);
+                    Program.userSekarang = user;
+                    this.Hide();
+
+                    formMain form = new formMain(user.tipe, user.nama, user.path);
+                    form.Show();
+                }
+                else
+                {
+                    DialogError dialog = new DialogError();
+                    dialog.ShowDialog();
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormSignUp signup = new FormSignUp();
-            signup.Show();
+            signup.ShowDialog();
+        }
+
+        private void pBoxShow_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = false;
+        }
+
+        private void pBoxShow_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
         }
     }
 }

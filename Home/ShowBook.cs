@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace Home
 {
-    public partial class FormAddEditBook : Form
+    public partial class ShowBookForm : Form
     {
-        public FormAddEditBook()
+        public ShowBookForm()
         {
             InitializeComponent();
-            lblWelcome.Text = "Add Book";
         }
 
-        public FormAddEditBook(string isititle, string Year, string Genre, string Author) //Overload Constructor utk Edit
+        public ShowBookForm(String Title, String Author, List<String> listPathPhoto)
         {
-            InitializeComponent();
-            txtTitle.Text = isititle;
             txtAuthor.Text = Author;
-            txtGenre.Text = Genre;
-            txtYear.Text = Year;
-            lblWelcome.Text = "Edit Book";
+            txtTitle.Text = Title;
         }
 
         private void minimizeBtn_Click(object sender, EventArgs e)
@@ -41,13 +36,8 @@ namespace Home
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formMain main = new formMain(Program.TipeAkun, Program.Nama, Program.PathFoto);
-            main.Show();
-        }
-
-        private void FormAddEditBook_Load(object sender, EventArgs e)
-        {
-
+            FormBookList booklist = new FormBookList();
+            booklist.Show();
         }
     }
 }

@@ -33,5 +33,24 @@ namespace Home
             formMain main = new formMain(Program.TipeAkun, Program.Nama, Program.PathFoto);
             main.Show();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            FormAddEditBook addbook = new FormAddEditBook("Title", "Year", "Genre", "Author");
+            this.Hide();
+            addbook.Show();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FormAddEditBook addbook = new FormAddEditBook();
+            this.Hide();
+            addbook.Show();
+        }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Home
 {
-    public partial class Blank_Borderless1 : Form
+    public partial class DialogError : Form
     {
-        public Blank_Borderless1()
+        public DialogError()
         {
             InitializeComponent();
         }
@@ -24,7 +24,12 @@ namespace Home
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

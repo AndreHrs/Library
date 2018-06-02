@@ -12,6 +12,12 @@ namespace Home
 {
     public partial class FormSignUp : Form
     {
+        private void loadFoto(string filepath)
+        {
+            Image loadFoto = new Bitmap(filepath);
+            pictBoxPhoto.BackgroundImage = loadFoto;
+        }
+        string pathFoto ="";
         public FormSignUp()
         {
             InitializeComponent();
@@ -42,6 +48,33 @@ namespace Home
             this.Hide();
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
+        }
+
+        private void btnPickPhoto_Click(object sender, EventArgs e)
+        {
+            string path = "", filepath;
+            OpenFileDialog openfile = new OpenFileDialog();
+            if (openfile.ShowDialog() == DialogResult.OK)
+            {
+                path = openfile.FileName;
+                if ((path.EndsWith(".jpg")) || path.EndsWith(".png") || path.EndsWith(".gif"))
+                {
+                    pathFoto = path;
+                    loadFoto(pathFoto);
+                }
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string user = txtUsername.Text, pass = txtPassword.Text, tipe = "User", nama = txtName.Text,
+                alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62","0"), gender = cBoxGender.Text, path = pathFoto;
+            koneksiSql koneksi = new koneksiSql();
+            if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, path))
+                this.Close();
+            else
+                txtUsername.Focus();
+
         }
     }
 }

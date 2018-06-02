@@ -32,40 +32,41 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnChangePic = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.pBoxShow = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblPhotoPath = new System.Windows.Forms.Label();
+            this.cBoxAccountType = new System.Windows.Forms.ComboBox();
+            this.lblAccountType = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.cBoxGender = new System.Windows.Forms.ComboBox();
+            this.mtbTelephone = new System.Windows.Forms.MaskedTextBox();
+            this.rtbAddress = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.rtbAddress = new System.Windows.Forms.RichTextBox();
-            this.mtbTelephone = new System.Windows.Forms.MaskedTextBox();
-            this.cBoxGender = new System.Windows.Forms.ComboBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lblAccountType = new System.Windows.Forms.Label();
-            this.cBoxAccountType = new System.Windows.Forms.ComboBox();
-            this.lblPhotoPath = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pBoxShow = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,6 +98,16 @@
             this.lblWelcome.TabIndex = 11;
             this.lblWelcome.Text = "User Profile";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Home.Properties.Resources.Library;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnChangePic
             // 
             this.btnChangePic.Enabled = false;
@@ -106,6 +117,7 @@
             this.btnChangePic.TabIndex = 21;
             this.btnChangePic.Text = "Change";
             this.btnChangePic.UseVisualStyleBackColor = true;
+            this.btnChangePic.Click += new System.EventHandler(this.btnChangePic_Click);
             // 
             // label1
             // 
@@ -139,6 +151,58 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account";
             // 
+            // pBoxShow
+            // 
+            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
+            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBoxShow.Location = new System.Drawing.Point(523, 70);
+            this.pBoxShow.Name = "pBoxShow";
+            this.pBoxShow.Size = new System.Drawing.Size(31, 31);
+            this.pBoxShow.TabIndex = 2;
+            this.pBoxShow.TabStop = false;
+            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
+            this.pBoxShow.MouseLeave += new System.EventHandler(this.pBoxShow_MouseLeave);
+            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Enabled = false;
+            this.txtPassword.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(119, 70);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(400, 31);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Enabled = false;
+            this.txtUsername.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(119, 33);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(435, 31);
+            this.txtUsername.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(5, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 23);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Password";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(5, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 23);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Username";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblPhotoPath);
@@ -162,112 +226,45 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data";
             // 
-            // label3
+            // lblPhotoPath
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 23);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Username";
+            this.lblPhotoPath.AutoSize = true;
+            this.lblPhotoPath.Location = new System.Drawing.Point(344, 332);
+            this.lblPhotoPath.Name = "lblPhotoPath";
+            this.lblPhotoPath.Size = new System.Drawing.Size(0, 27);
+            this.lblPhotoPath.TabIndex = 30;
+            this.lblPhotoPath.Visible = false;
             // 
-            // label5
+            // cBoxAccountType
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Password";
+            this.cBoxAccountType.FormattingEnabled = true;
+            this.cBoxAccountType.Items.AddRange(new object[] {
+            "Admin",
+            "User"});
+            this.cBoxAccountType.Location = new System.Drawing.Point(191, 362);
+            this.cBoxAccountType.Name = "cBoxAccountType";
+            this.cBoxAccountType.Size = new System.Drawing.Size(351, 34);
+            this.cBoxAccountType.TabIndex = 29;
+            this.cBoxAccountType.Text = "User";
+            this.cBoxAccountType.Visible = false;
             // 
-            // txtUsername
+            // lblAccountType
             // 
-            this.txtUsername.Enabled = false;
-            this.txtUsername.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(119, 33);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(435, 31);
-            this.txtUsername.TabIndex = 1;
+            this.lblAccountType.AutoSize = true;
+            this.lblAccountType.Location = new System.Drawing.Point(9, 362);
+            this.lblAccountType.Name = "lblAccountType";
+            this.lblAccountType.Size = new System.Drawing.Size(172, 27);
+            this.lblAccountType.TabIndex = 28;
+            this.lblAccountType.Text = "Account Type";
+            this.lblAccountType.Visible = false;
             // 
-            // txtPassword
+            // txtName
             // 
-            this.txtPassword.Enabled = false;
-            this.txtPassword.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(119, 70);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(400, 31);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.UseSystemPasswordChar = true;
-            // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(216, 705);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 52);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Enabled = false;
-            this.label6.Location = new System.Drawing.Point(6, 58);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 27);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Name";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Enabled = false;
-            this.label7.Location = new System.Drawing.Point(6, 163);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 27);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Gender";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Enabled = false;
-            this.label8.Location = new System.Drawing.Point(8, 212);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 27);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Address";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Enabled = false;
-            this.label9.Location = new System.Drawing.Point(9, 123);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 27);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Telp.";
-            // 
-            // rtbAddress
-            // 
-            this.rtbAddress.Enabled = false;
-            this.rtbAddress.Location = new System.Drawing.Point(11, 242);
-            this.rtbAddress.Name = "rtbAddress";
-            this.rtbAddress.Size = new System.Drawing.Size(316, 96);
-            this.rtbAddress.TabIndex = 24;
-            this.rtbAddress.Text = "";
-            // 
-            // mtbTelephone
-            // 
-            this.mtbTelephone.Enabled = false;
-            this.mtbTelephone.Location = new System.Drawing.Point(119, 117);
-            this.mtbTelephone.Mask = "+620000-0000-0000";
-            this.mtbTelephone.Name = "mtbTelephone";
-            this.mtbTelephone.Size = new System.Drawing.Size(206, 35);
-            this.mtbTelephone.TabIndex = 25;
+            this.txtName.Enabled = false;
+            this.txtName.Location = new System.Drawing.Point(119, 62);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(206, 35);
+            this.txtName.TabIndex = 27;
             // 
             // cBoxGender
             // 
@@ -283,42 +280,59 @@
             this.cBoxGender.TabIndex = 26;
             this.cBoxGender.Text = "Male";
             // 
-            // txtName
+            // mtbTelephone
             // 
-            this.txtName.Enabled = false;
-            this.txtName.Location = new System.Drawing.Point(119, 62);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(206, 35);
-            this.txtName.TabIndex = 27;
+            this.mtbTelephone.Enabled = false;
+            this.mtbTelephone.Location = new System.Drawing.Point(119, 117);
+            this.mtbTelephone.Mask = "+6200000000000";
+            this.mtbTelephone.Name = "mtbTelephone";
+            this.mtbTelephone.Size = new System.Drawing.Size(206, 35);
+            this.mtbTelephone.TabIndex = 25;
             // 
-            // lblAccountType
+            // rtbAddress
             // 
-            this.lblAccountType.AutoSize = true;
-            this.lblAccountType.Location = new System.Drawing.Point(9, 362);
-            this.lblAccountType.Name = "lblAccountType";
-            this.lblAccountType.Size = new System.Drawing.Size(172, 27);
-            this.lblAccountType.TabIndex = 28;
-            this.lblAccountType.Text = "Account Type";
-            this.lblAccountType.Visible = false;
+            this.rtbAddress.Enabled = false;
+            this.rtbAddress.Location = new System.Drawing.Point(11, 242);
+            this.rtbAddress.Name = "rtbAddress";
+            this.rtbAddress.Size = new System.Drawing.Size(316, 96);
+            this.rtbAddress.TabIndex = 24;
+            this.rtbAddress.Text = "";
             // 
-            // cBoxAccountType
+            // label8
             // 
-            this.cBoxAccountType.FormattingEnabled = true;
-            this.cBoxAccountType.Location = new System.Drawing.Point(191, 362);
-            this.cBoxAccountType.Name = "cBoxAccountType";
-            this.cBoxAccountType.Size = new System.Drawing.Size(351, 34);
-            this.cBoxAccountType.TabIndex = 29;
-            this.cBoxAccountType.Visible = false;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 212);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 27);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Address";
             // 
-            // lblPhotoPath
+            // label9
             // 
-            this.lblPhotoPath.AutoSize = true;
-            this.lblPhotoPath.Location = new System.Drawing.Point(344, 332);
-            this.lblPhotoPath.Name = "lblPhotoPath";
-            this.lblPhotoPath.Size = new System.Drawing.Size(106, 27);
-            this.lblPhotoPath.TabIndex = 30;
-            this.lblPhotoPath.Text = "FilePath";
-            this.lblPhotoPath.Visible = false;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 123);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 27);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Telp.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 163);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 27);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Gender";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 58);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 27);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Name";
             // 
             // pictureBox2
             // 
@@ -331,18 +345,16 @@
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
             // 
-            // pBoxShow
+            // btnSave
             // 
-            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
-            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBoxShow.Location = new System.Drawing.Point(523, 70);
-            this.pBoxShow.Name = "pBoxShow";
-            this.pBoxShow.Size = new System.Drawing.Size(31, 31);
-            this.pBoxShow.TabIndex = 2;
-            this.pBoxShow.TabStop = false;
-            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
-            this.pBoxShow.MouseLeave += new System.EventHandler(this.pBoxShow_MouseLeave);
-            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(216, 705);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(174, 52);
+            this.btnSave.TabIndex = 25;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -373,16 +385,6 @@
             this.btnReturn.TabIndex = 18;
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Home.Properties.Resources.Library;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
             // 
             // minimizeBtn
             // 
@@ -420,13 +422,18 @@
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(600, 800);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
@@ -444,13 +451,13 @@
             this.Text = "FormProfile";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,7 +485,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.RichTextBox rtbAddress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -489,5 +496,6 @@
         private System.Windows.Forms.ComboBox cBoxGender;
         private System.Windows.Forms.Label lblPhotoPath;
         private System.Windows.Forms.PictureBox pBoxShow;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

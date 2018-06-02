@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace Home
 {
-    public partial class FormBookList : Form
+    public partial class DialogYesNo : Form
     {
-        public FormBookList()
+        public DialogYesNo()
         {
             InitializeComponent();
-            if (Program.TipeAkun == "Guest")
-            {
-                btnLend.Enabled = false;
-            }
+        }
+        bool status = false;
+        public bool getresult()
+        {
+            return status;
         }
 
         private void minimizeBtn_Click(object sender, EventArgs e)
@@ -31,17 +32,16 @@ namespace Home
             Application.Exit();
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void btnYes_Click(object sender, EventArgs e)
         {
+            status = true;
             this.Hide();
-            formMain main = new formMain(Program.TipeAkun, Program.Nama, Program.PathFoto);
-            main.Show();
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void btnNo_Click(object sender, EventArgs e)
         {
-            btnView.Enabled = true;
-            btnLend.Enabled = true;
+            status = false;
+            this.Hide();
         }
     }
 }

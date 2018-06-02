@@ -175,9 +175,9 @@
             // mtbTelephone
             // 
             this.mtbTelephone.Location = new System.Drawing.Point(198, 491);
-            this.mtbTelephone.Mask = "+620000-0000-0000";
+            this.mtbTelephone.Mask = "+6200000000000";
             this.mtbTelephone.Name = "mtbTelephone";
-            this.mtbTelephone.Size = new System.Drawing.Size(209, 35);
+            this.mtbTelephone.Size = new System.Drawing.Size(364, 35);
             this.mtbTelephone.TabIndex = 18;
             // 
             // rtbAddress
@@ -280,6 +280,7 @@
             this.btnPickPhoto.TabIndex = 28;
             this.btnPickPhoto.Text = "Pick Photo";
             this.btnPickPhoto.UseVisualStyleBackColor = true;
+            this.btnPickPhoto.Click += new System.EventHandler(this.btnPickPhoto_Click);
             // 
             // btnSubmit
             // 
@@ -289,6 +290,7 @@
             this.btnSubmit.TabIndex = 29;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnReturn
             // 

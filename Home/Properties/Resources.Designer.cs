@@ -63,6 +63,16 @@ namespace Home.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blank {
+            get {
+                object obj = ResourceManager.GetObject("blank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap books {
             get {
                 object obj = ResourceManager.GetObject("books", resourceCulture);
@@ -246,6 +256,16 @@ namespace Home.Properties {
         internal static System.Drawing.Bitmap Splash_BG {
             get {
                 object obj = ResourceManager.GetObject("Splash BG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wrongUser {
+            get {
+                object obj = ResourceManager.GetObject("wrongUser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

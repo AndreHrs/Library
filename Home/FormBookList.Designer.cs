@@ -67,6 +67,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(978, 317);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // panel1
             // 
@@ -197,6 +198,7 @@
             // 
             // btnLend
             // 
+            this.btnLend.Enabled = false;
             this.btnLend.Location = new System.Drawing.Point(730, 113);
             this.btnLend.Name = "btnLend";
             this.btnLend.Size = new System.Drawing.Size(222, 68);
@@ -206,6 +208,7 @@
             // 
             // btnView
             // 
+            this.btnView.Enabled = false;
             this.btnView.Location = new System.Drawing.Point(730, 34);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(222, 68);

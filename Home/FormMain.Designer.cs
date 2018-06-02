@@ -265,6 +265,7 @@
             this.btnProfile.Size = new System.Drawing.Size(120, 50);
             this.btnProfile.TabIndex = 15;
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnLend
             // 
@@ -280,6 +281,7 @@
             this.btnLend.Size = new System.Drawing.Size(120, 50);
             this.btnLend.TabIndex = 15;
             this.btnLend.UseVisualStyleBackColor = true;
+            this.btnLend.Click += new System.EventHandler(this.btnLend_Click);
             // 
             // btnBooks
             // 

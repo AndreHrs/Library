@@ -53,11 +53,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ShowPic.cs">
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="DialogNormal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowPic.Designer.cs">
-      <DependentUpon>ShowPic.cs</DependentUpon>
+    <Compile Include="DialogNormal.Designer.cs">
+      <DependentUpon>DialogNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogYesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogYesNo.Designer.cs">
+      <DependentUpon>DialogYesNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="koneksiSql.cs" />
+    <Compile Include="Library-Blank1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Library-Blank1.Designer.cs">
+      <DependentUpon>Library-Blank1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowBook.Designer.cs">
+      <DependentUpon>ShowBook.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAddEditBook.cs">
       <SubType>Form</SubType>
@@ -121,8 +141,17 @@
     <Compile Include="Splashscreen.Designer.cs">
       <DependentUpon>Splashscreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ShowPic.resx">
-      <DependentUpon>ShowPic.cs</DependentUpon>
+    <EmbeddedResource Include="DialogNormal.resx">
+      <DependentUpon>DialogNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogYesNo.resx">
+      <DependentUpon>DialogYesNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Library-Blank1.resx">
+      <DependentUpon>Library-Blank1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowBook.resx">
+      <DependentUpon>ShowBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddEditBook.resx">
       <DependentUpon>FormAddEditBook.cs</DependentUpon>
@@ -234,6 +263,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrongUser.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
