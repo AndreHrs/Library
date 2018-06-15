@@ -75,11 +75,11 @@
       <DependentUpon>DialogYesNo.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\koneksiSql.cs" />
-    <Compile Include="Dialogs\Library-Blank1.cs">
+    <Compile Include="Dialogs\DialogError.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\Library-Blank1.Designer.cs">
-      <DependentUpon>Library-Blank1.cs</DependentUpon>
+    <Compile Include="Dialogs\DialogError.Designer.cs">
+      <DependentUpon>DialogError.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\Peminjaman.cs" />
     <Compile Include="Book\ShowBook.cs">
@@ -156,8 +156,8 @@
     <EmbeddedResource Include="Dialogs\DialogYesNo.resx">
       <DependentUpon>DialogYesNo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\Library-Blank1.resx">
-      <DependentUpon>Library-Blank1.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\DialogError.resx">
+      <DependentUpon>DialogError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Book\ShowBook.resx">
       <DependentUpon>ShowBook.cs</DependentUpon>

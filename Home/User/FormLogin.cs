@@ -66,11 +66,19 @@ namespace Home
                 if (koneksi.validasiLogin(username, password))
                 {
                     CurrentUser user = koneksi.returnUser(username);
-                    Program.userSekarang = user;
-                    this.Hide();
+                    if(txtUsername.Text == user.user && txtPassword.Text == user.pass)
+                    {
+                        Program.userSekarang = user;
+                        this.Hide();
 
-                    formMain form = new formMain(user.tipe, user.nama, user.path);
-                    form.Show();
+                        formMain form = new formMain(user.tipe, user.nama, user.path);
+                        form.Show();
+                    }
+                    else
+                    {
+                        DialogError dialog = new DialogError();
+                        dialog.ShowDialog();
+                    }
                 }
                 else
                 {
