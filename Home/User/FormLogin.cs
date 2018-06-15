@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
+
 namespace Home
 {
     public partial class FormLogin : Form
-    {
+    {    
         private void cekNull(Control objek)
         {
             if (String.IsNullOrEmpty(objek.Text))
@@ -28,9 +29,7 @@ namespace Home
             label2.BackColor = System.Drawing.Color.Transparent;
             linkLabel1.BackColor = System.Drawing.Color.Transparent;
         }
-
-        
-
+     
         private void minimizeBtn_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
@@ -44,7 +43,7 @@ namespace Home
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            formMain form = new formMain("Guest", "Guest","");
+            formMain form = new formMain(Program.userSekarang.nama, Program.userSekarang.tipe, Program.userSekarang.path);
             form.Show();
         }
 
@@ -95,6 +94,22 @@ namespace Home
         private void pBoxShow_MouseUp(object sender, MouseEventArgs e)
         {
             txtPassword.UseSystemPasswordChar = true;
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                button1_Click(null, null);
+            }   
         }
     }
 }

@@ -61,6 +61,9 @@
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtFine = new System.Windows.Forms.TextBox();
+            this.btnPay = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -219,9 +222,9 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.btnChangePic);
-            this.groupBox2.Location = new System.Drawing.Point(17, 251);
+            this.groupBox2.Location = new System.Drawing.Point(17, 344);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(560, 426);
+            this.groupBox2.Size = new System.Drawing.Size(560, 407);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data";
@@ -348,7 +351,7 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(216, 705);
+            this.btnSave.Location = new System.Drawing.Point(208, 768);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(174, 52);
             this.btnSave.TabIndex = 25;
@@ -395,7 +398,7 @@
             this.minimizeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(490, 7);
+            this.minimizeBtn.Location = new System.Drawing.Point(490, 23);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
             this.minimizeBtn.TabIndex = 12;
@@ -413,7 +416,7 @@
             this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtn.ForeColor = System.Drawing.Color.White;
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(542, 7);
+            this.closeBtn.Location = new System.Drawing.Point(542, 23);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 13;
@@ -427,12 +430,43 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(23, 295);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 27);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Fine";
+            // 
+            // txtFine
+            // 
+            this.txtFine.Enabled = false;
+            this.txtFine.Location = new System.Drawing.Point(136, 292);
+            this.txtFine.Name = "txtFine";
+            this.txtFine.Size = new System.Drawing.Size(314, 35);
+            this.txtFine.TabIndex = 28;
+            this.txtFine.Text = "0";
+            // 
+            // btnPay
+            // 
+            this.btnPay.Location = new System.Drawing.Point(456, 293);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(121, 35);
+            this.btnPay.TabIndex = 29;
+            this.btnPay.Text = "Pay";
+            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(600, 800);
+            this.ClientSize = new System.Drawing.Size(600, 832);
+            this.Controls.Add(this.btnPay);
+            this.Controls.Add(this.txtFine);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -497,5 +531,8 @@
         private System.Windows.Forms.Label lblPhotoPath;
         private System.Windows.Forms.PictureBox pBoxShow;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtFine;
+        private System.Windows.Forms.Button btnPay;
     }
 }

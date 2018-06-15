@@ -11,14 +11,31 @@ using System.Windows.Forms;
 namespace Home
 {
     public partial class FormProfile : Form
-    {
+    { 
+        Utility fungsi = new Utility();
+        ControlForm kontrol = new ControlForm();
         koneksiSql koneksi = new koneksiSql();
         protected bool AddNewAcc = false;
-        private void loadFoto(string filepath)
+        public bool fromMain = false;
+        string path = "";
+
+        private void checkFromMain()
         {
-            Image loadFoto = new Bitmap(filepath);
-            pictureBox2.BackgroundImage = loadFoto;
+            if (fromMain)
+            {
+                CurrentUser userSkrng = koneksi.returnUser(Program.userSekarang.user);
+                Program.userSekarang = userSkrng;
+                this.Hide();
+
+                formMain form = new formMain(Program.userSekarang.tipe, Program.userSekarang.nama, Program.userSekarang.path);
+                form.Show();
+            }
+            else
+            {
+                this.Close();
+            }
         }
+
 
         //Form can be repurposed to add or edit user account
         private void EnableControl()
@@ -62,54 +79,15 @@ namespace Home
             mtbTelephone.Text = temp.telp;
             cBoxGender.Text = temp.gender;
             rtbAddress.Text = temp.alamat;
-            cBoxAccountType.Text = temp.tipe; 
+            cBoxAccountType.Text = temp.tipe;
+            txtFine.Text = temp.fine;
+            lblPhotoPath.Text = temp.path;
             if(!String.IsNullOrEmpty(temp.path))
             {
-                lblPhotoPath.Text = temp.path;
-                loadFoto(lblPhotoPath.Text);
+                kontrol.setFoto(pictureBox2, lblPhotoPath.Text);
             }
 
             if (Program.userSekarang.tipe == "Admin")
-            {
-                lblAccountType.Visible = true;
-                cBoxAccountType.Visible = true;
-            }
-        }
-
-        public FormProfile(string username, string password,
-            string nama, string telepon, string gender, string address, string type, string filepath) //Overload untuk edit
-        {
-            InitializeComponent();
-            txtUsername.Text = username;
-            txtPassword.Text = password;
-            txtName.Text = nama;
-            mtbTelephone.Text = telepon;
-            cBoxGender.Text = gender;
-            rtbAddress.Text = address;
-            cBoxAccountType.Text = type;
-            lblPhotoPath.Text = filepath;
-            loadFoto(filepath);
-
-            if (Program.TipeAkun == "Admin")
-            {
-                lblAccountType.Visible = true;
-                cBoxAccountType.Visible = true;
-            }
-        }
-
-        public FormProfile(string username, string password,
-            string nama, string telepon, string gender, string address, string type) //Overload untuk edit acc tanpa foto
-        {
-            InitializeComponent();
-            txtUsername.Text = username;
-            txtPassword.Text = password;
-            txtName.Text = nama;
-            mtbTelephone.Text = telepon;
-            cBoxGender.Text = gender;
-            rtbAddress.Text = address;
-            cBoxAccountType.Text = type;
-
-            if (Program.TipeAkun == "Admin")
             {
                 lblAccountType.Visible = true;
                 cBoxAccountType.Visible = true;
@@ -133,7 +111,7 @@ namespace Home
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            checkFromMain();
         }
 
         private void pBoxShow_MouseDown(object sender, MouseEventArgs e)
@@ -158,40 +136,52 @@ namespace Home
 
         private void btnChangePic_Click(object sender, EventArgs e)
         {
-            string path = "", filepath;
-            OpenFileDialog openfile = new OpenFileDialog();
-            if(openfile.ShowDialog() == DialogResult.OK)
-            {
-                path = openfile.FileName;
-                if ((path.EndsWith(".jpg")) || path.EndsWith(".png") || path.EndsWith(".gif"))
-                {
-                    filepath = path;
-                    lblPhotoPath.Text = filepath;
-                    loadFoto(filepath);
-                }
-            }
+            path = kontrol.pickFoto(pictureBox2);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            string pathFile = fungsi.returnDestPath(this.path, "profil");
             string user = txtUsername.Text, pass = txtPassword.Text, tipe = cBoxAccountType.Text, nama = txtName.Text,
-                alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62", "0"), gender = cBoxGender.Text, path = lblPhotoPath.Text;
+                alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62", "0"), gender = cBoxGender.Text, fine = txtFine.Text;
             if (AddNewAcc)
             {
-                if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, path))
+                if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, pathFile,fine))
+                {
+                    fungsi.copyKe(path, "profil");
                     this.Close();
+                }         
                 else
                     txtUsername.Focus();
             }
             else
             {
-                if (koneksi.UpdateUser(user, pass, tipe, nama, alamat, telp, gender, path))
-                    this.Close();
+                if (koneksi.UpdateUser(user, pass, tipe, nama, alamat, telp, gender, pathFile,fine))
+                {
+                    fungsi.copyKe(path, "profil");
+                    checkFromMain();
+                }
+                    
                 else
-                    txtUsername.Focus();
-                
+                    txtUsername.Focus();        
             }
 
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            if (Convert.ToInt32(txtFine.Text) > 0)
+            {
+                koneksi.UserPayFine(username);
+                txtFine.Text = "0";
+            }
+            else
+            {
+                DialogNormal dialog = new DialogNormal("Error", "No Fine to Pay", 127, 85);
+                dialog.ShowDialog();
+            }
+            
         }
     }
 }

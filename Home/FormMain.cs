@@ -14,11 +14,7 @@ namespace Home
     public partial class formMain : Form
     {
         //Methods//
-        private void setFoto(string pathFoto)
-        {
-            Image loadFoto = new Bitmap(pathFoto);
-            pBoxProfile.BackgroundImage = loadFoto;
-        }
+        ControlForm kontrol = new ControlForm();
 
         private void validasiAkun(string tipeAkun, string NamaAkun, string pathFoto)
         {
@@ -38,7 +34,7 @@ namespace Home
 
             if (!String.IsNullOrEmpty(pathFoto))
             {
-                setFoto(pathFoto);
+                kontrol.setFoto(pBoxProfile, pathFoto);
             }
         }
         //End Methods
@@ -60,11 +56,6 @@ namespace Home
             WindowState = FormWindowState.Minimized;
         }
 
-        private void button2_MouseClick(object sender, MouseEventArgs e)
-        {
-            menuBooks.Show(PointToScreen(booksDropdownLocation.Location));
-        }
-
         private void btnManage_MouseClick(object sender, MouseEventArgs e)
         {
             menuManage.Show(PointToScreen(manageDropdownLocation.Location));
@@ -72,33 +63,16 @@ namespace Home
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            Program.resetLogin();
             this.Hide();
-            Program.Nama = "Guest";
-            Program.PathFoto = @"D:\Mikroskil\Sem 4\OOP C#\ProjectC#\Pic Resource\Png\Default Pic(box).jpg";
-            Program.TipeAkun = "Guest";
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
         }
 
         private void manageBook_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormManageBooks formManageB = new FormManageBooks();
-            formManageB.Show();
-        }
-
-        private void filterBookCategory_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormBookList booklist = new FormBookList();
-            booklist.Show();
-        }
-
-        private void filterBookYear_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormBookList booklist = new FormBookList();
-            booklist.Show();
+            formManageB.ShowDialog();
         }
 
         private void manageAccount_Click(object sender, EventArgs e)
@@ -110,14 +84,30 @@ namespace Home
         private void btnProfile_Click(object sender, EventArgs e)
         {
             FormProfile profile = new FormProfile(Program.userSekarang.user);
-            profile.ShowDialog();
+            profile.fromMain = true;
+            this.Hide();
+            profile.Show();
         }
 
         private void btnLend_Click(object sender, EventArgs e)
         {
             FormLending lend = new FormLending();
-            this.Hide();
-            lend.Show();
+            lend.ShowDialog();
+        }
+
+        private void formMain_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnBooks_Click(object sender, EventArgs e)
+        {
+            FormBookList booklist = new FormBookList();
+            booklist.ShowDialog();
+        }
+
+        private void pBoxProfile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

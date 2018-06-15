@@ -36,7 +36,6 @@
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnReturnBook = new System.Windows.Forms.Button();
@@ -47,17 +46,22 @@
             this.txtBookTitle = new System.Windows.Forms.TextBox();
             this.lblFineAmount = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.dgvBooks = new System.Windows.Forms.DataGridView();
+            this.LendId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomFine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomIdBuku = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomLend = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -150,15 +154,6 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 341);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1000, 367);
-            this.dataGridView1.TabIndex = 19;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -177,7 +172,6 @@
             this.groupBox1.Controls.Add(this.txtBookTitle);
             this.groupBox1.Controls.Add(this.lblFineAmount);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label7);
@@ -200,11 +194,12 @@
             this.btnReturnBook.TabIndex = 4;
             this.btnReturnBook.Text = "Return Book";
             this.btnReturnBook.UseVisualStyleBackColor = false;
+            this.btnReturnBook.Click += new System.EventHandler(this.btnReturnBook_Click);
             // 
             // txtGenre
             // 
             this.txtGenre.Enabled = false;
-            this.txtGenre.Location = new System.Drawing.Point(312, 114);
+            this.txtGenre.Location = new System.Drawing.Point(173, 114);
             this.txtGenre.Name = "txtGenre";
             this.txtGenre.Size = new System.Drawing.Size(273, 35);
             this.txtGenre.TabIndex = 3;
@@ -220,7 +215,7 @@
             // txtAuthor
             // 
             this.txtAuthor.Enabled = false;
-            this.txtAuthor.Location = new System.Drawing.Point(312, 75);
+            this.txtAuthor.Location = new System.Drawing.Point(173, 75);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(273, 35);
             this.txtAuthor.TabIndex = 3;
@@ -236,7 +231,7 @@
             // txtBookTitle
             // 
             this.txtBookTitle.Enabled = false;
-            this.txtBookTitle.Location = new System.Drawing.Point(312, 36);
+            this.txtBookTitle.Location = new System.Drawing.Point(173, 36);
             this.txtBookTitle.Name = "txtBookTitle";
             this.txtBookTitle.Size = new System.Drawing.Size(273, 35);
             this.txtBookTitle.TabIndex = 3;
@@ -259,14 +254,6 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Fine";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(7, 35);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(145, 176);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -279,7 +266,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(166, 117);
+            this.label5.Location = new System.Drawing.Point(27, 117);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 27);
             this.label5.TabIndex = 0;
@@ -297,7 +284,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(166, 80);
+            this.label4.Location = new System.Drawing.Point(27, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 27);
             this.label4.TabIndex = 0;
@@ -306,11 +293,73 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(166, 39);
+            this.label3.Location = new System.Drawing.Point(27, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 27);
             this.label3.TabIndex = 0;
             this.label3.Text = "Book Title";
+            // 
+            // dgvBooks
+            // 
+            this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LendId,
+            this.kolomUsername,
+            this.kolomFine,
+            this.kolomIdBuku,
+            this.kolomLend,
+            this.kolomDue});
+            this.dgvBooks.Location = new System.Drawing.Point(17, 341);
+            this.dgvBooks.Name = "dgvBooks";
+            this.dgvBooks.ReadOnly = true;
+            this.dgvBooks.RowTemplate.Height = 24;
+            this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBooks.Size = new System.Drawing.Size(995, 367);
+            this.dgvBooks.TabIndex = 24;
+            this.dgvBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentClick);
+            // 
+            // LendId
+            // 
+            this.LendId.HeaderText = "LendId";
+            this.LendId.Name = "LendId";
+            this.LendId.ReadOnly = true;
+            this.LendId.Visible = false;
+            // 
+            // kolomUsername
+            // 
+            this.kolomUsername.HeaderText = "username";
+            this.kolomUsername.Name = "kolomUsername";
+            this.kolomUsername.ReadOnly = true;
+            this.kolomUsername.Visible = false;
+            this.kolomUsername.Width = 300;
+            // 
+            // kolomFine
+            // 
+            this.kolomFine.HeaderText = "Fine";
+            this.kolomFine.Name = "kolomFine";
+            this.kolomFine.ReadOnly = true;
+            this.kolomFine.Visible = false;
+            // 
+            // kolomIdBuku
+            // 
+            this.kolomIdBuku.HeaderText = "Book Id";
+            this.kolomIdBuku.Name = "kolomIdBuku";
+            this.kolomIdBuku.ReadOnly = true;
+            this.kolomIdBuku.Width = 300;
+            // 
+            // kolomLend
+            // 
+            this.kolomLend.HeaderText = "Lend Date";
+            this.kolomLend.Name = "kolomLend";
+            this.kolomLend.ReadOnly = true;
+            this.kolomLend.Width = 300;
+            // 
+            // kolomDue
+            // 
+            this.kolomDue.HeaderText = "Due Date";
+            this.kolomDue.Name = "kolomDue";
+            this.kolomDue.ReadOnly = true;
+            this.kolomDue.Width = 300;
             // 
             // FormLending
             // 
@@ -318,9 +367,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1024, 720);
+            this.Controls.Add(this.dgvBooks);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.minimizeBtn);
@@ -332,13 +381,13 @@
             this.Name = "FormLending";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLending";
+            this.Load += new System.EventHandler(this.FormLending_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,7 +402,6 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtGenre;
@@ -363,12 +411,18 @@
         private System.Windows.Forms.TextBox txtBookTitle;
         private System.Windows.Forms.Label lblFineAmount;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnReturnBook;
+        private System.Windows.Forms.DataGridView dgvBooks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LendId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomFine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomIdBuku;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomLend;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomDue;
     }
 }

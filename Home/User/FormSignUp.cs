@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Home
 {
     public partial class FormSignUp : Form
     {
-        private void loadFoto(string filepath)
-        {
-            Image loadFoto = new Bitmap(filepath);
-            pictBoxPhoto.BackgroundImage = loadFoto;
-        }
-        string pathFoto ="";
+        string path = "";
+
+        Utility fungsi = new Utility();
+        ControlForm kontrol = new ControlForm();
+
         public FormSignUp()
         {
             InitializeComponent();
@@ -52,26 +52,20 @@ namespace Home
 
         private void btnPickPhoto_Click(object sender, EventArgs e)
         {
-            string path = "", filepath;
-            OpenFileDialog openfile = new OpenFileDialog();
-            if (openfile.ShowDialog() == DialogResult.OK)
-            {
-                path = openfile.FileName;
-                if ((path.EndsWith(".jpg")) || path.EndsWith(".png") || path.EndsWith(".gif"))
-                {
-                    pathFoto = path;
-                    loadFoto(pathFoto);
-                }
-            }
+            path = kontrol.pickFoto(pictBoxPhoto);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            string pathFile = fungsi.returnDestPath(this.path, "profil");
             string user = txtUsername.Text, pass = txtPassword.Text, tipe = "User", nama = txtName.Text,
-                alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62","0"), gender = cBoxGender.Text, path = pathFoto;
+                alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62","0"), gender = cBoxGender.Text, fine = "0";
             koneksiSql koneksi = new koneksiSql();
-            if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, path))
+            if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, pathFile, fine))
+            {
+                fungsi.copyKe(path, "profil");
                 this.Close();
+            }  
             else
                 txtUsername.Focus();
 

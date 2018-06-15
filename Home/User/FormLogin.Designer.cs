@@ -55,6 +55,7 @@
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
             this.minimizeBtn.TabIndex = 10;
+            this.minimizeBtn.TabStop = false;
             this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.minimizeBtn.UseVisualStyleBackColor = false;
@@ -73,6 +74,7 @@
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 11;
+            this.closeBtn.TabStop = false;
             this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.closeBtn.UseVisualStyleBackColor = false;
@@ -108,7 +110,7 @@
             this.button1.Location = new System.Drawing.Point(58, 202);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(216, 58);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Sign In";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -118,7 +120,7 @@
             this.button2.Location = new System.Drawing.Point(352, 202);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(216, 58);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Sign Up";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -129,7 +131,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(201, 276);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(213, 34);
-            this.linkLabel1.TabIndex = 14;
+            this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Login as Guest";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -140,7 +142,8 @@
             this.txtUsername.Location = new System.Drawing.Point(207, 85);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(361, 39);
-            this.txtUsername.TabIndex = 15;
+            this.txtUsername.TabIndex = 0;
+            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // txtPassword
             // 
@@ -148,8 +151,9 @@
             this.txtPassword.Location = new System.Drawing.Point(207, 138);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(312, 39);
-            this.txtPassword.TabIndex = 15;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // pBoxShow
             // 

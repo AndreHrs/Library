@@ -1,6 +1,6 @@
 ﻿namespace Home
 {
-    partial class FormManageBooks
+    partial class FormManageAccounts
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageBooks));
-            this.dgvBooks = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageAccounts));
+            this.dgvAccounts = new System.Windows.Forms.DataGridView();
+            this.kolomUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomTipe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
@@ -42,20 +45,49 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvBooks
+            // dgvAccounts
             // 
-            this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooks.Location = new System.Drawing.Point(12, 178);
-            this.dgvBooks.Name = "dgvBooks";
-            this.dgvBooks.RowTemplate.Height = 24;
-            this.dgvBooks.Size = new System.Drawing.Size(978, 530);
-            this.dgvBooks.TabIndex = 14;
+            this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.kolomUser,
+            this.kolomPassword,
+            this.kolomTipe});
+            this.dgvAccounts.Location = new System.Drawing.Point(12, 178);
+            this.dgvAccounts.Name = "dgvAccounts";
+            this.dgvAccounts.ReadOnly = true;
+            this.dgvAccounts.RowTemplate.Height = 24;
+            this.dgvAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAccounts.Size = new System.Drawing.Size(978, 530);
+            this.dgvAccounts.TabIndex = 14;
+            // 
+            // kolomUser
+            // 
+            this.kolomUser.HeaderText = "Username";
+            this.kolomUser.Name = "kolomUser";
+            this.kolomUser.ReadOnly = true;
+            this.kolomUser.Width = 330;
+            // 
+            // kolomPassword
+            // 
+            this.kolomPassword.HeaderText = "Password";
+            this.kolomPassword.Name = "kolomPassword";
+            this.kolomPassword.ReadOnly = true;
+            this.kolomPassword.Width = 330;
+            // 
+            // kolomTipe
+            // 
+            this.kolomTipe.HeaderText = "Account Type";
+            this.kolomTipe.Name = "kolomTipe";
+            this.kolomTipe.ReadOnly = true;
+            this.kolomTipe.Width = 330;
             // 
             // panel1
             // 
@@ -80,11 +112,12 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.Location = new System.Drawing.Point(110, 63);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(185, 27);
+            this.lblWelcome.Size = new System.Drawing.Size(182, 23);
             this.lblWelcome.TabIndex = 11;
-            this.lblWelcome.Text = "Manage Books";
+            this.lblWelcome.Text = "Manage Accounts";
             // 
             // pictureBox1
             // 
@@ -96,12 +129,12 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox5
+            // txtSearch
             // 
-            this.textBox5.Location = new System.Drawing.Point(56, 127);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(934, 35);
-            this.textBox5.TabIndex = 20;
+            this.txtSearch.Location = new System.Drawing.Point(56, 127);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(622, 35);
+            this.txtSearch.TabIndex = 20;
             // 
             // pictureBox2
             // 
@@ -209,30 +242,53 @@
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // FormManageBooks
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(684, 127);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(150, 35);
+            this.btnSearch.TabIndex = 22;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(840, 127);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(150, 35);
+            this.btnRefresh.TabIndex = 23;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // FormManageAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1007, 720);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvBooks);
+            this.Controls.Add(this.dgvAccounts);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.closeBtn);
             this.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "FormManageBooks";
+            this.Name = "FormManageAccounts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormManageBooks";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
+            this.Text = "FormManageAccounts";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -246,7 +302,7 @@
 
         private System.Windows.Forms.Button minimizeBtn;
         private System.Windows.Forms.Button closeBtn;
-        private System.Windows.Forms.DataGridView dgvBooks;
+        private System.Windows.Forms.DataGridView dgvAccounts;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblWelcome;
@@ -255,7 +311,12 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomTipe;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

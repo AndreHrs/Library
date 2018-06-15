@@ -13,7 +13,6 @@ namespace Home
 {
     public partial class FormManageAccounts : Form
     {
-        private DataSet ds;
         public FormManageAccounts()
         {
             InitializeComponent();
@@ -27,14 +26,14 @@ namespace Home
             SqlConnection conn = new SqlConnection(koneksi.getSqlConn());
             SqlCommand cmd = new SqlCommand($"SELECT * FROM Userlist Where Username LIKE '%{teks}%' or PasswordAkun LIKE '%{teks}%' or TipeAkun LIKE '%{teks}%'", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dataTable = new DataTable();
-            sda.Fill(dataTable);
+            DataSet ds = new DataSet();
+            sda.Fill(ds,"Userlist");
                     
-            for(int i = 0; i< dataTable.Rows.Count; i++)
+            for(int i = 0; i< ds.Tables["Userlist"].Rows.Count; i++)
             {
-                string username = dataTable.Rows[i][0].ToString();
-                string password = dataTable.Rows[i][1].ToString();
-                string tipeAkun = dataTable.Rows[i][2].ToString();
+                string username = ds.Tables["Userlist"].Rows[i][0].ToString();
+                string password = ds.Tables["Userlist"].Rows[i][1].ToString();
+                string tipeAkun = ds.Tables["Userlist"].Rows[i][2].ToString();
                 dgvAccounts.Rows.Add(username, password, tipeAkun);
             }
             conn.Close();
@@ -74,7 +73,14 @@ namespace Home
         private void btnRemove_Click(object sender, EventArgs e)
         {
             koneksiSql koneksi = new koneksiSql();
-            koneksi.removeUser(dgvAccounts.SelectedCells[0].Value.ToString());
+            try
+            {
+                koneksi.removeUser(dgvAccounts.SelectedCells[0].Value.ToString());
+            }
+            catch(Exception)
+            {
+
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

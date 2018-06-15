@@ -1,6 +1,6 @@
 ﻿namespace Home
 {
-    partial class FormBookList
+    partial class FormManageBooks
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBookList));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageBooks));
+            this.dgvBooks = new System.Windows.Forms.DataGridView();
+            this.kolomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomJudul = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomTahun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolomGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnLend = new System.Windows.Forms.Button();
-            this.btnView = new System.Windows.Forms.Button();
-            this.txtGenre = new System.Windows.Forms.TextBox();
-            this.txtYear = new System.Windows.Forms.TextBox();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pboxThumbnail = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxThumbnail)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvBooks
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 391);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(978, 317);
-            this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.kolomID,
+            this.kolomJudul,
+            this.kolomAuthor,
+            this.kolomTahun,
+            this.kolomGenre});
+            this.dgvBooks.Location = new System.Drawing.Point(12, 178);
+            this.dgvBooks.Name = "dgvBooks";
+            this.dgvBooks.ReadOnly = true;
+            this.dgvBooks.RowTemplate.Height = 24;
+            this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBooks.Size = new System.Drawing.Size(978, 530);
+            this.dgvBooks.TabIndex = 14;
+            // 
+            // kolomID
+            // 
+            this.kolomID.HeaderText = "ID";
+            this.kolomID.Name = "kolomID";
+            this.kolomID.ReadOnly = true;
+            // 
+            // kolomJudul
+            // 
+            this.kolomJudul.HeaderText = "Title";
+            this.kolomJudul.Name = "kolomJudul";
+            this.kolomJudul.ReadOnly = true;
+            this.kolomJudul.Width = 245;
+            // 
+            // kolomAuthor
+            // 
+            this.kolomAuthor.HeaderText = "Author";
+            this.kolomAuthor.Name = "kolomAuthor";
+            this.kolomAuthor.ReadOnly = true;
+            this.kolomAuthor.Width = 245;
+            // 
+            // kolomTahun
+            // 
+            this.kolomTahun.HeaderText = "Year";
+            this.kolomTahun.Name = "kolomTahun";
+            this.kolomTahun.ReadOnly = true;
+            this.kolomTahun.Width = 145;
+            // 
+            // kolomGenre
+            // 
+            this.kolomGenre.HeaderText = "Genre";
+            this.kolomGenre.Name = "kolomGenre";
+            this.kolomGenre.ReadOnly = true;
+            this.kolomGenre.Width = 245;
             // 
             // panel1
             // 
@@ -94,9 +131,9 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Location = new System.Drawing.Point(110, 63);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(147, 27);
+            this.lblWelcome.Size = new System.Drawing.Size(185, 27);
             this.lblWelcome.TabIndex = 11;
-            this.lblWelcome.Text = "View Books";
+            this.lblWelcome.Text = "Manage Books";
             // 
             // pictureBox1
             // 
@@ -108,12 +145,12 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox5
+            // txtSearch
             // 
-            this.textBox5.Location = new System.Drawing.Point(56, 127);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(934, 35);
-            this.textBox5.TabIndex = 20;
+            this.txtSearch.Location = new System.Drawing.Point(56, 127);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(606, 35);
+            this.txtSearch.TabIndex = 20;
             // 
             // pictureBox2
             // 
@@ -139,6 +176,51 @@
             this.btnReturn.TabIndex = 17;
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackgroundImage = global::Home.Properties.Resources.iconRemove;
+            this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Location = new System.Drawing.Point(671, 49);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(150, 60);
+            this.btnRemove.TabIndex = 17;
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackgroundImage = global::Home.Properties.Resources.iconEdit;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Location = new System.Drawing.Point(503, 49);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(150, 60);
+            this.btnEdit.TabIndex = 17;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = global::Home.Properties.Resources.iconAdd;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(335, 49);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(150, 60);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // minimizeBtn
             // 
@@ -176,151 +258,55 @@
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // groupBox1
+            // btnRefresh
             // 
-            this.groupBox1.Controls.Add(this.btnLend);
-            this.groupBox1.Controls.Add(this.btnView);
-            this.groupBox1.Controls.Add(this.txtGenre);
-            this.groupBox1.Controls.Add(this.txtYear);
-            this.groupBox1.Controls.Add(this.txtAuthor);
-            this.groupBox1.Controls.Add(this.txtTitle);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.pboxThumbnail);
-            this.groupBox1.Location = new System.Drawing.Point(12, 168);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(978, 203);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Book Details";
+            this.btnRefresh.Location = new System.Drawing.Point(840, 127);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(150, 35);
+            this.btnRefresh.TabIndex = 25;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnLend
+            // btnSearch
             // 
-            this.btnLend.Enabled = false;
-            this.btnLend.Location = new System.Drawing.Point(730, 113);
-            this.btnLend.Name = "btnLend";
-            this.btnLend.Size = new System.Drawing.Size(222, 68);
-            this.btnLend.TabIndex = 3;
-            this.btnLend.Text = "Make Lend";
-            this.btnLend.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(684, 127);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(150, 35);
+            this.btnSearch.TabIndex = 24;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // btnView
-            // 
-            this.btnView.Enabled = false;
-            this.btnView.Location = new System.Drawing.Point(730, 34);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(222, 68);
-            this.btnView.TabIndex = 3;
-            this.btnView.Text = "View Book";
-            this.btnView.UseVisualStyleBackColor = true;
-            // 
-            // txtGenre
-            // 
-            this.txtGenre.Enabled = false;
-            this.txtGenre.Location = new System.Drawing.Point(291, 150);
-            this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(415, 35);
-            this.txtGenre.TabIndex = 2;
-            // 
-            // txtYear
-            // 
-            this.txtYear.Enabled = false;
-            this.txtYear.Location = new System.Drawing.Point(291, 109);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(415, 35);
-            this.txtYear.TabIndex = 2;
-            // 
-            // txtAuthor
-            // 
-            this.txtAuthor.Enabled = false;
-            this.txtAuthor.Location = new System.Drawing.Point(291, 70);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(415, 35);
-            this.txtAuthor.TabIndex = 2;
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Enabled = false;
-            this.txtTitle.Location = new System.Drawing.Point(291, 31);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(415, 35);
-            this.txtTitle.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(175, 154);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 27);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Genre";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(175, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 27);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Year";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(173, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 27);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Author";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(174, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 27);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Title";
-            // 
-            // pboxThumbnail
-            // 
-            this.pboxThumbnail.Location = new System.Drawing.Point(15, 34);
-            this.pboxThumbnail.Name = "pboxThumbnail";
-            this.pboxThumbnail.Size = new System.Drawing.Size(137, 163);
-            this.pboxThumbnail.TabIndex = 0;
-            this.pboxThumbnail.TabStop = false;
-            // 
-            // FormBookList
+            // FormManageBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1007, 720);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvBooks);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.closeBtn);
             this.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "FormBookList";
+            this.Name = "FormManageBooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormBookList";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "FormManageBooks";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxThumbnail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,25 +316,23 @@
 
         private System.Windows.Forms.Button minimizeBtn;
         private System.Windows.Forms.Button closeBtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBooks;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnLend;
-        private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.TextBox txtGenre;
-        private System.Windows.Forms.TextBox txtYear;
-        private System.Windows.Forms.TextBox txtAuthor;
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pboxThumbnail;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomJudul;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomTahun;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolomGenre;
     }
 }

@@ -38,3 +38,11 @@ INSERT INTO Userlist VALUES('tesnull','seharusnyaKosongJ','Admin','Tidak Bernama
 
 DELETE FROM Userlist WHERE Username='k'
 select * from Userlist
+
+INSERT INTO Booklist VALUES('ID0001','Judull','Author','2001','Genre','D:\ProjectC#\Pic Resource\Png\Splash.png')
+select * from Booklist
+
+INSERT INTO Lendings VALUES('asd','ID0002','21 06 2018','31 05 2018')
+INSERT INTO Lendings VALUES('asd','ID0001','21 06 2018','01 06 2018')
+select * from Lendings where Username = 'asd'
+DELETE FROM Lendings WHERE Username = 'kosongkanSaja' and BookID ='ID0001'

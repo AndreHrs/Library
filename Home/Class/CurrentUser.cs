@@ -8,6 +8,6 @@ namespace Home
 {
     public class CurrentUser
     {
-        public string user, pass, tipe, nama, alamat, telp, gender, path;
+        public string user, pass, tipe, nama, alamat, telp, gender, path, balance, fine;
     }
 }

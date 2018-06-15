@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogYesNo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNotice = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnYes = new System.Windows.Forms.Button();
             this.lblText = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnNo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,24 @@
             this.lblNotice.TabIndex = 14;
             this.lblNotice.Text = "Confirmation";
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(394, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(46, 30);
+            this.button1.TabIndex = 13;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnYes
             // 
             this.btnYes.Location = new System.Drawing.Point(60, 160);
@@ -76,23 +94,6 @@
             this.lblText.TabIndex = 18;
             this.lblText.Text = "Are You Sure ?";
             this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(394, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 30);
-            this.button1.TabIndex = 13;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // btnNo
             // 

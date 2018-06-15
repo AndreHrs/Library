@@ -12,12 +12,22 @@ namespace Home
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        
+        public static void resetLogin()
+        {
+            CurrentUser guest = new CurrentUser();
+            guest.nama = "Guest";
+            guest.tipe = "Guest";
+            guest.path = "";
+            userSekarang = guest;
+        }
+
         [STAThread]
         static void Main()
-        {
+        {  
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            resetLogin();
             /*//Splash Screen
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
@@ -33,7 +43,6 @@ namespace Home
         {
             Application.Run(new Splashscreen());
         }
-        public static string Nama, TipeAkun, PathFoto;
         public static CurrentUser userSekarang;
     }
 }

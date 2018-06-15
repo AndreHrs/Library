@@ -39,11 +39,6 @@
             this.pBoxProfile = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.menuBooks = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.filterBookCategory = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.filterBookYear = new System.Windows.Forms.ToolStripMenuItem();
-            this.booksDropdownLocation = new System.Windows.Forms.Panel();
             this.manageDropdownLocation = new System.Windows.Forms.Panel();
             this.menuManage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.manageBook = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).BeginInit();
-            this.menuBooks.SuspendLayout();
             this.menuManage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +109,7 @@
             // lblAccountName
             // 
             this.lblAccountName.AutoSize = true;
-            this.lblAccountName.Location = new System.Drawing.Point(43, 149);
+            this.lblAccountName.Location = new System.Drawing.Point(3, 149);
             this.lblAccountName.Name = "lblAccountName";
             this.lblAccountName.Size = new System.Drawing.Size(69, 29);
             this.lblAccountName.TabIndex = 11;
@@ -130,6 +124,7 @@
             this.pBoxProfile.Size = new System.Drawing.Size(146, 146);
             this.pBoxProfile.TabIndex = 12;
             this.pBoxProfile.TabStop = false;
+            this.pBoxProfile.Click += new System.EventHandler(this.pBoxProfile_Click);
             // 
             // panel3
             // 
@@ -145,44 +140,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1014, 276);
             this.panel4.TabIndex = 14;
-            // 
-            // menuBooks
-            // 
-            this.menuBooks.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuBooks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filterBookCategory,
-            this.toolStripSeparator1,
-            this.filterBookYear});
-            this.menuBooks.Name = "menuBooks";
-            this.menuBooks.Size = new System.Drawing.Size(163, 62);
-            // 
-            // filterBookCategory
-            // 
-            this.filterBookCategory.Image = global::Home.Properties.Resources.Library;
-            this.filterBookCategory.Name = "filterBookCategory";
-            this.filterBookCategory.Size = new System.Drawing.Size(162, 26);
-            this.filterBookCategory.Text = "By Category";
-            this.filterBookCategory.Click += new System.EventHandler(this.filterBookCategory_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
-            // 
-            // filterBookYear
-            // 
-            this.filterBookYear.Image = global::Home.Properties.Resources.Library;
-            this.filterBookYear.Name = "filterBookYear";
-            this.filterBookYear.Size = new System.Drawing.Size(162, 26);
-            this.filterBookYear.Text = "By Author";
-            this.filterBookYear.Click += new System.EventHandler(this.filterBookYear_Click);
-            // 
-            // booksDropdownLocation
-            // 
-            this.booksDropdownLocation.Location = new System.Drawing.Point(300, 62);
-            this.booksDropdownLocation.Name = "booksDropdownLocation";
-            this.booksDropdownLocation.Size = new System.Drawing.Size(119, 17);
-            this.booksDropdownLocation.TabIndex = 16;
             // 
             // manageDropdownLocation
             // 
@@ -296,7 +253,7 @@
             this.btnBooks.Size = new System.Drawing.Size(120, 50);
             this.btnBooks.TabIndex = 15;
             this.btnBooks.UseVisualStyleBackColor = true;
-            this.btnBooks.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button2_MouseClick);
+            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
             // minimizeBtn
             // 
@@ -342,7 +299,6 @@
             this.ClientSize = new System.Drawing.Size(1062, 673);
             this.Controls.Add(this.btnManage);
             this.Controls.Add(this.manageDropdownLocation);
-            this.Controls.Add(this.booksDropdownLocation);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.btnLend);
@@ -360,13 +316,13 @@
             this.Name = "formMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.formMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).EndInit();
-            this.menuBooks.ResumeLayout(false);
             this.menuManage.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -389,11 +345,6 @@
         private System.Windows.Forms.Button btnLend;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.ContextMenuStrip menuBooks;
-        private System.Windows.Forms.ToolStripMenuItem filterBookCategory;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem filterBookYear;
-        private System.Windows.Forms.Panel booksDropdownLocation;
         private System.Windows.Forms.Panel manageDropdownLocation;
         private System.Windows.Forms.ContextMenuStrip menuManage;
         private System.Windows.Forms.ToolStripMenuItem manageBook;

@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogNormal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNotice = new System.Windows.Forms.Label();
+            this.closeBtn = new System.Windows.Forms.Button();
             this.lblText = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
-            this.closeBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,26 +56,6 @@
             this.lblNotice.TabIndex = 14;
             this.lblNotice.Text = "label1";
             // 
-            // lblText
-            // 
-            this.lblText.AutoSize = true;
-            this.lblText.Location = new System.Drawing.Point(139, 87);
-            this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(163, 27);
-            this.lblText.TabIndex = 15;
-            this.lblText.Text = "Data Deleted";
-            this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(164, 140);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(108, 37);
-            this.btnOK.TabIndex = 16;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
             // closeBtn
             // 
             this.closeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -93,6 +73,26 @@
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // lblText
+            // 
+            this.lblText.AutoSize = true;
+            this.lblText.Location = new System.Drawing.Point(70, 65);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(312, 54);
+            this.lblText.TabIndex = 15;
+            this.lblText.Text = "You have unpaid Fine\r\nPlease pay your fine first!";
+            this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(164, 140);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(108, 37);
+            this.btnOK.TabIndex = 16;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // DialogNormal
             // 
