@@ -1,7 +1,7 @@
 # Project Form C# Mikroskil T.A. 2016/2017
 Aplikasi Perpustakaan menggunakan bahasa pemrograman C# dalam bentuk Form
 
-#### Contributor:
+#### Team:
 1. Andre **[Project Leader]**
 2. Vivi
 3. Andy
