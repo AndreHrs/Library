@@ -3,7 +3,7 @@ Aplikasi Perpustakaan menggunakan bahasa pemrograman C# dalam bentuk Form
 
 #### Contributor:
 1. Andre **[Project Leader]**
-2. Vivi Wijaya
+2. Vivi
 3. Andy
 4. Anthony
 5. Steve
