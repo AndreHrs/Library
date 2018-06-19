@@ -43,7 +43,7 @@ namespace Home
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            formMain form = new formMain(Program.userSekarang.nama, Program.userSekarang.tipe, Program.userSekarang.path);
+            formMain form = new formMain(Program.userSekarang);
             form.Show();
         }
 
@@ -71,7 +71,7 @@ namespace Home
                         Program.userSekarang = user;
                         this.Hide();
 
-                        formMain form = new formMain(user.tipe, user.nama, user.path);
+                        formMain form = new formMain(user);
                         form.Show();
                     }
                     else

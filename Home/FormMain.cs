@@ -46,6 +46,12 @@ namespace Home
             validasiAkun(tipeAkun, NamaAkun, pathFoto);                   
         }
 
+        public formMain(CurrentUser user) // Prototype Class Overload
+        {
+            InitializeComponent();
+            validasiAkun(user.tipe, user.nama, user.path);
+        }
+
         private void closeBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -95,19 +101,10 @@ namespace Home
             lend.ShowDialog();
         }
 
-        private void formMain_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btnBooks_Click(object sender, EventArgs e)
         {
             FormBookList booklist = new FormBookList();
             booklist.ShowDialog();
-        }
-
-        private void pBoxProfile_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

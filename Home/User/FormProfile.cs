@@ -28,7 +28,7 @@ namespace Home
                 Program.userSekarang = userSkrng;
                 this.Hide();
 
-                formMain form = new formMain(Program.userSekarang.tipe, Program.userSekarang.nama, Program.userSekarang.path);
+                formMain form = new formMain(userSkrng);
                 form.Show();
             }
             else

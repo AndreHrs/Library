@@ -124,7 +124,6 @@
             this.pBoxProfile.Size = new System.Drawing.Size(146, 146);
             this.pBoxProfile.TabIndex = 12;
             this.pBoxProfile.TabStop = false;
-            this.pBoxProfile.Click += new System.EventHandler(this.pBoxProfile_Click);
             // 
             // panel3
             // 
@@ -316,7 +315,6 @@
             this.Name = "formMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.formMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

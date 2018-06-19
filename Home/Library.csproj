@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Class\buku.cs" />
     <Compile Include="Class\CurrentUser.cs" />
+    <Compile Include="Class\fungsiHashing.cs" />
     <Compile Include="Class\Utility.cs" />
     <Compile Include="Class\ControlForm.cs">
       <SubType>Form</SubType>
