@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Home
 {
@@ -84,7 +85,7 @@ namespace Home
             lblPhotoPath.Text = temp.path;
             if(!String.IsNullOrEmpty(temp.path))
             {
-                kontrol.setFoto(pictureBox2, lblPhotoPath.Text);
+                kontrol.setFotoProfil(pictureBox2, temp.path);
             }
 
             if (Program.userSekarang.tipe == "Admin")
@@ -146,7 +147,7 @@ namespace Home
                 alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62", "0"), gender = cBoxGender.Text, fine = txtFine.Text;
             if (AddNewAcc)
             {
-                if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, pathFile,fine))
+                if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, Path.GetFileName(pathFile),fine))
                 {
                     fungsi.copyKe(path, "profil");
                     this.Close();
@@ -156,7 +157,7 @@ namespace Home
             }
             else
             {
-                if (koneksi.UpdateUser(user, pass, tipe, nama, alamat, telp, gender, pathFile,fine))
+                if (koneksi.UpdateUser(user, pass, tipe, nama, alamat, telp, gender, Path.GetFileName(pathFile), fine))
                 {
                     fungsi.copyKe(path, "profil");
                     checkFromMain();

@@ -53,9 +53,11 @@
             this.btnPickPhoto = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.pBoxShow = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).BeginInit();
             this.pnlInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
             this.SuspendLayout();
             // 
             // minimizeBtn
@@ -133,6 +135,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pBoxShow);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUsername);
             this.panel1.Controls.Add(this.lblUsername);
@@ -146,8 +149,9 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(158, 64);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(364, 35);
+            this.txtPassword.Size = new System.Drawing.Size(322, 35);
             this.txtPassword.TabIndex = 15;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
@@ -302,6 +306,19 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // pBoxShow
+            // 
+            this.pBoxShow.BackColor = System.Drawing.Color.Silver;
+            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
+            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBoxShow.Location = new System.Drawing.Point(486, 64);
+            this.pBoxShow.Name = "pBoxShow";
+            this.pBoxShow.Size = new System.Drawing.Size(36, 35);
+            this.pBoxShow.TabIndex = 17;
+            this.pBoxShow.TabStop = false;
+            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
+            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
+            // 
             // FormSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
@@ -339,6 +356,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,5 +388,6 @@
         private System.Windows.Forms.Button btnPickPhoto;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.PictureBox pBoxShow;
     }
 }

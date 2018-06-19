@@ -70,5 +70,15 @@ namespace Home
                 txtUsername.Focus();
 
         }
+
+        private void pBoxShow_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = false;
+        }
+
+        private void pBoxShow_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
+        }
     }
 }

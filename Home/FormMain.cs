@@ -34,7 +34,7 @@ namespace Home
 
             if (!String.IsNullOrEmpty(pathFoto))
             {
-                kontrol.setFoto(pBoxProfile, pathFoto);
+                kontrol.setFotoProfil(pBoxProfile, pathFoto);
             }
         }
         //End Methods

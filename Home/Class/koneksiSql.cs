@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Home
 {
@@ -40,6 +41,23 @@ namespace Home
             }
         }
 
+        private bool executeSQLnoMsg(string qCommand)
+        {
+            try
+            {
+                query = qCommand;
+                SqlCommand command = new SqlCommand(query, sqlConn);
+                sqlConn.Open();
+                command.ExecuteNonQuery();
+                sqlConn.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
         public bool removeQuery(string qCommand, string successMsg, int sucX, int sucY)
         {
             DialogYesNo yesno = new DialogYesNo();
@@ -58,6 +76,7 @@ namespace Home
             return false;
         }
 
+
         //Lending//
         public void makeLend(string lendId, string username, string bookid, string lendDate, string dueDate)
         {
@@ -72,8 +91,7 @@ namespace Home
 
         public void updateFine(string username, string fine)
         {
-            executeSQL($"UPDATE Userlist SET Fine={fine} WHERE Username='{username}'",
-                "Data Updated Successfully", "Failed to Save", 78, 85, 48, 86);
+            executeSQLnoMsg($"UPDATE Userlist SET Fine={fine} WHERE Username='{username}'");
         }
 
         public void updateStock(string bookId, string stock, string type)
@@ -87,8 +105,7 @@ namespace Home
             {
                 newStock = Convert.ToInt32(stock) - 1;
             }
-            executeSQL($"UPDATE Booklist SET Stock='{newStock.ToString()}' WHERE BookId='{bookId}'",
-                "", "Failed", 78, 85, 48, 86);
+            executeSQLnoMsg($"UPDATE Booklist SET Stock='{newStock.ToString()}' WHERE BookId='{bookId}'");
         }
 
         public Peminjaman returnLend(string username, string lendId)

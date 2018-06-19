@@ -45,7 +45,21 @@ namespace Home
             }
         }
 
-        
+        public void setFotoProfil(Control objek, string namaFoto)
+        {
+            try
+            {
+                string path = utilitas.strukturFolder("profil") + namaFoto;
+                Bitmap temp = new Bitmap(path);
+                objek.BackgroundImage = temp;
+            }
+            catch (Exception)
+            {
+                objek.BackgroundImage = null;
+            }
+        }
+
+
 
         public string pickFoto(Control objek)
         {

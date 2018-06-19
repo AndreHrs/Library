@@ -119,5 +119,10 @@ namespace Home
                 button1_Click(null, null);
             }   
         }
+
+        private void pBoxShow_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
