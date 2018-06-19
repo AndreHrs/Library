@@ -1,13 +1,13 @@
 CREATE DATABASE Library
 ON 
 ( NAME = Library,
-    FILENAME = 'D:\ProjectC#\Library\Database\Library.mdf',  
+    FILENAME = 'D:\ProjectC#\Database\Library.mdf',  
     SIZE = 5MB,  
     MAXSIZE = 4GB,  
     FILEGROWTH = 1MB )  
 LOG ON  
 ( NAME = Library_log,  
-    FILENAME = 'D:\ProjectC#\Library\Database\Library_log.ldf',
+    FILENAME = 'D:\ProjectC#\Database\Library_log.ldf',
     SIZE = 1MB,  
     MAXSIZE = 25MB,  
     FILEGROWTH = 1MB ) ;  
@@ -16,7 +16,7 @@ GO
 CREATE TABLE Userlist
 (
 	Username varchar(20) NOT NULL,
-	PasswordAkun char(48) NOT NULL,
+	PasswordAkun char(20) NOT NULL,
 	TipeAkun char(20) NOT NULL,
 	Nama varchar(50) NOT NULL,
 	Alamat varchar(100) NOT NULL,
@@ -50,3 +50,6 @@ CREATE TABLE Lendings
 	CONSTRAINT FK_Lendings1 FOREIGN KEY (Username) REFERENCES Userlist(Username) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT FK_Lendings2 FOREIGN KEY (BookID) REFERENCES Booklist(BookID) ON DELETE CASCADE ON UPDATE CASCADE
 )
+
+ALTER TABLE Booklist
+ALTER COLUMN Title varchar(200)
