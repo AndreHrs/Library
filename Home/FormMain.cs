@@ -105,9 +105,6 @@ namespace Home
             booklist.ShowDialog();
         }
 
-        private void pBoxProfile_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

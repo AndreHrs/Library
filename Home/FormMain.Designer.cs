@@ -124,7 +124,6 @@
             this.pBoxProfile.Size = new System.Drawing.Size(146, 146);
             this.pBoxProfile.TabIndex = 12;
             this.pBoxProfile.TabStop = false;
-            this.pBoxProfile.Click += new System.EventHandler(this.pBoxProfile_Click);
             // 
             // panel3
             // 
