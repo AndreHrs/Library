@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using Tulpep.NotificationWindow;
 
 namespace Home
 {
@@ -16,40 +17,52 @@ namespace Home
         //Methods//
         ControlForm kontrol = new ControlForm();
 
-        private void validasiAkun(string tipeAkun, string NamaAkun, string pathFoto)
+        private void notification()
         {
-            lblAccountName.Text = NamaAkun;
-            lblWelcome.Text = "Welcome " + NamaAkun+" ("+tipeAkun+")";
-            if (tipeAkun != "Guest")
+
+            
+            //Check if user have unreturned book
+            /*
+            if true
+            {
+                //Send popup message
+                PopupNotifier popup = new PopupNotifier();
+                popup.TitleText = "Notification";
+                popup.ContentText = "You have a book in lending which already passed deadline";
+                popup.Popup();
+            }
+            */
+
+        }
+
+        private void validasiAkun(CurrentUser akun)
+        {
+            lblAccountName.Text = akun.nama;
+            lblWelcome.Text = "Welcome " + akun.nama+" ("+akun.tipe+")";
+            if (akun.tipe != "Guest")
             {
                 btnLend.Enabled = true;
                 btnLend.BackgroundImage = Properties.Resources.lend;
                 btnProfile.Enabled = true;
                 btnProfile.BackgroundImage = Properties.Resources.profile;
             }
-            if (tipeAkun == "Admin")
+            if (akun.tipe == "Admin")
             {
                 btnManage.Visible = true;
             }
 
-            if (!String.IsNullOrEmpty(pathFoto))
+            if (!String.IsNullOrEmpty(akun.path))
             {
-                kontrol.setFotoProfil(pBoxProfile, pathFoto);
+                kontrol.setFotoProfil(pBoxProfile, akun.path);
             }
+            notification();
         }
         //End Methods
 
-
-        public formMain(string tipeAkun, string NamaAkun, string pathFoto)
-        { 
-            InitializeComponent();
-            validasiAkun(tipeAkun, NamaAkun, pathFoto);                   
-        }
-
-        public formMain(CurrentUser user) // Prototype Class Overload
+        public formMain(CurrentUser user)
         {
             InitializeComponent();
-            validasiAkun(user.tipe, user.nama, user.path);
+            validasiAkun(user);
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
