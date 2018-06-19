@@ -1,13 +1,13 @@
-CREATE DATABASE Library2 
+CREATE DATABASE Library
 ON 
 ( NAME = Library,
-    FILENAME = 'D:\ProjectC#\Library\Database2\Library.mdf',  
+    FILENAME = 'D:\ProjectC#\Library\Database\Library.mdf',  
     SIZE = 5MB,  
     MAXSIZE = 4GB,  
     FILEGROWTH = 1MB )  
 LOG ON  
 ( NAME = Library_log,  
-    FILENAME = 'D:\ProjectC#\Library\Database2\Library_log.ldf',
+    FILENAME = 'D:\ProjectC#\Library\Database\Library_log.ldf',
     SIZE = 1MB,  
     MAXSIZE = 25MB,  
     FILEGROWTH = 1MB ) ;  
