@@ -67,9 +67,17 @@ namespace Home
 
         private void button1_Click(object sender, EventArgs e)
         {
-            indeks -= 1;
-            indeks %= listGambar.Count();
-            kontrol.setFoto(pboxGambar, listGambar[indeks]);
+            if(indeks != 0)
+            {
+                indeks -= 1;
+                indeks %= listGambar.Count();
+                kontrol.setFoto(pboxGambar, listGambar[indeks]);
+            }
+            else
+            {
+                indeks = listGambar.Count()-1;
+                kontrol.setFoto(pboxGambar, listGambar[indeks]);
+            }           
         }
 
         private void button2_Click(object sender, EventArgs e)

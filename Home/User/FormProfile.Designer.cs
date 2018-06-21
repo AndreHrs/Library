@@ -340,7 +340,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Location = new System.Drawing.Point(342, 71);
             this.pictureBox2.Name = "pictureBox2";

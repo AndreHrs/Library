@@ -36,6 +36,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pBoxShow = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblTelephone = new System.Windows.Forms.Label();
@@ -53,11 +54,10 @@
             this.btnPickPhoto = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.pBoxShow = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).BeginInit();
             this.pnlInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
             this.SuspendLayout();
             // 
             // minimizeBtn
@@ -145,6 +145,19 @@
             this.panel1.Size = new System.Drawing.Size(542, 111);
             this.panel1.TabIndex = 15;
             // 
+            // pBoxShow
+            // 
+            this.pBoxShow.BackColor = System.Drawing.Color.Silver;
+            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
+            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBoxShow.Location = new System.Drawing.Point(486, 64);
+            this.pBoxShow.Name = "pBoxShow";
+            this.pBoxShow.Size = new System.Drawing.Size(36, 35);
+            this.pBoxShow.TabIndex = 17;
+            this.pBoxShow.TabStop = false;
+            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
+            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
+            // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(158, 64);
@@ -227,7 +240,7 @@
             // pictBoxPhoto
             // 
             this.pictBoxPhoto.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
-            this.pictBoxPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictBoxPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictBoxPhoto.Location = new System.Drawing.Point(39, 169);
             this.pictBoxPhoto.Name = "pictBoxPhoto";
             this.pictBoxPhoto.Size = new System.Drawing.Size(160, 160);
@@ -306,19 +319,6 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // pBoxShow
-            // 
-            this.pBoxShow.BackColor = System.Drawing.Color.Silver;
-            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
-            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBoxShow.Location = new System.Drawing.Point(486, 64);
-            this.pBoxShow.Name = "pBoxShow";
-            this.pBoxShow.Size = new System.Drawing.Size(36, 35);
-            this.pBoxShow.TabIndex = 17;
-            this.pBoxShow.TabStop = false;
-            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
-            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
-            // 
             // FormSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
@@ -353,10 +353,10 @@
             this.Text = "FormSignUp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

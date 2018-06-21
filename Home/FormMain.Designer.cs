@@ -118,7 +118,7 @@
             // pBoxProfile
             // 
             this.pBoxProfile.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
-            this.pBoxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBoxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pBoxProfile.Location = new System.Drawing.Point(0, 0);
             this.pBoxProfile.Name = "pBoxProfile";
             this.pBoxProfile.Size = new System.Drawing.Size(146, 146);

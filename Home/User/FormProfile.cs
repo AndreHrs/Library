@@ -142,7 +142,11 @@ namespace Home
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string pathFile = fungsi.returnDestPath(this.path, "profil");
+            string pathFile = "";
+
+            if (!String.IsNullOrEmpty(this.path))
+                pathFile = fungsi.returnDestPath(this.path, "profil");
+
             string user = txtUsername.Text, pass = txtPassword.Text, tipe = cBoxAccountType.Text, nama = txtName.Text,
                 alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62", "0"), gender = cBoxGender.Text, fine = txtFine.Text;
             if (AddNewAcc)

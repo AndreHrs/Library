@@ -52,7 +52,7 @@
             this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtn.ForeColor = System.Drawing.Color.White;
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(976, 3);
+            this.closeBtn.Location = new System.Drawing.Point(976, 128);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 13;
@@ -110,11 +110,11 @@
             // 
             // pboxGambar
             // 
-            this.pboxGambar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pboxGambar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pboxGambar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pboxGambar.Location = new System.Drawing.Point(23, 178);
             this.pboxGambar.Name = "pboxGambar";
-            this.pboxGambar.Size = new System.Drawing.Size(978, 530);
+            this.pboxGambar.Size = new System.Drawing.Size(978, 780);
             this.pboxGambar.TabIndex = 24;
             this.pboxGambar.TabStop = false;
             // 
@@ -158,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1024, 720);
+            this.ClientSize = new System.Drawing.Size(1024, 970);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
