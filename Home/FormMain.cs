@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Data.SqlClient;
 using Tulpep.NotificationWindow;
 
 namespace Home
@@ -19,8 +20,6 @@ namespace Home
 
         private void notification()
         {
-
-            
             //Check if user have unreturned book
             /*
             if true
@@ -82,10 +81,15 @@ namespace Home
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Program.resetLogin();
-            this.Hide();
-            FormLogin formLogin = new FormLogin();
-            formLogin.Show();
+            DialogYesNo yesno = new DialogYesNo();
+            yesno.ShowDialog();
+            if (yesno.getresult())
+            {
+                Program.resetLogin();
+                this.Hide();
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+            }
         }
 
         private void manageBook_Click(object sender, EventArgs e)

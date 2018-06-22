@@ -105,6 +105,12 @@
     <Compile Include="Book\FormBookList.Designer.cs">
       <DependentUpon>FormBookList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\userControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialogs\userControl1.Designer.cs">
+      <DependentUpon>userControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLending.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Book\FormBookList.resx">
       <DependentUpon>FormBookList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\userControl1.resx">
+      <DependentUpon>userControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLending.resx">
       <DependentUpon>FormLending.cs</DependentUpon>
