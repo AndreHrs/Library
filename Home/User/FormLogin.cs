@@ -123,14 +123,12 @@ namespace Home
 
         private void pBoxShow_Click(object sender, EventArgs e)
         {
-            if (txtPassword.PasswordChar == '*')
-            {
-                txtPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                txtPassword.PasswordChar = '*';
-            }
+
+        }
+
+        private void pBoxShow_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

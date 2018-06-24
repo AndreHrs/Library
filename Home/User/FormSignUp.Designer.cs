@@ -103,7 +103,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(3, 13);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(102, 22);
+            this.lblUsername.Size = new System.Drawing.Size(134, 27);
             this.lblUsername.TabIndex = 14;
             this.lblUsername.Text = "Username";
             // 
@@ -112,7 +112,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(3, 67);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(97, 22);
+            this.lblPassword.Size = new System.Drawing.Size(125, 27);
             this.lblPassword.TabIndex = 14;
             this.lblPassword.Text = "Password";
             // 
@@ -121,7 +121,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(33, 354);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(63, 22);
+            this.lblName.Size = new System.Drawing.Size(82, 27);
             this.lblName.TabIndex = 14;
             this.lblName.Text = "Name";
             // 
@@ -130,7 +130,7 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.Location = new System.Drawing.Point(33, 396);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(85, 22);
+            this.lblAddress.Size = new System.Drawing.Size(110, 27);
             this.lblAddress.TabIndex = 14;
             this.lblAddress.Text = "Address";
             // 
@@ -157,7 +157,6 @@
             this.pBoxShow.Size = new System.Drawing.Size(36, 35);
             this.pBoxShow.TabIndex = 17;
             this.pBoxShow.TabStop = false;
-            this.pBoxShow.Click += new System.EventHandler(this.pBoxShow_Click);
             this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
             this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
             // 
@@ -165,7 +164,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(158, 64);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(322, 29);
+            this.txtPassword.Size = new System.Drawing.Size(322, 35);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -173,7 +172,7 @@
             // 
             this.txtUsername.Location = new System.Drawing.Point(158, 8);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(364, 29);
+            this.txtUsername.Size = new System.Drawing.Size(364, 35);
             this.txtUsername.TabIndex = 1;
             // 
             // lblTelephone
@@ -181,7 +180,7 @@
             this.lblTelephone.AutoSize = true;
             this.lblTelephone.Location = new System.Drawing.Point(32, 494);
             this.lblTelephone.Name = "lblTelephone";
-            this.lblTelephone.Size = new System.Drawing.Size(106, 22);
+            this.lblTelephone.Size = new System.Drawing.Size(135, 27);
             this.lblTelephone.TabIndex = 16;
             this.lblTelephone.Text = "Telephone";
             // 
@@ -189,7 +188,7 @@
             // 
             this.txtName.Location = new System.Drawing.Point(199, 346);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(363, 29);
+            this.txtName.Size = new System.Drawing.Size(363, 35);
             this.txtName.TabIndex = 4;
             // 
             // mtbTelephone
@@ -197,7 +196,7 @@
             this.mtbTelephone.Location = new System.Drawing.Point(198, 491);
             this.mtbTelephone.Mask = "+6200000000000";
             this.mtbTelephone.Name = "mtbTelephone";
-            this.mtbTelephone.Size = new System.Drawing.Size(364, 29);
+            this.mtbTelephone.Size = new System.Drawing.Size(364, 35);
             this.mtbTelephone.TabIndex = 6;
             // 
             // rtbAddress
@@ -217,7 +216,7 @@
             "Neither"});
             this.cBoxGender.Location = new System.Drawing.Point(198, 547);
             this.cBoxGender.Name = "cBoxGender";
-            this.cBoxGender.Size = new System.Drawing.Size(120, 29);
+            this.cBoxGender.Size = new System.Drawing.Size(120, 34);
             this.cBoxGender.TabIndex = 7;
             this.cBoxGender.Text = "Male";
             // 
@@ -226,7 +225,7 @@
             this.lblGender.AutoSize = true;
             this.lblGender.Location = new System.Drawing.Point(33, 550);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(76, 22);
+            this.lblGender.Size = new System.Drawing.Size(97, 27);
             this.lblGender.TabIndex = 21;
             this.lblGender.Text = "Gender";
             // 
@@ -235,7 +234,7 @@
             this.chkBoxAgree.AutoSize = true;
             this.chkBoxAgree.Location = new System.Drawing.Point(57, 620);
             this.chkBoxAgree.Name = "chkBoxAgree";
-            this.chkBoxAgree.Size = new System.Drawing.Size(380, 26);
+            this.chkBoxAgree.Size = new System.Drawing.Size(484, 31);
             this.chkBoxAgree.TabIndex = 8;
             this.chkBoxAgree.Text = "I agree with the terms and conditions";
             this.chkBoxAgree.UseVisualStyleBackColor = true;
@@ -255,7 +254,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(215, 169);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 22);
+            this.label7.Size = new System.Drawing.Size(174, 27);
             this.label7.TabIndex = 24;
             this.label7.Text = "Profile Picture";
             // 
@@ -265,7 +264,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label8.Location = new System.Drawing.Point(3, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(183, 39);
+            this.label8.Size = new System.Drawing.Size(244, 51);
             this.label8.TabIndex = 25;
             this.label8.Text = "If you don\'t pick a profile picture.\r\nThen we will assign our default profile\r\npi" +
     "cture.";
@@ -276,7 +275,7 @@
             this.label9.Font = new System.Drawing.Font("Lucida Sans", 10F);
             this.label9.Location = new System.Drawing.Point(385, 175);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 16);
+            this.label9.Size = new System.Drawing.Size(17, 19);
             this.label9.TabIndex = 26;
             this.label9.Text = "?";
             this.label9.MouseEnter += new System.EventHandler(this.label9_MouseEnter);
@@ -324,7 +323,7 @@
             // 
             // FormSignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(616, 720);

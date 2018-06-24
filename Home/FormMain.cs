@@ -17,20 +17,73 @@ namespace Home
     {
         //Methods//
         ControlForm kontrol = new ControlForm();
+        koneksiSql koneksi;
+        DataSet dsOverdue = new DataSet();
+        private void loadLowStock()
+        {
+            koneksi = new koneksiSql();
+            SqlConnection conn = new SqlConnection(koneksi.getSqlConn());
+            SqlCommand cmd = new SqlCommand($"SELECT BookId, PicturePath, Stock FROM Booklist ORDER BY Stock", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(dsOverdue, "LowStock");
+            panelSupport.Controls.Add(new NoOverdue(dsOverdue));
+        }
+
+        private void loadHotList()
+        {
+            koneksi = new koneksiSql();
+            SqlConnection conn = new SqlConnection(koneksi.getSqlConn());
+            SqlCommand cmd = new SqlCommand("SELECT Booklist.BookId, Booklist.PicturePath, Stock ,count(Lendings.BookID) AS jumlah FROM Booklist left join Lendings ON Booklist.BookId = Lendings.BookID GROUP BY Booklist.BookId, PicturePath, Stock ORDER BY jumlah DESC", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(dsOverdue, "Hotlist");
+            panelHotlist.Controls.Add(new hotBook(dsOverdue));
+        }
 
         private void notification()
         {
-            //Check if user have unreturned book
-            /*
-            if true
+            bool overdue = false;
+            koneksi = new koneksiSql();
+            SqlConnection conn = new SqlConnection(koneksi.getSqlConn());
+            SqlCommand cmd = new SqlCommand($"SELECT * from Lendings INNER JOIN Booklist on Lendings.BookId = Booklist.BookID where Username = '{Program.userSekarang.user}'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);            
+            sda.Fill(dsOverdue, "Lendings");
+            try
+            {
+                for (int i = 0; i < dsOverdue.Tables["Lendings"].Rows.Count; i++)
+                {
+                    Peminjaman temp = new Peminjaman();
+                    temp.username = dsOverdue.Tables["Lendings"].Rows[i]["Username"].ToString();
+                    temp.bookId = dsOverdue.Tables["Lendings"].Rows[i]["BookId"].ToString();
+                    temp.lendId = dsOverdue.Tables["Lendings"].Rows[i]["LendId"].ToString();
+                    temp.strLendDate = dsOverdue.Tables["Lendings"].Rows[i]["LendDate"].ToString();
+                    temp.strDueDate = dsOverdue.Tables["Lendings"].Rows[i]["DueDate"].ToString();
+                    temp.fineCount();
+                    if(temp.fine > 0)
+                    {
+                        overdue = true;
+                        break;
+                    }
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+            if (overdue)
             {
                 //Send popup message
                 PopupNotifier popup = new PopupNotifier();
                 popup.TitleText = "Notification";
                 popup.ContentText = "You have a book in lending which already passed deadline";
                 popup.Popup();
+                panelSupport.Controls.Add(new OverdueBooks(dsOverdue));
             }
-            */
+            else
+            {
+                loadLowStock();
+            }
 
         }
 
@@ -62,6 +115,7 @@ namespace Home
         {
             InitializeComponent();
             validasiAkun(user);
+            loadHotList();
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

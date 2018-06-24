@@ -27,6 +27,7 @@ namespace Home
             txtDeadline.Text = pinjam.strDueDate;
             lblFineAmount.Text = "Rp. "+pinjam.fine.ToString();
         }
+
         private void isiDgv(string username)
         {
             dgvBooks.Rows.Clear();

@@ -123,6 +123,30 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\hotBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\hotBook.Designer.cs">
+      <DependentUpon>hotBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\NoOverdue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\NoOverdue.Designer.cs">
+      <DependentUpon>NoOverdue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\OverdueBooks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\OverdueBooks.Designer.cs">
+      <DependentUpon>OverdueBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UcFineValue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UcFineValue.Designer.cs">
+      <DependentUpon>UcFineValue.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +211,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\hotBook.resx">
+      <DependentUpon>hotBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\NoOverdue.resx">
+      <DependentUpon>NoOverdue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\OverdueBooks.resx">
+      <DependentUpon>OverdueBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UcFineValue.resx">
+      <DependentUpon>UcFineValue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

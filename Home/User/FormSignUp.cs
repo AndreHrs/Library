@@ -57,22 +57,23 @@ namespace Home
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string pathFile = "";
-
-            if (!String.IsNullOrEmpty(this.path))
-                pathFile = fungsi.returnDestPath(this.path, "profil");
-
-            string user = txtUsername.Text, pass = txtPassword.Text, tipe = "User", nama = txtName.Text,
-                alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62","0"), gender = cBoxGender.Text, fine = "0";
-            koneksiSql koneksi = new koneksiSql();
-            if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, pathFile, fine))
             {
-                fungsi.copyKe(path, "profil");
-                this.Close();
-            }  
-            else
-                txtUsername.Focus();
+                string pathFile = "";
 
+                if (!String.IsNullOrEmpty(this.path))
+                    pathFile = fungsi.returnDestPath(this.path, "profil");
+
+                string user = txtUsername.Text, pass = txtPassword.Text, tipe = "User", nama = txtName.Text,
+                    alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62", "0"), gender = cBoxGender.Text, fine = "0";
+                koneksiSql koneksi = new koneksiSql();
+                if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, pathFile, fine))
+                {
+                    fungsi.copyKe(path, "profil");
+                    this.Close();
+                }
+                else
+                    txtUsername.Focus();
+            }
         }
 
         private void pBoxShow_MouseDown(object sender, MouseEventArgs e)
@@ -87,14 +88,7 @@ namespace Home
 
         private void pBoxShow_Click(object sender, EventArgs e)
         {
-            if (txtPassword.PasswordChar == '*')
-            {
-                txtPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                txtPassword.PasswordChar = '*';
-            }
+
         }
     }
 }
