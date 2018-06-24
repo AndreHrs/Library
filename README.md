@@ -5,7 +5,7 @@ Aplikasi Perpustakaan menggunakan bahasa pemrograman C# dalam bentuk Form
 1. Andre **[Project Leader]**
 2. Vivi
 3. Andy
-4. Anthony
+4. Anthony **[Database Admin]**
 5. Steve
 6. Kevin
 7. Enjelin

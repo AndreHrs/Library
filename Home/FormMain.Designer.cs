@@ -74,7 +74,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(103, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 46);
+            this.label2.Size = new System.Drawing.Size(133, 37);
             this.label2.TabIndex = 12;
             this.label2.Text = "E-Library";
             // 
@@ -83,7 +83,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Location = new System.Drawing.Point(110, 63);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(161, 29);
+            this.lblWelcome.Size = new System.Drawing.Size(129, 23);
             this.lblWelcome.TabIndex = 11;
             this.lblWelcome.Text = "Welcome Guest";
             // 
@@ -111,7 +111,7 @@
             this.lblAccountName.AutoSize = true;
             this.lblAccountName.Location = new System.Drawing.Point(3, 149);
             this.lblAccountName.Name = "lblAccountName";
-            this.lblAccountName.Size = new System.Drawing.Size(69, 29);
+            this.lblAccountName.Size = new System.Drawing.Size(55, 23);
             this.lblAccountName.TabIndex = 11;
             this.lblAccountName.Text = "Guest";
             // 
@@ -155,24 +155,24 @@
             this.toolStripSeparator2,
             this.manageAccount});
             this.menuManage.Name = "menuManage";
-            this.menuManage.Size = new System.Drawing.Size(133, 58);
+            this.menuManage.Size = new System.Drawing.Size(120, 54);
             // 
             // manageBook
             // 
             this.manageBook.Name = "manageBook";
-            this.manageBook.Size = new System.Drawing.Size(132, 24);
+            this.manageBook.Size = new System.Drawing.Size(119, 22);
             this.manageBook.Text = "Books";
             this.manageBook.Click += new System.EventHandler(this.manageBook_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(129, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(116, 6);
             // 
             // manageAccount
             // 
             this.manageAccount.Name = "manageAccount";
-            this.manageAccount.Size = new System.Drawing.Size(132, 24);
+            this.manageAccount.Size = new System.Drawing.Size(119, 22);
             this.manageAccount.Text = "Account";
             this.manageAccount.Click += new System.EventHandler(this.manageAccount_Click);
             // 
@@ -187,7 +187,7 @@
             this.btnManage.Location = new System.Drawing.Point(803, 12);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(120, 50);
-            this.btnManage.TabIndex = 18;
+            this.btnManage.TabIndex = 5;
             this.btnManage.UseVisualStyleBackColor = true;
             this.btnManage.Visible = false;
             this.btnManage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnManage_MouseClick);
@@ -203,7 +203,7 @@
             this.btnLogout.Location = new System.Drawing.Point(677, 12);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(120, 50);
-            this.btnLogout.TabIndex = 15;
+            this.btnLogout.TabIndex = 4;
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -219,7 +219,7 @@
             this.btnProfile.Location = new System.Drawing.Point(551, 12);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(120, 50);
-            this.btnProfile.TabIndex = 15;
+            this.btnProfile.TabIndex = 3;
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
@@ -235,7 +235,7 @@
             this.btnLend.Location = new System.Drawing.Point(425, 12);
             this.btnLend.Name = "btnLend";
             this.btnLend.Size = new System.Drawing.Size(120, 50);
-            this.btnLend.TabIndex = 15;
+            this.btnLend.TabIndex = 2;
             this.btnLend.UseVisualStyleBackColor = true;
             this.btnLend.Click += new System.EventHandler(this.btnLend_Click);
             // 
@@ -250,7 +250,7 @@
             this.btnBooks.Location = new System.Drawing.Point(299, 12);
             this.btnBooks.Name = "btnBooks";
             this.btnBooks.Size = new System.Drawing.Size(120, 50);
-            this.btnBooks.TabIndex = 15;
+            this.btnBooks.TabIndex = 1;
             this.btnBooks.UseVisualStyleBackColor = true;
             this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
@@ -267,6 +267,7 @@
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
             this.minimizeBtn.TabIndex = 7;
+            this.minimizeBtn.TabStop = false;
             this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.minimizeBtn.UseVisualStyleBackColor = false;
@@ -285,6 +286,7 @@
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 9;
+            this.closeBtn.TabStop = false;
             this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.closeBtn.UseVisualStyleBackColor = false;
@@ -292,7 +294,7 @@
             // 
             // formMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1062, 673);

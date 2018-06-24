@@ -84,5 +84,17 @@ namespace Home
         {
             txtPassword.UseSystemPasswordChar = true;
         }
+
+        private void pBoxShow_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+            }
+        }
     }
 }
