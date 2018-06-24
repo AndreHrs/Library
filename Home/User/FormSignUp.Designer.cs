@@ -36,6 +36,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pBoxShow = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblTelephone = new System.Windows.Forms.Label();
@@ -53,11 +54,10 @@
             this.btnPickPhoto = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.pBoxShow = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).BeginInit();
             this.pnlInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
             this.SuspendLayout();
             // 
             // minimizeBtn
@@ -73,6 +73,7 @@
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
             this.minimizeBtn.TabIndex = 12;
+            this.minimizeBtn.TabStop = false;
             this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.minimizeBtn.UseVisualStyleBackColor = false;
@@ -91,6 +92,7 @@
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 13;
+            this.closeBtn.TabStop = false;
             this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.closeBtn.UseVisualStyleBackColor = false;
@@ -101,7 +103,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(3, 13);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(134, 27);
+            this.lblUsername.Size = new System.Drawing.Size(102, 22);
             this.lblUsername.TabIndex = 14;
             this.lblUsername.Text = "Username";
             // 
@@ -110,7 +112,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(3, 67);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(125, 27);
+            this.lblPassword.Size = new System.Drawing.Size(97, 22);
             this.lblPassword.TabIndex = 14;
             this.lblPassword.Text = "Password";
             // 
@@ -119,7 +121,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(33, 354);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(82, 27);
+            this.lblName.Size = new System.Drawing.Size(63, 22);
             this.lblName.TabIndex = 14;
             this.lblName.Text = "Name";
             // 
@@ -128,7 +130,7 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.Location = new System.Drawing.Point(33, 396);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(110, 27);
+            this.lblAddress.Size = new System.Drawing.Size(85, 22);
             this.lblAddress.TabIndex = 14;
             this.lblAddress.Text = "Address";
             // 
@@ -145,27 +147,41 @@
             this.panel1.Size = new System.Drawing.Size(542, 111);
             this.panel1.TabIndex = 15;
             // 
+            // pBoxShow
+            // 
+            this.pBoxShow.BackColor = System.Drawing.Color.Silver;
+            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
+            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBoxShow.Location = new System.Drawing.Point(486, 64);
+            this.pBoxShow.Name = "pBoxShow";
+            this.pBoxShow.Size = new System.Drawing.Size(36, 35);
+            this.pBoxShow.TabIndex = 17;
+            this.pBoxShow.TabStop = false;
+            this.pBoxShow.Click += new System.EventHandler(this.pBoxShow_Click);
+            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
+            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
+            // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(158, 64);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(322, 35);
-            this.txtPassword.TabIndex = 15;
+            this.txtPassword.Size = new System.Drawing.Size(322, 29);
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(158, 8);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(364, 35);
-            this.txtUsername.TabIndex = 15;
+            this.txtUsername.Size = new System.Drawing.Size(364, 29);
+            this.txtUsername.TabIndex = 1;
             // 
             // lblTelephone
             // 
             this.lblTelephone.AutoSize = true;
             this.lblTelephone.Location = new System.Drawing.Point(32, 494);
             this.lblTelephone.Name = "lblTelephone";
-            this.lblTelephone.Size = new System.Drawing.Size(135, 27);
+            this.lblTelephone.Size = new System.Drawing.Size(106, 22);
             this.lblTelephone.TabIndex = 16;
             this.lblTelephone.Text = "Telephone";
             // 
@@ -173,23 +189,23 @@
             // 
             this.txtName.Location = new System.Drawing.Point(199, 346);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(363, 35);
-            this.txtName.TabIndex = 17;
+            this.txtName.Size = new System.Drawing.Size(363, 29);
+            this.txtName.TabIndex = 4;
             // 
             // mtbTelephone
             // 
             this.mtbTelephone.Location = new System.Drawing.Point(198, 491);
             this.mtbTelephone.Mask = "+6200000000000";
             this.mtbTelephone.Name = "mtbTelephone";
-            this.mtbTelephone.Size = new System.Drawing.Size(364, 35);
-            this.mtbTelephone.TabIndex = 18;
+            this.mtbTelephone.Size = new System.Drawing.Size(364, 29);
+            this.mtbTelephone.TabIndex = 6;
             // 
             // rtbAddress
             // 
             this.rtbAddress.Location = new System.Drawing.Point(199, 396);
             this.rtbAddress.Name = "rtbAddress";
             this.rtbAddress.Size = new System.Drawing.Size(363, 89);
-            this.rtbAddress.TabIndex = 19;
+            this.rtbAddress.TabIndex = 5;
             this.rtbAddress.Text = "";
             // 
             // cBoxGender
@@ -201,8 +217,8 @@
             "Neither"});
             this.cBoxGender.Location = new System.Drawing.Point(198, 547);
             this.cBoxGender.Name = "cBoxGender";
-            this.cBoxGender.Size = new System.Drawing.Size(120, 34);
-            this.cBoxGender.TabIndex = 20;
+            this.cBoxGender.Size = new System.Drawing.Size(120, 29);
+            this.cBoxGender.TabIndex = 7;
             this.cBoxGender.Text = "Male";
             // 
             // lblGender
@@ -210,7 +226,7 @@
             this.lblGender.AutoSize = true;
             this.lblGender.Location = new System.Drawing.Point(33, 550);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(97, 27);
+            this.lblGender.Size = new System.Drawing.Size(76, 22);
             this.lblGender.TabIndex = 21;
             this.lblGender.Text = "Gender";
             // 
@@ -219,8 +235,8 @@
             this.chkBoxAgree.AutoSize = true;
             this.chkBoxAgree.Location = new System.Drawing.Point(57, 620);
             this.chkBoxAgree.Name = "chkBoxAgree";
-            this.chkBoxAgree.Size = new System.Drawing.Size(484, 31);
-            this.chkBoxAgree.TabIndex = 22;
+            this.chkBoxAgree.Size = new System.Drawing.Size(380, 26);
+            this.chkBoxAgree.TabIndex = 8;
             this.chkBoxAgree.Text = "I agree with the terms and conditions";
             this.chkBoxAgree.UseVisualStyleBackColor = true;
             // 
@@ -239,7 +255,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(215, 169);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(174, 27);
+            this.label7.Size = new System.Drawing.Size(139, 22);
             this.label7.TabIndex = 24;
             this.label7.Text = "Profile Picture";
             // 
@@ -249,7 +265,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label8.Location = new System.Drawing.Point(3, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(244, 51);
+            this.label8.Size = new System.Drawing.Size(183, 39);
             this.label8.TabIndex = 25;
             this.label8.Text = "If you don\'t pick a profile picture.\r\nThen we will assign our default profile\r\npi" +
     "cture.";
@@ -260,7 +276,7 @@
             this.label9.Font = new System.Drawing.Font("Lucida Sans", 10F);
             this.label9.Location = new System.Drawing.Point(385, 175);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(17, 19);
+            this.label9.Size = new System.Drawing.Size(13, 16);
             this.label9.TabIndex = 26;
             this.label9.Text = "?";
             this.label9.MouseEnter += new System.EventHandler(this.label9_MouseEnter);
@@ -281,7 +297,7 @@
             this.btnPickPhoto.Location = new System.Drawing.Point(220, 209);
             this.btnPickPhoto.Name = "btnPickPhoto";
             this.btnPickPhoto.Size = new System.Drawing.Size(169, 36);
-            this.btnPickPhoto.TabIndex = 28;
+            this.btnPickPhoto.TabIndex = 3;
             this.btnPickPhoto.Text = "Pick Photo";
             this.btnPickPhoto.UseVisualStyleBackColor = true;
             this.btnPickPhoto.Click += new System.EventHandler(this.btnPickPhoto_Click);
@@ -291,7 +307,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(85, 657);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(167, 50);
-            this.btnSubmit.TabIndex = 29;
+            this.btnSubmit.TabIndex = 9;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -301,27 +317,14 @@
             this.btnReturn.Location = new System.Drawing.Point(365, 657);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(167, 50);
-            this.btnReturn.TabIndex = 29;
+            this.btnReturn.TabIndex = 10;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // pBoxShow
-            // 
-            this.pBoxShow.BackColor = System.Drawing.Color.Silver;
-            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
-            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBoxShow.Location = new System.Drawing.Point(486, 64);
-            this.pBoxShow.Name = "pBoxShow";
-            this.pBoxShow.Size = new System.Drawing.Size(36, 35);
-            this.pBoxShow.TabIndex = 17;
-            this.pBoxShow.TabStop = false;
-            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
-            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
-            // 
             // FormSignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(616, 720);
@@ -353,10 +356,10 @@
             this.Text = "FormSignUp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

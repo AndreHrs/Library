@@ -65,6 +65,7 @@ namespace Home
         {
             InitializeComponent();
             isiDgv(username);
+            txtBookTitle.Focus();
         }
 
         private void minimizeBtn_Click(object sender, EventArgs e)

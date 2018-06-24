@@ -93,6 +93,7 @@ namespace Home
                 lblAccountType.Visible = true;
                 cBoxAccountType.Visible = true;
             }
+            txtUsername.Focus();
         }
 
         private void minimizeBtn_Click(object sender, EventArgs e)
@@ -183,6 +184,18 @@ namespace Home
                 dialog.ShowDialog();
             }
             
+        }
+
+        private void pBoxShow_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+            }
         }
     }
 }
