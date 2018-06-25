@@ -28,13 +28,13 @@ namespace Home
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             resetLogin();
-            /*//Splash Screen
+            //Splash Screen
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
             Random rand = new Random();
-            Thread.Sleep(rand.Next(3000, 7000));
+            Thread.Sleep(rand.Next(1000, 3000));
             t.Abort();
-            //Splash Screen End*/
+            //Splash Screen End
 
             Application.Run(new FormLogin());
         }

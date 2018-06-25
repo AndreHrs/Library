@@ -56,6 +56,14 @@ namespace Home
             }
         }
 
+        public bool validasi(Control objek)
+        {
+            bool valid = true;
+            koneksiSql koneksi = new koneksiSql();
+
+            return valid;
+        }
+
         public bool validasi(Control objek, string nama)
         {
             bool valid = true;

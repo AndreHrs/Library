@@ -33,7 +33,7 @@ namespace Home
                 sqlConn.Close();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 DialogNormal dialogErr = new DialogNormal("Error", failMsg, faiX, faiY);
                 dialogErr.ShowDialog();
@@ -52,7 +52,7 @@ namespace Home
                 sqlConn.Close();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

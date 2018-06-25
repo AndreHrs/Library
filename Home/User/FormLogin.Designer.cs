@@ -165,7 +165,6 @@
             this.pBoxShow.Size = new System.Drawing.Size(43, 41);
             this.pBoxShow.TabIndex = 16;
             this.pBoxShow.TabStop = false;
-            this.pBoxShow.Click += new System.EventHandler(this.pBoxShow_Click_1);
             this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
             this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
             // 
