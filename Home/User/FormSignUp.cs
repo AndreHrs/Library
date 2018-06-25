@@ -18,6 +18,39 @@ namespace Home
         Utility fungsi = new Utility();
         ControlForm kontrol = new ControlForm();
 
+        private bool validasiInput()
+        {
+            List<bool> listValidasi = new List<bool>();
+            bool valid = true;
+
+            listValidasi.Add(kontrol.validasi(txtUsername, "Username", 8, 21));
+            listValidasi.Add(kontrol.validasi(txtPassword, "Password", 8, 21));
+            listValidasi.Add(kontrol.validasi(txtName, "Name", "teks", 1, 51));
+            listValidasi.Add(kontrol.validasi(rtbAddress, "Address", 1, 100));
+            listValidasi.Add(kontrol.validasi(cBoxGender, "Gender"));
+            listValidasi.Add(kontrol.validasi(mtbTelephone, "Telephone", 10, 13));
+            if (chkBoxAgree.Checked)
+            {
+                listValidasi.Add(true);
+            }    
+            else
+            {
+                errProv.SetError(chkBoxAgree, "Please check agree fist");
+                listValidasi.Add(false);
+            }
+            
+            foreach(bool b in listValidasi)
+            {
+                if (b == false)
+                {
+                    valid = false;
+                    break;
+                }
+            }
+                             
+            return valid;
+        }
+
         public FormSignUp()
         {
             InitializeComponent();
@@ -57,6 +90,7 @@ namespace Home
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (validasiInput())     
             {
                 string pathFile = "";
 
@@ -74,6 +108,12 @@ namespace Home
                 else
                     txtUsername.Focus();
             }
+            else
+            {
+                FormKosong dialog = new FormKosong();
+                dialog.loadUC(new UcNotif1(dialog));
+                dialog.ShowDialog();
+            }
         }
 
         private void pBoxShow_MouseDown(object sender, MouseEventArgs e)
@@ -89,6 +129,16 @@ namespace Home
         private void pBoxShow_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtbTelephone_TextChanged(object sender, EventArgs e)
+        {
+            mtbTelephone.Text = mtbTelephone.Text.ToString().Replace(' ', '\0');
         }
     }
 }

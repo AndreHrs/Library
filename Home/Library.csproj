@@ -58,15 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\buku.cs" />
-    <Compile Include="Class\CurrentUser.cs" />
-    <Compile Include="Class\fungsiHashing.cs" />
-    <Compile Include="Class\Utility.cs" />
     <Compile Include="Class\ControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Class\ControlForm.Designer.cs">
-      <DependentUpon>ControlForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Class\CurrentUser.cs" />
+    <Compile Include="Class\fungsiHashing.cs" />
+    <Compile Include="Class\Utility.cs" />
     <Compile Include="Dialogs\DialogNormal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +108,12 @@
     <Compile Include="Dialogs\userControl1.Designer.cs">
       <DependentUpon>userControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKosong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKosong.Designer.cs">
+      <DependentUpon>FormKosong.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLending.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +125,12 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UcNotif1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UcNotif1.Designer.cs">
+      <DependentUpon>UcNotif1.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\hotBook.cs">
       <SubType>UserControl</SubType>
@@ -206,6 +215,9 @@
     <EmbeddedResource Include="Dialogs\userControl1.resx">
       <DependentUpon>userControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormKosong.resx">
+      <DependentUpon>FormKosong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLending.resx">
       <DependentUpon>FormLending.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UcFineValue.resx">
       <DependentUpon>UcFineValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UcNotif1.resx">
+      <DependentUpon>UcNotif1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

@@ -39,13 +39,13 @@ namespace Home
             panelHotlist.Controls.Add(new hotBook(dsOverdue));
         }
 
-        private void notification()
+        private bool checkOverdue()
         {
             bool overdue = false;
             koneksi = new koneksiSql();
             SqlConnection conn = new SqlConnection(koneksi.getSqlConn());
             SqlCommand cmd = new SqlCommand($"SELECT * from Lendings INNER JOIN Booklist on Lendings.BookId = Booklist.BookID where Username = '{Program.userSekarang.user}'", conn);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);            
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dsOverdue, "Lendings");
             try
             {
@@ -58,7 +58,7 @@ namespace Home
                     temp.strLendDate = dsOverdue.Tables["Lendings"].Rows[i]["LendDate"].ToString();
                     temp.strDueDate = dsOverdue.Tables["Lendings"].Rows[i]["DueDate"].ToString();
                     temp.fineCount();
-                    if(temp.fine > 0)
+                    if (temp.fine > 0)
                     {
                         overdue = true;
                         break;
@@ -70,13 +70,22 @@ namespace Home
             {
                 MessageBox.Show(e.ToString());
             }
+            return overdue;
+        }
+        private void notification()
+        {
 
+            bool overdue = checkOverdue();
             if (overdue)
             {
                 //Send popup message
                 PopupNotifier popup = new PopupNotifier();
+                popup.BodyColor = Color.AliceBlue;
+                popup.ButtonHoverColor = Color.Red;
+                popup.HeaderColor = Color.Aqua;
                 popup.TitleText = "Notification";
                 popup.ContentText = "You have a book in lending which already passed deadline";
+                popup.ContentHoverColor = Color.Black;
                 popup.Popup();
                 panelSupport.Controls.Add(new OverdueBooks(dsOverdue));
             }

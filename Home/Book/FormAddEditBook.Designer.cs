@@ -126,13 +126,13 @@
             // 
             this.nudStock.Location = new System.Drawing.Point(678, 146);
             this.nudStock.Name = "nudStock";
-            this.nudStock.Size = new System.Drawing.Size(293, 35);
+            this.nudStock.Size = new System.Drawing.Size(278, 35);
             this.nudStock.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(569, 150);
+            this.label7.Location = new System.Drawing.Point(578, 148);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 27);
             this.label7.TabIndex = 3;
@@ -142,7 +142,7 @@
             // 
             this.txtGenre.Location = new System.Drawing.Point(678, 27);
             this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(293, 35);
+            this.txtGenre.Size = new System.Drawing.Size(278, 35);
             this.txtGenre.TabIndex = 2;
             // 
             // txtYear
@@ -155,7 +155,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(562, 31);
+            this.label5.Location = new System.Drawing.Point(578, 30);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 27);
             this.label5.TabIndex = 1;
@@ -165,7 +165,7 @@
             // 
             this.txtAuthor.Location = new System.Drawing.Point(145, 106);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(826, 35);
+            this.txtAuthor.Size = new System.Drawing.Size(811, 35);
             this.txtAuthor.TabIndex = 2;
             // 
             // label8
@@ -197,7 +197,7 @@
             // 
             this.txtTitle.Location = new System.Drawing.Point(145, 67);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(826, 35);
+            this.txtTitle.Size = new System.Drawing.Size(811, 35);
             this.txtTitle.TabIndex = 2;
             // 
             // label3

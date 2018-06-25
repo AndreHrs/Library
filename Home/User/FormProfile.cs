@@ -58,6 +58,28 @@ namespace Home
             AddNewAcc = true;
         }
 
+        private bool validasiInput()
+        {
+            List<bool> listValidasi = new List<bool>();
+            bool valid = true;
+            listValidasi.Add(kontrol.validasi(txtPassword, "Password", 8, 21));
+            listValidasi.Add(kontrol.validasi(txtName, "Name", "teks", 1, 51));
+            listValidasi.Add(kontrol.validasi(rtbAddress, "Address", 1, 100));
+            listValidasi.Add(kontrol.validasi(cBoxGender, "Gender"));
+            listValidasi.Add(kontrol.validasi(mtbTelephone, "Telephone", 10, 13));
+
+            foreach (bool b in listValidasi)
+            {
+                if (b == false)
+                {
+                    valid = false;
+                    break;
+                }
+            }
+
+            return valid;
+        }
+
         public FormProfile()
         {
 
@@ -143,35 +165,37 @@ namespace Home
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string pathFile = "";
-
-            if (!String.IsNullOrEmpty(this.path))
-                pathFile = fungsi.returnDestPath(this.path, "profil");
-
-            string user = txtUsername.Text, pass = txtPassword.Text, tipe = cBoxAccountType.Text, nama = txtName.Text,
-                alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62", "0"), gender = cBoxGender.Text, fine = txtFine.Text;
-            if (AddNewAcc)
+            if(validasiInput())
             {
-                if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, Path.GetFileName(pathFile),fine))
+                string pathFile = "";
+
+                if (!String.IsNullOrEmpty(this.path))
+                    pathFile = fungsi.returnDestPath(this.path, "profil");
+
+                string user = txtUsername.Text, pass = txtPassword.Text, tipe = cBoxAccountType.Text, nama = txtName.Text,
+                    alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62", "0"), gender = cBoxGender.Text, fine = txtFine.Text;
+                if (AddNewAcc)
                 {
-                    fungsi.copyKe(path, "profil");
-                    this.Close();
-                }         
-                else
-                    txtUsername.Focus();
-            }
-            else
-            {
-                if (koneksi.UpdateUser(user, pass, tipe, nama, alamat, telp, gender, Path.GetFileName(pathFile), fine))
-                {
-                    fungsi.copyKe(path, "profil");
-                    checkFromMain();
+                    if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, Path.GetFileName(pathFile), fine))
+                    {
+                        fungsi.copyKe(path, "profil");
+                        this.Close();
+                    }
+                    else
+                        txtUsername.Focus();
                 }
-                    
                 else
-                    txtUsername.Focus();        
-            }
+                {
+                    if (koneksi.UpdateUser(user, pass, tipe, nama, alamat, telp, gender, Path.GetFileName(pathFile), fine))
+                    {
+                        fungsi.copyKe(path, "profil");
+                        checkFromMain();
+                    }
 
+                    else
+                        txtUsername.Focus();
+                }
+            }    
         }
 
         private void btnPay_Click(object sender, EventArgs e)
@@ -188,18 +212,6 @@ namespace Home
                 dialog.ShowDialog();
             }
             
-        }
-
-        private void pBoxShow_Click(object sender, EventArgs e)
-        {
-            if (txtPassword.PasswordChar == '*')
-            {
-                txtPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                txtPassword.PasswordChar = '*';
-            }
         }
     }
 }

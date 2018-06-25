@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSignUp));
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
@@ -54,10 +55,12 @@
             this.btnPickPhoto = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.errProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).BeginInit();
             this.pnlInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProv)).BeginInit();
             this.SuspendLayout();
             // 
             // minimizeBtn
@@ -174,6 +177,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(364, 35);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // lblTelephone
             // 
@@ -198,6 +202,7 @@
             this.mtbTelephone.Name = "mtbTelephone";
             this.mtbTelephone.Size = new System.Drawing.Size(364, 35);
             this.mtbTelephone.TabIndex = 6;
+            this.mtbTelephone.TextChanged += new System.EventHandler(this.mtbTelephone_TextChanged);
             // 
             // rtbAddress
             // 
@@ -321,6 +326,10 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // errProv
+            // 
+            this.errProv.ContainerControl = this;
+            // 
             // FormSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
@@ -359,6 +368,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +401,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.PictureBox pBoxShow;
+        private System.Windows.Forms.ErrorProvider errProv;
     }
 }

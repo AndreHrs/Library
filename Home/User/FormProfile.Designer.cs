@@ -88,7 +88,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(103, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 37);
+            this.label2.Size = new System.Drawing.Size(164, 46);
             this.label2.TabIndex = 12;
             this.label2.Text = "E-Library";
             // 
@@ -97,7 +97,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Location = new System.Drawing.Point(110, 63);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(117, 22);
+            this.lblWelcome.Size = new System.Drawing.Size(149, 27);
             this.lblWelcome.TabIndex = 11;
             this.lblWelcome.Text = "User Profile";
             // 
@@ -128,7 +128,7 @@
             this.label1.Enabled = false;
             this.label1.Location = new System.Drawing.Point(337, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 22);
+            this.label1.Size = new System.Drawing.Size(176, 27);
             this.label1.TabIndex = 22;
             this.label1.Text = "Profile picture";
             // 
@@ -137,7 +137,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 22);
+            this.label4.Size = new System.Drawing.Size(0, 27);
             this.label4.TabIndex = 23;
             // 
             // groupBox1
@@ -163,7 +163,6 @@
             this.pBoxShow.Size = new System.Drawing.Size(31, 31);
             this.pBoxShow.TabIndex = 2;
             this.pBoxShow.TabStop = false;
-            this.pBoxShow.Click += new System.EventHandler(this.pBoxShow_Click);
             this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
             this.pBoxShow.MouseLeave += new System.EventHandler(this.pBoxShow_MouseLeave);
             this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
@@ -174,8 +173,9 @@
             this.txtPassword.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(119, 70);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(400, 26);
+            this.txtPassword.Size = new System.Drawing.Size(400, 31);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
@@ -183,7 +183,7 @@
             this.txtUsername.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(119, 33);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(435, 26);
+            this.txtUsername.Size = new System.Drawing.Size(435, 31);
             this.txtUsername.TabIndex = 1;
             // 
             // label5
@@ -192,7 +192,7 @@
             this.label5.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(5, 75);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 18);
+            this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 0;
             this.label5.Text = "Password";
             // 
@@ -202,7 +202,7 @@
             this.label3.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(5, 41);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 18);
+            this.label3.Size = new System.Drawing.Size(108, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Username";
             // 
@@ -234,21 +234,21 @@
             this.lblPhotoPath.AutoSize = true;
             this.lblPhotoPath.Location = new System.Drawing.Point(344, 332);
             this.lblPhotoPath.Name = "lblPhotoPath";
-            this.lblPhotoPath.Size = new System.Drawing.Size(0, 22);
+            this.lblPhotoPath.Size = new System.Drawing.Size(0, 27);
             this.lblPhotoPath.TabIndex = 30;
             this.lblPhotoPath.Visible = false;
             // 
             // cBoxAccountType
             // 
+            this.cBoxAccountType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxAccountType.FormattingEnabled = true;
             this.cBoxAccountType.Items.AddRange(new object[] {
             "Admin",
             "User"});
             this.cBoxAccountType.Location = new System.Drawing.Point(191, 362);
             this.cBoxAccountType.Name = "cBoxAccountType";
-            this.cBoxAccountType.Size = new System.Drawing.Size(351, 29);
+            this.cBoxAccountType.Size = new System.Drawing.Size(351, 34);
             this.cBoxAccountType.TabIndex = 10;
-            this.cBoxAccountType.Text = "User";
             this.cBoxAccountType.Visible = false;
             // 
             // lblAccountType
@@ -256,7 +256,7 @@
             this.lblAccountType.AutoSize = true;
             this.lblAccountType.Location = new System.Drawing.Point(9, 362);
             this.lblAccountType.Name = "lblAccountType";
-            this.lblAccountType.Size = new System.Drawing.Size(138, 22);
+            this.lblAccountType.Size = new System.Drawing.Size(172, 27);
             this.lblAccountType.TabIndex = 28;
             this.lblAccountType.Text = "Account Type";
             this.lblAccountType.Visible = false;
@@ -266,7 +266,7 @@
             this.txtName.Enabled = false;
             this.txtName.Location = new System.Drawing.Point(119, 62);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(206, 29);
+            this.txtName.Size = new System.Drawing.Size(206, 35);
             this.txtName.TabIndex = 5;
             // 
             // cBoxGender
@@ -279,7 +279,7 @@
             "Neither"});
             this.cBoxGender.Location = new System.Drawing.Point(119, 163);
             this.cBoxGender.Name = "cBoxGender";
-            this.cBoxGender.Size = new System.Drawing.Size(206, 29);
+            this.cBoxGender.Size = new System.Drawing.Size(206, 34);
             this.cBoxGender.TabIndex = 7;
             this.cBoxGender.Text = "Male";
             // 
@@ -289,7 +289,7 @@
             this.mtbTelephone.Location = new System.Drawing.Point(119, 117);
             this.mtbTelephone.Mask = "+6200000000000";
             this.mtbTelephone.Name = "mtbTelephone";
-            this.mtbTelephone.Size = new System.Drawing.Size(206, 29);
+            this.mtbTelephone.Size = new System.Drawing.Size(206, 35);
             this.mtbTelephone.TabIndex = 6;
             // 
             // rtbAddress
@@ -306,7 +306,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(8, 212);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 22);
+            this.label8.Size = new System.Drawing.Size(110, 27);
             this.label8.TabIndex = 23;
             this.label8.Text = "Address";
             // 
@@ -315,7 +315,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(9, 123);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 22);
+            this.label9.Size = new System.Drawing.Size(70, 27);
             this.label9.TabIndex = 23;
             this.label9.Text = "Telp.";
             // 
@@ -324,7 +324,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 163);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 22);
+            this.label7.Size = new System.Drawing.Size(97, 27);
             this.label7.TabIndex = 23;
             this.label7.Text = "Gender";
             // 
@@ -333,7 +333,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 58);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 22);
+            this.label6.Size = new System.Drawing.Size(82, 27);
             this.label6.TabIndex = 23;
             this.label6.Text = "Name";
             // 
@@ -351,7 +351,7 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(208, 768);
+            this.btnSave.Location = new System.Drawing.Point(208, 767);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(174, 52);
             this.btnSave.TabIndex = 25;
@@ -398,7 +398,7 @@
             this.minimizeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(490, 23);
+            this.minimizeBtn.Location = new System.Drawing.Point(490, 63);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
             this.minimizeBtn.TabIndex = 12;
@@ -417,7 +417,7 @@
             this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtn.ForeColor = System.Drawing.Color.White;
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(542, 23);
+            this.closeBtn.Location = new System.Drawing.Point(542, 63);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 13;
@@ -437,7 +437,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(23, 295);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 22);
+            this.label11.Size = new System.Drawing.Size(62, 27);
             this.label11.TabIndex = 27;
             this.label11.Text = "Fine";
             // 
@@ -446,7 +446,7 @@
             this.txtFine.Enabled = false;
             this.txtFine.Location = new System.Drawing.Point(136, 292);
             this.txtFine.Name = "txtFine";
-            this.txtFine.Size = new System.Drawing.Size(314, 29);
+            this.txtFine.Size = new System.Drawing.Size(314, 35);
             this.txtFine.TabIndex = 3;
             this.txtFine.TabStop = false;
             this.txtFine.Text = "0";
@@ -463,10 +463,10 @@
             // 
             // FormProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(600, 749);
+            this.ClientSize = new System.Drawing.Size(600, 829);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.txtFine);
             this.Controls.Add(this.label11);
