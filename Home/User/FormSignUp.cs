@@ -18,6 +18,39 @@ namespace Home
         Utility fungsi = new Utility();
         ControlForm kontrol = new ControlForm();
 
+        private bool validasiInput()
+        {
+            List<bool> listValidasi = new List<bool>();
+            bool valid = true;
+
+            listValidasi.Add(kontrol.validasi(txtUsername, "Username", 8, 21));
+            listValidasi.Add(kontrol.validasi(txtPassword, "Password", 8, 21));
+            listValidasi.Add(kontrol.validasi(txtName, "Name", "teks", 1, 51));
+            listValidasi.Add(kontrol.validasi(rtbAddress, "Address", 1, 100));
+            listValidasi.Add(kontrol.validasi(cBoxGender, "Gender"));
+            listValidasi.Add(kontrol.validasi(mtbTelephone, "Telephone", 10, 13));
+            if (chkBoxAgree.Checked)
+            {
+                listValidasi.Add(true);
+            }    
+            else
+            {
+                errProv.SetError(chkBoxAgree, "Please check agree fist");
+                listValidasi.Add(false);
+            }
+            
+            foreach(bool b in listValidasi)
+            {
+                if (b == false)
+                {
+                    valid = false;
+                    break;
+                }
+            }
+                             
+            return valid;
+        }
+
         public FormSignUp()
         {
             InitializeComponent();
@@ -57,18 +90,30 @@ namespace Home
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string pathFile = fungsi.returnDestPath(this.path, "profil");
-            string user = txtUsername.Text, pass = txtPassword.Text, tipe = "User", nama = txtName.Text,
-                alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62","0"), gender = cBoxGender.Text, fine = "0";
-            koneksiSql koneksi = new koneksiSql();
-            if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, pathFile, fine))
+            if (validasiInput())     
             {
-                fungsi.copyKe(path, "profil");
-                this.Close();
-            }  
-            else
-                txtUsername.Focus();
+                string pathFile = "";
 
+                if (!String.IsNullOrEmpty(this.path))
+                    pathFile = fungsi.returnDestPath(this.path, "profil");
+
+                string user = txtUsername.Text, pass = txtPassword.Text, tipe = "User", nama = txtName.Text,
+                    alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62", "0"), gender = cBoxGender.Text, fine = "0";
+                koneksiSql koneksi = new koneksiSql();
+                if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, pathFile, fine))
+                {
+                    fungsi.copyKe(path, "profil");
+                    this.Close();
+                }
+                else
+                    txtUsername.Focus();
+            }
+            else
+            {
+                FormKosong dialog = new FormKosong();
+                dialog.loadUC(new UcNotif1(dialog));
+                dialog.ShowDialog();
+            }
         }
 
         private void pBoxShow_MouseDown(object sender, MouseEventArgs e)
@@ -79,6 +124,21 @@ namespace Home
         private void pBoxShow_MouseUp(object sender, MouseEventArgs e)
         {
             txtPassword.UseSystemPasswordChar = true;
+        }
+
+        private void pBoxShow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtbTelephone_TextChanged(object sender, EventArgs e)
+        {
+            mtbTelephone.Text = mtbTelephone.Text.ToString().Replace(' ', '\0');
         }
     }
 }

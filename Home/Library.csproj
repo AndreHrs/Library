@@ -58,15 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\buku.cs" />
-    <Compile Include="Class\CurrentUser.cs" />
-    <Compile Include="Class\fungsiHashing.cs" />
-    <Compile Include="Class\Utility.cs" />
     <Compile Include="Class\ControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Class\ControlForm.Designer.cs">
-      <DependentUpon>ControlForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Class\CurrentUser.cs" />
+    <Compile Include="Class\fungsiHashing.cs" />
+    <Compile Include="Class\Utility.cs" />
     <Compile Include="Dialogs\DialogNormal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +102,18 @@
     <Compile Include="Book\FormBookList.Designer.cs">
       <DependentUpon>FormBookList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\userControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialogs\userControl1.Designer.cs">
+      <DependentUpon>userControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKosong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKosong.Designer.cs">
+      <DependentUpon>FormKosong.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLending.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +125,36 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UcNotif1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UcNotif1.Designer.cs">
+      <DependentUpon>UcNotif1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\hotBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\hotBook.Designer.cs">
+      <DependentUpon>hotBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\NoOverdue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\NoOverdue.Designer.cs">
+      <DependentUpon>NoOverdue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\OverdueBooks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\OverdueBooks.Designer.cs">
+      <DependentUpon>OverdueBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UcFineValue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UcFineValue.Designer.cs">
+      <DependentUpon>UcFineValue.cs</DependentUpon>
     </Compile>
     <Compile Include="User\FormLogin.cs">
       <SubType>Form</SubType>
@@ -173,11 +212,32 @@
     <EmbeddedResource Include="Book\FormBookList.resx">
       <DependentUpon>FormBookList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\userControl1.resx">
+      <DependentUpon>userControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKosong.resx">
+      <DependentUpon>FormKosong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLending.resx">
       <DependentUpon>FormLending.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\hotBook.resx">
+      <DependentUpon>hotBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\NoOverdue.resx">
+      <DependentUpon>NoOverdue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\OverdueBooks.resx">
+      <DependentUpon>OverdueBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UcFineValue.resx">
+      <DependentUpon>UcFineValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UcNotif1.resx">
+      <DependentUpon>UcNotif1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

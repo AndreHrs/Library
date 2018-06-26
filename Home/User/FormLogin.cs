@@ -28,6 +28,7 @@ namespace Home
             label1.BackColor = System.Drawing.Color.Transparent;
             label2.BackColor = System.Drawing.Color.Transparent;
             linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            txtUsername.Focus();
         }
      
         private void minimizeBtn_Click(object sender, EventArgs e)
@@ -118,11 +119,6 @@ namespace Home
             {
                 button1_Click(null, null);
             }   
-        }
-
-        private void pBoxShow_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Data.SqlClient;
 using Tulpep.NotificationWindow;
 
 namespace Home
@@ -16,22 +17,82 @@ namespace Home
     {
         //Methods//
         ControlForm kontrol = new ControlForm();
+        koneksiSql koneksi;
+        DataSet dsOverdue = new DataSet();
+        private void loadLowStock()
+        {
+            koneksi = new koneksiSql();
+            SqlConnection conn = new SqlConnection(koneksi.getSqlConn());
+            SqlCommand cmd = new SqlCommand($"SELECT BookId, PicturePath, Stock FROM Booklist ORDER BY Stock", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(dsOverdue, "LowStock");
+            panelSupport.Controls.Add(new NoOverdue(dsOverdue));
+        }
 
+        private void loadHotList()
+        {
+            koneksi = new koneksiSql();
+            SqlConnection conn = new SqlConnection(koneksi.getSqlConn());
+            SqlCommand cmd = new SqlCommand("SELECT Booklist.BookId, Booklist.PicturePath, Stock ,count(Lendings.BookID) AS jumlah FROM Booklist left join Lendings ON Booklist.BookId = Lendings.BookID GROUP BY Booklist.BookId, PicturePath, Stock ORDER BY jumlah DESC", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(dsOverdue, "Hotlist");
+            panelHotlist.Controls.Add(new hotBook(dsOverdue));
+        }
+
+        private bool checkOverdue()
+        {
+            bool overdue = false;
+            koneksi = new koneksiSql();
+            SqlConnection conn = new SqlConnection(koneksi.getSqlConn());
+            SqlCommand cmd = new SqlCommand($"SELECT * from Lendings INNER JOIN Booklist on Lendings.BookId = Booklist.BookID where Username = '{Program.userSekarang.user}'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(dsOverdue, "Lendings");
+            try
+            {
+                for (int i = 0; i < dsOverdue.Tables["Lendings"].Rows.Count; i++)
+                {
+                    Peminjaman temp = new Peminjaman();
+                    temp.username = dsOverdue.Tables["Lendings"].Rows[i]["Username"].ToString();
+                    temp.bookId = dsOverdue.Tables["Lendings"].Rows[i]["BookId"].ToString();
+                    temp.lendId = dsOverdue.Tables["Lendings"].Rows[i]["LendId"].ToString();
+                    temp.strLendDate = dsOverdue.Tables["Lendings"].Rows[i]["LendDate"].ToString();
+                    temp.strDueDate = dsOverdue.Tables["Lendings"].Rows[i]["DueDate"].ToString();
+                    temp.fineCount();
+                    if (temp.fine > 0)
+                    {
+                        overdue = true;
+                        break;
+                    }
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            return overdue;
+        }
         private void notification()
         {
 
-            
-            //Check if user have unreturned book
-            /*
-            if true
+            bool overdue = checkOverdue();
+            if (overdue)
             {
                 //Send popup message
                 PopupNotifier popup = new PopupNotifier();
+                popup.BodyColor = Color.AliceBlue;
+                popup.ButtonHoverColor = Color.Red;
+                popup.HeaderColor = Color.Aqua;
                 popup.TitleText = "Notification";
                 popup.ContentText = "You have a book in lending which already passed deadline";
+                popup.ContentHoverColor = Color.Black;
                 popup.Popup();
+                panelSupport.Controls.Add(new OverdueBooks(dsOverdue));
             }
-            */
+            else
+            {
+                loadLowStock();
+            }
 
         }
 
@@ -63,6 +124,7 @@ namespace Home
         {
             InitializeComponent();
             validasiAkun(user);
+            loadHotList();
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
@@ -82,10 +144,15 @@ namespace Home
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Program.resetLogin();
-            this.Hide();
-            FormLogin formLogin = new FormLogin();
-            formLogin.Show();
+            DialogYesNo yesno = new DialogYesNo();
+            yesno.ShowDialog();
+            if (yesno.getresult())
+            {
+                Program.resetLogin();
+                this.Hide();
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+            }
         }
 
         private void manageBook_Click(object sender, EventArgs e)

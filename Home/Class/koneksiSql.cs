@@ -10,8 +10,8 @@ namespace Home
 {
     public class koneksiSql
     {
-        private string ConnectionString = @"Data Source=BEAST\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True";
-        protected SqlConnection sqlConn = new SqlConnection(@"Data Source=BEAST\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True");
+        private string ConnectionString = @"Data Source=ANDRE-MSI\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True";
+        protected SqlConnection sqlConn = new SqlConnection(@"Data Source=ANDRE-MSI\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True");
         string query = "";
 
 
@@ -33,7 +33,7 @@ namespace Home
                 sqlConn.Close();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 DialogNormal dialogErr = new DialogNormal("Error", failMsg, faiX, faiY);
                 dialogErr.ShowDialog();
@@ -52,7 +52,7 @@ namespace Home
                 sqlConn.Close();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

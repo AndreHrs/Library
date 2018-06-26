@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSignUp));
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pBoxShow = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblTelephone = new System.Windows.Forms.Label();
@@ -53,11 +55,12 @@
             this.btnPickPhoto = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.pBoxShow = new System.Windows.Forms.PictureBox();
+            this.errProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).BeginInit();
             this.pnlInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProv)).BeginInit();
             this.SuspendLayout();
             // 
             // minimizeBtn
@@ -73,6 +76,7 @@
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
             this.minimizeBtn.TabIndex = 12;
+            this.minimizeBtn.TabStop = false;
             this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.minimizeBtn.UseVisualStyleBackColor = false;
@@ -91,6 +95,7 @@
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 13;
+            this.closeBtn.TabStop = false;
             this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.closeBtn.UseVisualStyleBackColor = false;
@@ -145,12 +150,25 @@
             this.panel1.Size = new System.Drawing.Size(542, 111);
             this.panel1.TabIndex = 15;
             // 
+            // pBoxShow
+            // 
+            this.pBoxShow.BackColor = System.Drawing.Color.Silver;
+            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
+            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBoxShow.Location = new System.Drawing.Point(486, 64);
+            this.pBoxShow.Name = "pBoxShow";
+            this.pBoxShow.Size = new System.Drawing.Size(36, 35);
+            this.pBoxShow.TabIndex = 17;
+            this.pBoxShow.TabStop = false;
+            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
+            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
+            // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(158, 64);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(322, 35);
-            this.txtPassword.TabIndex = 15;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
@@ -158,7 +176,8 @@
             this.txtUsername.Location = new System.Drawing.Point(158, 8);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(364, 35);
-            this.txtUsername.TabIndex = 15;
+            this.txtUsername.TabIndex = 1;
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // lblTelephone
             // 
@@ -174,7 +193,7 @@
             this.txtName.Location = new System.Drawing.Point(199, 346);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(363, 35);
-            this.txtName.TabIndex = 17;
+            this.txtName.TabIndex = 4;
             // 
             // mtbTelephone
             // 
@@ -182,14 +201,15 @@
             this.mtbTelephone.Mask = "+6200000000000";
             this.mtbTelephone.Name = "mtbTelephone";
             this.mtbTelephone.Size = new System.Drawing.Size(364, 35);
-            this.mtbTelephone.TabIndex = 18;
+            this.mtbTelephone.TabIndex = 6;
+            this.mtbTelephone.TextChanged += new System.EventHandler(this.mtbTelephone_TextChanged);
             // 
             // rtbAddress
             // 
             this.rtbAddress.Location = new System.Drawing.Point(199, 396);
             this.rtbAddress.Name = "rtbAddress";
             this.rtbAddress.Size = new System.Drawing.Size(363, 89);
-            this.rtbAddress.TabIndex = 19;
+            this.rtbAddress.TabIndex = 5;
             this.rtbAddress.Text = "";
             // 
             // cBoxGender
@@ -202,7 +222,7 @@
             this.cBoxGender.Location = new System.Drawing.Point(198, 547);
             this.cBoxGender.Name = "cBoxGender";
             this.cBoxGender.Size = new System.Drawing.Size(120, 34);
-            this.cBoxGender.TabIndex = 20;
+            this.cBoxGender.TabIndex = 7;
             this.cBoxGender.Text = "Male";
             // 
             // lblGender
@@ -220,7 +240,7 @@
             this.chkBoxAgree.Location = new System.Drawing.Point(57, 620);
             this.chkBoxAgree.Name = "chkBoxAgree";
             this.chkBoxAgree.Size = new System.Drawing.Size(484, 31);
-            this.chkBoxAgree.TabIndex = 22;
+            this.chkBoxAgree.TabIndex = 8;
             this.chkBoxAgree.Text = "I agree with the terms and conditions";
             this.chkBoxAgree.UseVisualStyleBackColor = true;
             // 
@@ -281,7 +301,7 @@
             this.btnPickPhoto.Location = new System.Drawing.Point(220, 209);
             this.btnPickPhoto.Name = "btnPickPhoto";
             this.btnPickPhoto.Size = new System.Drawing.Size(169, 36);
-            this.btnPickPhoto.TabIndex = 28;
+            this.btnPickPhoto.TabIndex = 3;
             this.btnPickPhoto.Text = "Pick Photo";
             this.btnPickPhoto.UseVisualStyleBackColor = true;
             this.btnPickPhoto.Click += new System.EventHandler(this.btnPickPhoto_Click);
@@ -291,7 +311,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(85, 657);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(167, 50);
-            this.btnSubmit.TabIndex = 29;
+            this.btnSubmit.TabIndex = 9;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -301,23 +321,14 @@
             this.btnReturn.Location = new System.Drawing.Point(365, 657);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(167, 50);
-            this.btnReturn.TabIndex = 29;
+            this.btnReturn.TabIndex = 10;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // pBoxShow
+            // errProv
             // 
-            this.pBoxShow.BackColor = System.Drawing.Color.Silver;
-            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
-            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBoxShow.Location = new System.Drawing.Point(486, 64);
-            this.pBoxShow.Name = "pBoxShow";
-            this.pBoxShow.Size = new System.Drawing.Size(36, 35);
-            this.pBoxShow.TabIndex = 17;
-            this.pBoxShow.TabStop = false;
-            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
-            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
+            this.errProv.ContainerControl = this;
             // 
             // FormSignUp
             // 
@@ -353,10 +364,11 @@
             this.Text = "FormSignUp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,5 +401,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.PictureBox pBoxShow;
+        private System.Windows.Forms.ErrorProvider errProv;
     }
 }

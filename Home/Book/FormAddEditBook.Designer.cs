@@ -34,6 +34,8 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nudStock = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtGenre = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,13 +55,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.listBoxGambar = new System.Windows.Forms.ListBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.nudStock = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,11 +122,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Book Details";
             // 
+            // nudStock
+            // 
+            this.nudStock.Location = new System.Drawing.Point(678, 146);
+            this.nudStock.Name = "nudStock";
+            this.nudStock.Size = new System.Drawing.Size(278, 35);
+            this.nudStock.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(578, 148);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 27);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Stock";
+            // 
             // txtGenre
             // 
             this.txtGenre.Location = new System.Drawing.Point(678, 27);
             this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(293, 35);
+            this.txtGenre.Size = new System.Drawing.Size(278, 35);
             this.txtGenre.TabIndex = 2;
             // 
             // txtYear
@@ -139,7 +155,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(562, 31);
+            this.label5.Location = new System.Drawing.Point(578, 30);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 27);
             this.label5.TabIndex = 1;
@@ -149,7 +165,7 @@
             // 
             this.txtAuthor.Location = new System.Drawing.Point(145, 106);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(826, 35);
+            this.txtAuthor.Size = new System.Drawing.Size(811, 35);
             this.txtAuthor.TabIndex = 2;
             // 
             // label8
@@ -181,7 +197,7 @@
             // 
             this.txtTitle.Location = new System.Drawing.Point(145, 67);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(826, 35);
+            this.txtTitle.Size = new System.Drawing.Size(811, 35);
             this.txtTitle.TabIndex = 2;
             // 
             // label3
@@ -276,7 +292,7 @@
             // pBoxPreview
             // 
             this.pBoxPreview.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pBoxPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBoxPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pBoxPreview.Location = new System.Drawing.Point(733, 367);
             this.pBoxPreview.Name = "pBoxPreview";
@@ -313,22 +329,6 @@
             this.listBoxGambar.TabIndex = 30;
             this.listBoxGambar.SelectedIndexChanged += new System.EventHandler(this.listBoxGambar_SelectedIndexChanged);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(569, 150);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 27);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Stock";
-            // 
-            // nudStock
-            // 
-            this.nudStock.Location = new System.Drawing.Point(678, 146);
-            this.nudStock.Name = "nudStock";
-            this.nudStock.Size = new System.Drawing.Size(293, 35);
-            this.nudStock.TabIndex = 4;
-            // 
             // FormAddEditBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
@@ -358,8 +358,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

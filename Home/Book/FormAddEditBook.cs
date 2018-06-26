@@ -18,6 +18,29 @@ namespace Home
         string bookId, title, author, year, genre, path, stock;
         bool editExisting = false;
 
+        private bool validasiInput()
+        {
+            List<bool> listValidasi = new List<bool>();
+            bool valid = true;
+
+            listValidasi.Add(kontrol.validasi(txtBookId, "BookId", 3, 21));
+            listValidasi.Add(kontrol.validasi(txtAuthor, "Author Name"));
+            listValidasi.Add(kontrol.validasi(txtTitle, "Title"));
+            listValidasi.Add(kontrol.validasi(txtYear, "Released Year", "angka",3,5));
+            listValidasi.Add(kontrol.validasi(txtAuthor, "Author Name"));
+
+            foreach (bool b in listValidasi)
+            {
+                if (b == false)
+                {
+                    valid = false;
+                    break;
+                }
+            }
+
+            return valid;
+        }
+
         private string convertList()
         {
             string stringList = "";
@@ -133,22 +156,26 @@ namespace Home
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            koneksiSql koneksi = new koneksiSql();
-            fillCredentials();
-            if(editExisting)
+            if(validasiInput())
             {
-                if (koneksi.UpdateBook(bookId, title, author, year, genre, path, stock))
-                    this.Close();
+                koneksiSql koneksi = new koneksiSql();
+                fillCredentials();
+                if (editExisting)
+                {
+                    if (koneksi.UpdateBook(bookId, title, author, year, genre, path, stock))
+                        this.Close();
+                    else
+                        txtBookId.Focus();
+                }
                 else
-                    txtBookId.Focus();
+                {
+                    if (koneksi.InsertIntoBooklist(bookId, title, author, year, genre, path, stock))
+                        this.Close();
+                    else
+                        txtBookId.Focus();
+                }
             }
-            else
-            {
-                if (koneksi.InsertIntoBooklist(bookId, title, author, year, genre, path, stock))
-                    this.Close();
-                else
-                    txtBookId.Focus();
-            }
+            
             
         }
     }

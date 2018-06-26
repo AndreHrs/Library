@@ -34,7 +34,9 @@
             this.closeBtn = new System.Windows.Forms.Button();
             this.lblText = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,7 +79,7 @@
             // lblText
             // 
             this.lblText.AutoSize = true;
-            this.lblText.Location = new System.Drawing.Point(70, 65);
+            this.lblText.Location = new System.Drawing.Point(71, 33);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(312, 54);
             this.lblText.TabIndex = 15;
@@ -86,7 +88,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(164, 140);
+            this.btnOK.Location = new System.Drawing.Point(173, 112);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(108, 37);
             this.btnOK.TabIndex = 16;
@@ -94,15 +96,23 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnOK);
+            this.panel2.Controls.Add(this.lblText);
+            this.panel2.Location = new System.Drawing.Point(1, 39);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(449, 161);
+            this.panel2.TabIndex = 17;
+            // 
             // DialogNormal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(450, 200);
-            this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.lblText);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -111,8 +121,9 @@
             this.Text = "DialogNormal";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -122,5 +133,6 @@
         private System.Windows.Forms.Label lblNotice;
         private System.Windows.Forms.Label lblText;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Panel panel2;
     }
 }

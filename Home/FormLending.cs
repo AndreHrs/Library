@@ -27,6 +27,7 @@ namespace Home
             txtDeadline.Text = pinjam.strDueDate;
             lblFineAmount.Text = "Rp. "+pinjam.fine.ToString();
         }
+
         private void isiDgv(string username)
         {
             dgvBooks.Rows.Clear();
@@ -65,6 +66,7 @@ namespace Home
         {
             InitializeComponent();
             isiDgv(username);
+            txtBookTitle.Focus();
         }
 
         private void minimizeBtn_Click(object sender, EventArgs e)

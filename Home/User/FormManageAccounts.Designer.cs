@@ -67,6 +67,7 @@
             this.dgvAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccounts.Size = new System.Drawing.Size(978, 530);
             this.dgvAccounts.TabIndex = 14;
+            this.dgvAccounts.TabStop = false;
             // 
             // kolomUser
             // 
@@ -105,7 +106,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(103, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 46);
+            this.label2.Size = new System.Drawing.Size(133, 37);
             this.label2.TabIndex = 12;
             this.label2.Text = "E-Library";
             // 
@@ -115,7 +116,7 @@
             this.lblWelcome.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.Location = new System.Drawing.Point(110, 63);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(182, 23);
+            this.lblWelcome.Size = new System.Drawing.Size(142, 18);
             this.lblWelcome.TabIndex = 11;
             this.lblWelcome.Text = "Manage Accounts";
             // 
@@ -133,8 +134,8 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(56, 127);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(622, 35);
-            this.txtSearch.TabIndex = 20;
+            this.txtSearch.Size = new System.Drawing.Size(622, 29);
+            this.txtSearch.TabIndex = 1;
             // 
             // pictureBox2
             // 
@@ -158,6 +159,7 @@
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(150, 60);
             this.btnReturn.TabIndex = 17;
+            this.btnReturn.TabStop = false;
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
@@ -173,6 +175,7 @@
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(150, 60);
             this.btnRemove.TabIndex = 17;
+            this.btnRemove.TabStop = false;
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
@@ -188,6 +191,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(150, 60);
             this.btnEdit.TabIndex = 17;
+            this.btnEdit.TabStop = false;
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -203,6 +207,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(150, 60);
             this.btnAdd.TabIndex = 17;
+            this.btnAdd.TabStop = false;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -219,6 +224,7 @@
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
             this.minimizeBtn.TabIndex = 12;
+            this.minimizeBtn.TabStop = false;
             this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.minimizeBtn.UseVisualStyleBackColor = false;
@@ -237,6 +243,7 @@
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 13;
+            this.closeBtn.TabStop = false;
             this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.closeBtn.UseVisualStyleBackColor = false;
@@ -247,7 +254,7 @@
             this.btnSearch.Location = new System.Drawing.Point(684, 127);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(150, 35);
-            this.btnSearch.TabIndex = 22;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -257,14 +264,14 @@
             this.btnRefresh.Location = new System.Drawing.Point(840, 127);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(150, 35);
-            this.btnRefresh.TabIndex = 23;
+            this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // FormManageAccounts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;

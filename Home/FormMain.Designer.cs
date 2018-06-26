@@ -33,12 +33,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAccountName = new System.Windows.Forms.Label();
-            this.pBoxProfile = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelSupport = new System.Windows.Forms.Panel();
+            this.panelHotlist = new System.Windows.Forms.Panel();
             this.manageDropdownLocation = new System.Windows.Forms.Panel();
             this.menuManage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.manageBook = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,11 +49,13 @@
             this.btnBooks = new System.Windows.Forms.Button();
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pBoxProfile = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).BeginInit();
             this.menuManage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,16 +87,6 @@
             this.lblWelcome.TabIndex = 11;
             this.lblWelcome.Text = "Welcome Guest";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Home.Properties.Resources.Library;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lblAccountName);
@@ -115,30 +105,22 @@
             this.lblAccountName.TabIndex = 11;
             this.lblAccountName.Text = "Guest";
             // 
-            // pBoxProfile
+            // panelSupport
             // 
-            this.pBoxProfile.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
-            this.pBoxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBoxProfile.Location = new System.Drawing.Point(0, 0);
-            this.pBoxProfile.Name = "pBoxProfile";
-            this.pBoxProfile.Size = new System.Drawing.Size(146, 146);
-            this.pBoxProfile.TabIndex = 12;
-            this.pBoxProfile.TabStop = false;
+            this.panelSupport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelSupport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSupport.Location = new System.Drawing.Point(12, 131);
+            this.panelSupport.Name = "panelSupport";
+            this.panelSupport.Size = new System.Drawing.Size(840, 232);
+            this.panelSupport.TabIndex = 14;
             // 
-            // panel3
+            // panelHotlist
             // 
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(12, 131);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(840, 232);
-            this.panel3.TabIndex = 14;
-            // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(12, 385);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1014, 276);
-            this.panel4.TabIndex = 14;
+            this.panelHotlist.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelHotlist.Location = new System.Drawing.Point(12, 385);
+            this.panelHotlist.Name = "panelHotlist";
+            this.panelHotlist.Size = new System.Drawing.Size(1014, 276);
+            this.panelHotlist.TabIndex = 14;
             // 
             // manageDropdownLocation
             // 
@@ -187,7 +169,7 @@
             this.btnManage.Location = new System.Drawing.Point(803, 12);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(120, 50);
-            this.btnManage.TabIndex = 18;
+            this.btnManage.TabIndex = 5;
             this.btnManage.UseVisualStyleBackColor = true;
             this.btnManage.Visible = false;
             this.btnManage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnManage_MouseClick);
@@ -203,7 +185,7 @@
             this.btnLogout.Location = new System.Drawing.Point(677, 12);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(120, 50);
-            this.btnLogout.TabIndex = 15;
+            this.btnLogout.TabIndex = 4;
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -219,7 +201,7 @@
             this.btnProfile.Location = new System.Drawing.Point(551, 12);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(120, 50);
-            this.btnProfile.TabIndex = 15;
+            this.btnProfile.TabIndex = 3;
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
@@ -235,7 +217,7 @@
             this.btnLend.Location = new System.Drawing.Point(425, 12);
             this.btnLend.Name = "btnLend";
             this.btnLend.Size = new System.Drawing.Size(120, 50);
-            this.btnLend.TabIndex = 15;
+            this.btnLend.TabIndex = 2;
             this.btnLend.UseVisualStyleBackColor = true;
             this.btnLend.Click += new System.EventHandler(this.btnLend_Click);
             // 
@@ -250,7 +232,7 @@
             this.btnBooks.Location = new System.Drawing.Point(299, 12);
             this.btnBooks.Name = "btnBooks";
             this.btnBooks.Size = new System.Drawing.Size(120, 50);
-            this.btnBooks.TabIndex = 15;
+            this.btnBooks.TabIndex = 1;
             this.btnBooks.UseVisualStyleBackColor = true;
             this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
@@ -267,6 +249,7 @@
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
             this.minimizeBtn.TabIndex = 7;
+            this.minimizeBtn.TabStop = false;
             this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.minimizeBtn.UseVisualStyleBackColor = false;
@@ -285,10 +268,31 @@
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 9;
+            this.closeBtn.TabStop = false;
             this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Home.Properties.Resources.Library;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pBoxProfile
+            // 
+            this.pBoxProfile.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
+            this.pBoxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pBoxProfile.Location = new System.Drawing.Point(0, 0);
+            this.pBoxProfile.Name = "pBoxProfile";
+            this.pBoxProfile.Size = new System.Drawing.Size(146, 146);
+            this.pBoxProfile.TabIndex = 12;
+            this.pBoxProfile.TabStop = false;
             // 
             // formMain
             // 
@@ -302,8 +306,8 @@
             this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.btnLend);
             this.Controls.Add(this.btnBooks);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelHotlist);
+            this.Controls.Add(this.panelSupport);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.panel1);
@@ -317,11 +321,11 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).EndInit();
             this.menuManage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,9 +341,9 @@
         private System.Windows.Forms.PictureBox pBoxProfile;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblAccountName;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelSupport;
         private System.Windows.Forms.Button btnBooks;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelHotlist;
         private System.Windows.Forms.Button btnLend;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnLogout;

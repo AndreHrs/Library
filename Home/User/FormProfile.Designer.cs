@@ -117,7 +117,7 @@
             this.btnChangePic.Location = new System.Drawing.Point(342, 287);
             this.btnChangePic.Name = "btnChangePic";
             this.btnChangePic.Size = new System.Drawing.Size(200, 37);
-            this.btnChangePic.TabIndex = 21;
+            this.btnChangePic.TabIndex = 9;
             this.btnChangePic.Text = "Change";
             this.btnChangePic.UseVisualStyleBackColor = true;
             this.btnChangePic.Click += new System.EventHandler(this.btnChangePic_Click);
@@ -174,7 +174,7 @@
             this.txtPassword.Location = new System.Drawing.Point(119, 70);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(400, 31);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
@@ -240,6 +240,7 @@
             // 
             // cBoxAccountType
             // 
+            this.cBoxAccountType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxAccountType.FormattingEnabled = true;
             this.cBoxAccountType.Items.AddRange(new object[] {
             "Admin",
@@ -247,8 +248,7 @@
             this.cBoxAccountType.Location = new System.Drawing.Point(191, 362);
             this.cBoxAccountType.Name = "cBoxAccountType";
             this.cBoxAccountType.Size = new System.Drawing.Size(351, 34);
-            this.cBoxAccountType.TabIndex = 29;
-            this.cBoxAccountType.Text = "User";
+            this.cBoxAccountType.TabIndex = 10;
             this.cBoxAccountType.Visible = false;
             // 
             // lblAccountType
@@ -267,7 +267,7 @@
             this.txtName.Location = new System.Drawing.Point(119, 62);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(206, 35);
-            this.txtName.TabIndex = 27;
+            this.txtName.TabIndex = 5;
             // 
             // cBoxGender
             // 
@@ -280,7 +280,7 @@
             this.cBoxGender.Location = new System.Drawing.Point(119, 163);
             this.cBoxGender.Name = "cBoxGender";
             this.cBoxGender.Size = new System.Drawing.Size(206, 34);
-            this.cBoxGender.TabIndex = 26;
+            this.cBoxGender.TabIndex = 7;
             this.cBoxGender.Text = "Male";
             // 
             // mtbTelephone
@@ -290,7 +290,7 @@
             this.mtbTelephone.Mask = "+6200000000000";
             this.mtbTelephone.Name = "mtbTelephone";
             this.mtbTelephone.Size = new System.Drawing.Size(206, 35);
-            this.mtbTelephone.TabIndex = 25;
+            this.mtbTelephone.TabIndex = 6;
             // 
             // rtbAddress
             // 
@@ -298,7 +298,7 @@
             this.rtbAddress.Location = new System.Drawing.Point(11, 242);
             this.rtbAddress.Name = "rtbAddress";
             this.rtbAddress.Size = new System.Drawing.Size(316, 96);
-            this.rtbAddress.TabIndex = 24;
+            this.rtbAddress.TabIndex = 8;
             this.rtbAddress.Text = "";
             // 
             // label8
@@ -340,7 +340,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Location = new System.Drawing.Point(342, 71);
             this.pictureBox2.Name = "pictureBox2";
@@ -351,7 +351,7 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(208, 768);
+            this.btnSave.Location = new System.Drawing.Point(208, 767);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(174, 52);
             this.btnSave.TabIndex = 25;
@@ -370,7 +370,7 @@
             this.btnEdit.Location = new System.Drawing.Point(359, 60);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(101, 44);
-            this.btnEdit.TabIndex = 19;
+            this.btnEdit.TabIndex = 11;
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -385,7 +385,7 @@
             this.btnReturn.Location = new System.Drawing.Point(481, 55);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(107, 54);
-            this.btnReturn.TabIndex = 18;
+            this.btnReturn.TabIndex = 12;
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
@@ -398,10 +398,11 @@
             this.minimizeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(490, 23);
+            this.minimizeBtn.Location = new System.Drawing.Point(490, 63);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
             this.minimizeBtn.TabIndex = 12;
+            this.minimizeBtn.TabStop = false;
             this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.minimizeBtn.UseVisualStyleBackColor = false;
@@ -416,10 +417,11 @@
             this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtn.ForeColor = System.Drawing.Color.White;
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(542, 23);
+            this.closeBtn.Location = new System.Drawing.Point(542, 63);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 13;
+            this.closeBtn.TabStop = false;
             this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.closeBtn.UseVisualStyleBackColor = false;
@@ -445,7 +447,8 @@
             this.txtFine.Location = new System.Drawing.Point(136, 292);
             this.txtFine.Name = "txtFine";
             this.txtFine.Size = new System.Drawing.Size(314, 35);
-            this.txtFine.TabIndex = 28;
+            this.txtFine.TabIndex = 3;
+            this.txtFine.TabStop = false;
             this.txtFine.Text = "0";
             // 
             // btnPay
@@ -453,7 +456,7 @@
             this.btnPay.Location = new System.Drawing.Point(456, 293);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(121, 35);
-            this.btnPay.TabIndex = 29;
+            this.btnPay.TabIndex = 4;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = true;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
@@ -463,7 +466,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(600, 832);
+            this.ClientSize = new System.Drawing.Size(600, 829);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.txtFine);
             this.Controls.Add(this.label11);
