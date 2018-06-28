@@ -98,14 +98,7 @@ namespace Home
 
         private void dgvBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string title = dgvBooks.SelectedCells[1].Value.ToString(),
-                author = dgvBooks.SelectedCells[2].Value.ToString(),
-                year = dgvBooks.SelectedCells[3].Value.ToString(),
-                genre = dgvBooks.SelectedCells[4].Value.ToString();
-            isiData(title, author, year, genre);
-            btnView.Enabled = true;
-            if (Program.userSekarang.tipe != "Guest")
-                btnLend.Enabled = true;
+            
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -160,6 +153,30 @@ namespace Home
             }
             isiDgv(txtSearch.Text);
 
+        }
+
+        private void dgvBooks_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void dgvBooks_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string title = dgvBooks.SelectedCells[1].Value.ToString(),
+                author = dgvBooks.SelectedCells[2].Value.ToString(),
+                year = dgvBooks.SelectedCells[3].Value.ToString(),
+                genre = dgvBooks.SelectedCells[4].Value.ToString();
+                isiData(title, author, year, genre);
+                btnView.Enabled = true;
+                if (Program.userSekarang.tipe != "Guest")
+                    btnLend.Enabled = true;
+            }
+            catch(Exception)
+            {
+
+            } 
         }
     }
 }

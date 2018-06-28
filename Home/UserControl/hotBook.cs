@@ -35,5 +35,70 @@ namespace Home
                 }
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ShowBookForm showbook = new ShowBookForm(listId[0]);
+                showbook.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ShowBookForm showbook = new ShowBookForm(listId[1]);
+                showbook.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ShowBookForm showbook = new ShowBookForm(listId[2]);
+                showbook.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ShowBookForm showbook = new ShowBookForm(listId[3]);
+                showbook.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ShowBookForm showbook = new ShowBookForm(listId[4]);
+                showbook.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

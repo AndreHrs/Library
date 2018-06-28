@@ -50,13 +50,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.kolomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolomJudul = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolomAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolomTahun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolomGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolomStok = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -298,16 +298,8 @@
             this.dgvBooks.Size = new System.Drawing.Size(978, 331);
             this.dgvBooks.TabIndex = 23;
             this.dgvBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentClick);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(814, 128);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(150, 35);
-            this.btnSearch.TabIndex = 25;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.dgvBooks.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvBooks_Scroll);
+            this.dgvBooks.SelectionChanged += new System.EventHandler(this.dgvBooks_SelectionChanged);
             // 
             // kolomID
             // 
@@ -348,6 +340,16 @@
             this.kolomStok.HeaderText = "Stock";
             this.kolomStok.Name = "kolomStok";
             this.kolomStok.ReadOnly = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(814, 128);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(150, 35);
+            this.btnSearch.TabIndex = 25;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // FormBookList
             // 

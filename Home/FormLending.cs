@@ -91,19 +91,7 @@ namespace Home
 
         private void dgvBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string idBuku = dgvBooks.SelectedCells[3].Value.ToString();
-            koneksiSql koneksi = new koneksiSql();
-            buku bukuTerpilih = koneksi.returnBuku(idBuku);
-            isiBuku(bukuTerpilih);
 
-            Peminjaman pinjam = koneksi.returnLend(dgvBooks.SelectedCells[1].Value.ToString(), dgvBooks.SelectedCells[0].Value.ToString());
-            isiPeminjaman(pinjam);
-
-            if (pinjam.fine > 0)
-            {
-                fined = true;
-            }
-            btnReturnBook.Enabled = true;
         }
 
         private void btnReturnBook_Click(object sender, EventArgs e)
@@ -121,6 +109,23 @@ namespace Home
                 koneksi.updateStock(temp.bookId, temp.stock, "add");
             }
             isiDgv(Program.userSekarang.user);
+        }
+
+        private void dgvBooks_SelectionChanged(object sender, EventArgs e)
+        {
+            string idBuku = dgvBooks.SelectedCells[3].Value.ToString();
+            koneksiSql koneksi = new koneksiSql();
+            buku bukuTerpilih = koneksi.returnBuku(idBuku);
+            isiBuku(bukuTerpilih);
+
+            Peminjaman pinjam = koneksi.returnLend(dgvBooks.SelectedCells[1].Value.ToString(), dgvBooks.SelectedCells[0].Value.ToString());
+            isiPeminjaman(pinjam);
+
+            if (pinjam.fine > 0)
+            {
+                fined = true;
+            }
+            btnReturnBook.Enabled = true;
         }
     }
 }

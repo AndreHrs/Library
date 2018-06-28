@@ -80,7 +80,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(103, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 37);
+            this.label2.Size = new System.Drawing.Size(164, 46);
             this.label2.TabIndex = 12;
             this.label2.Text = "E-Library";
             // 
@@ -89,7 +89,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Location = new System.Drawing.Point(110, 63);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(194, 22);
+            this.lblWelcome.Size = new System.Drawing.Size(253, 27);
             this.lblWelcome.TabIndex = 11;
             this.lblWelcome.Text = "Lending In Progress";
             // 
@@ -162,7 +162,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 118);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 22);
+            this.label1.Size = new System.Drawing.Size(0, 27);
             this.label1.TabIndex = 20;
             // 
             // groupBox1
@@ -204,7 +204,7 @@
             this.txtGenre.Enabled = false;
             this.txtGenre.Location = new System.Drawing.Point(173, 114);
             this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(273, 29);
+            this.txtGenre.Size = new System.Drawing.Size(273, 35);
             this.txtGenre.TabIndex = 3;
             // 
             // txtDeadline
@@ -212,7 +212,7 @@
             this.txtDeadline.Enabled = false;
             this.txtDeadline.Location = new System.Drawing.Point(747, 75);
             this.txtDeadline.Name = "txtDeadline";
-            this.txtDeadline.Size = new System.Drawing.Size(223, 29);
+            this.txtDeadline.Size = new System.Drawing.Size(223, 35);
             this.txtDeadline.TabIndex = 5;
             // 
             // txtAuthor
@@ -220,7 +220,7 @@
             this.txtAuthor.Enabled = false;
             this.txtAuthor.Location = new System.Drawing.Point(173, 75);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(273, 29);
+            this.txtAuthor.Size = new System.Drawing.Size(273, 35);
             this.txtAuthor.TabIndex = 2;
             // 
             // txtLendDate
@@ -228,7 +228,7 @@
             this.txtLendDate.Enabled = false;
             this.txtLendDate.Location = new System.Drawing.Point(747, 36);
             this.txtLendDate.Name = "txtLendDate";
-            this.txtLendDate.Size = new System.Drawing.Size(223, 29);
+            this.txtLendDate.Size = new System.Drawing.Size(223, 35);
             this.txtLendDate.TabIndex = 4;
             // 
             // txtBookTitle
@@ -236,7 +236,7 @@
             this.txtBookTitle.Enabled = false;
             this.txtBookTitle.Location = new System.Drawing.Point(173, 36);
             this.txtBookTitle.Name = "txtBookTitle";
-            this.txtBookTitle.Size = new System.Drawing.Size(273, 29);
+            this.txtBookTitle.Size = new System.Drawing.Size(273, 35);
             this.txtBookTitle.TabIndex = 1;
             // 
             // lblFineAmount
@@ -244,7 +244,7 @@
             this.lblFineAmount.AutoSize = true;
             this.lblFineAmount.Location = new System.Drawing.Point(742, 117);
             this.lblFineAmount.Name = "lblFineAmount";
-            this.lblFineAmount.Size = new System.Drawing.Size(58, 22);
+            this.lblFineAmount.Size = new System.Drawing.Size(74, 27);
             this.lblFineAmount.TabIndex = 2;
             this.lblFineAmount.Text = "Rp. 0";
             // 
@@ -253,7 +253,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(601, 117);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 22);
+            this.label6.Size = new System.Drawing.Size(62, 27);
             this.label6.TabIndex = 2;
             this.label6.Text = "Fine";
             // 
@@ -262,7 +262,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(601, 80);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 22);
+            this.label8.Size = new System.Drawing.Size(115, 27);
             this.label8.TabIndex = 0;
             this.label8.Text = "Deadline";
             // 
@@ -271,7 +271,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(27, 117);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 22);
+            this.label5.Size = new System.Drawing.Size(82, 27);
             this.label5.TabIndex = 0;
             this.label5.Text = "Genre";
             // 
@@ -280,7 +280,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(601, 39);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 22);
+            this.label7.Size = new System.Drawing.Size(131, 27);
             this.label7.TabIndex = 0;
             this.label7.Text = "Lend Date";
             // 
@@ -289,7 +289,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(27, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 22);
+            this.label4.Size = new System.Drawing.Size(94, 27);
             this.label4.TabIndex = 0;
             this.label4.Text = "Author";
             // 
@@ -298,7 +298,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(27, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 22);
+            this.label3.Size = new System.Drawing.Size(129, 27);
             this.label3.TabIndex = 0;
             this.label3.Text = "Book Title";
             // 
@@ -320,7 +320,7 @@
             this.dgvBooks.Size = new System.Drawing.Size(995, 367);
             this.dgvBooks.TabIndex = 24;
             this.dgvBooks.TabStop = false;
-            this.dgvBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentClick);
+            this.dgvBooks.SelectionChanged += new System.EventHandler(this.dgvBooks_SelectionChanged);
             // 
             // LendId
             // 
@@ -367,7 +367,7 @@
             // 
             // FormLending
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1024, 720);
