@@ -86,5 +86,15 @@ namespace Home
         {
             isiDgv(txtSearch.Text);
         }
+
+        private void dgvBooks_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            isiDgv(txtSearch.Text);
+        }
     }
 }
