@@ -14,7 +14,6 @@ namespace Home
         protected SqlConnection sqlConn = new SqlConnection(@"Data Source=BEAST\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True");
         string query = "";
 
-
         public string getSqlConn()
         {
             return ConnectionString;
