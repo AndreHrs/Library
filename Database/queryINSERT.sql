@@ -20,5 +20,15 @@ ALTER TABLE Books$
 DROP Column Publisher, SynopsisPath
 
 INSERT INTO Booklist SELECT * FROM Books$
-DELETE FROM Books$ WHERE BookId IS NULL;
+DELETE FROM Books$ WHERE BookId IS NULL
+----------------------------------------
+--DATA STEVE
 
+select * from Books$
+alter table Books$
+drop column f1,f5, SynopsisPath
+DELETE FROM BOOKS$ WHERE BOOKID IS NULL
+INSERT INTO Booklist SELECT * FROM Books$
+
+select * from booklist
+update books$ set stock = 2 where bookid ='800028'

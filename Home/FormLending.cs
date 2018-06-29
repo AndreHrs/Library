@@ -108,23 +108,37 @@ namespace Home
                 koneksi.updateFine(Program.userSekarang.user, fine);
                 koneksi.updateStock(temp.bookId, temp.stock, "add");
             }
+            else
+            {
+                koneksi.updateFine(Program.userSekarang.user, fine);
+                koneksi.updateStock(temp.bookId, temp.stock, "add");
+            }
             isiDgv(Program.userSekarang.user);
         }
 
         private void dgvBooks_SelectionChanged(object sender, EventArgs e)
         {
-            string idBuku = dgvBooks.SelectedCells[3].Value.ToString();
-            koneksiSql koneksi = new koneksiSql();
-            buku bukuTerpilih = koneksi.returnBuku(idBuku);
-            isiBuku(bukuTerpilih);
-
-            Peminjaman pinjam = koneksi.returnLend(dgvBooks.SelectedCells[1].Value.ToString(), dgvBooks.SelectedCells[0].Value.ToString());
-            isiPeminjaman(pinjam);
-
-            if (pinjam.fine > 0)
+            try
             {
-                fined = true;
+                string idBuku = dgvBooks.SelectedCells[3].Value.ToString();
+                koneksiSql koneksi = new koneksiSql();
+                buku bukuTerpilih = koneksi.returnBuku(idBuku);
+                isiBuku(bukuTerpilih);
+
+                Peminjaman pinjam = koneksi.returnLend(dgvBooks.SelectedCells[1].Value.ToString(), dgvBooks.SelectedCells[0].Value.ToString());
+                isiPeminjaman(pinjam);
+                if (pinjam.fine > 0)
+                {
+                    fined = true;
+                }
             }
+            catch(Exception)
+            {
+
+            }
+           
+
+           
             btnReturnBook.Enabled = true;
         }
     }
