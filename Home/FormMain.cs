@@ -19,6 +19,10 @@ namespace Home
         ControlForm kontrol = new ControlForm();
         koneksiSql koneksi;
         DataSet dsOverdue = new DataSet();
+        Utility utilitas = new Utility(); 
+        Random rand = new Random();
+        List<string> listSplash;
+
         private void loadLowStock()
         {
             koneksi = new koneksiSql();
@@ -125,6 +129,9 @@ namespace Home
             InitializeComponent();
             validasiAkun(user);
             loadHotList();
+            tickText.Start();
+            listSplash = utilitas.getSplashList();
+            lblRunning.Text = listSplash[rand.Next(0, listSplash.Count)];
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
@@ -185,6 +192,24 @@ namespace Home
         {
             FormBookList booklist = new FormBookList();
             booklist.ShowDialog();
+        }
+
+        private void linkLblAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormAboutus about = new FormAboutus();
+            about.ShowDialog();
+        }
+
+        private void tickText_Tick(object sender, EventArgs e)
+        {
+            lblRunning.Location = new Point(lblRunning.Location.X - 3, lblRunning.Location.Y);
+            int xpos = (lblRunning.Location.X + lblRunning.Width);
+            int width = this.Width;
+            if (xpos < 0)
+            {
+                lblRunning.Location = new Point(this.Width, lblRunning.Location.Y);
+                lblRunning.Text = listSplash[rand.Next(0, listSplash.Count)];
+            }
         }
     }
 }

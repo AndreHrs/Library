@@ -33,8 +33,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAccountName = new System.Windows.Forms.Label();
+            this.pBoxProfile = new System.Windows.Forms.PictureBox();
             this.panelSupport = new System.Windows.Forms.Panel();
             this.panelHotlist = new System.Windows.Forms.Panel();
             this.manageDropdownLocation = new System.Windows.Forms.Panel();
@@ -49,13 +51,16 @@
             this.btnBooks = new System.Windows.Forms.Button();
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pBoxProfile = new System.Windows.Forms.PictureBox();
+            this.linkLblAbout = new System.Windows.Forms.LinkLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tickText = new System.Windows.Forms.Timer(this.components);
+            this.lblRunning = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.menuManage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).BeginInit();
+            this.menuManage.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,6 +92,16 @@
             this.lblWelcome.TabIndex = 11;
             this.lblWelcome.Text = "Welcome Guest";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Home.Properties.Resources.Library;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lblAccountName);
@@ -104,6 +119,16 @@
             this.lblAccountName.Size = new System.Drawing.Size(69, 29);
             this.lblAccountName.TabIndex = 11;
             this.lblAccountName.Text = "Guest";
+            // 
+            // pBoxProfile
+            // 
+            this.pBoxProfile.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
+            this.pBoxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pBoxProfile.Location = new System.Drawing.Point(0, 0);
+            this.pBoxProfile.Name = "pBoxProfile";
+            this.pBoxProfile.Size = new System.Drawing.Size(146, 146);
+            this.pBoxProfile.TabIndex = 12;
+            this.pBoxProfile.TabStop = false;
             // 
             // panelSupport
             // 
@@ -245,7 +270,7 @@
             this.minimizeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
             this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(946, 3);
+            this.minimizeBtn.Location = new System.Drawing.Point(946, 18);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
             this.minimizeBtn.TabIndex = 7;
@@ -264,7 +289,7 @@
             this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtn.ForeColor = System.Drawing.Color.White;
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(1004, 3);
+            this.closeBtn.Location = new System.Drawing.Point(1004, 18);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(46, 30);
             this.closeBtn.TabIndex = 9;
@@ -274,32 +299,47 @@
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // pictureBox1
+            // linkLblAbout
             // 
-            this.pictureBox1.BackgroundImage = global::Home.Properties.Resources.Library;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.linkLblAbout.AutoSize = true;
+            this.linkLblAbout.Location = new System.Drawing.Point(966, 0);
+            this.linkLblAbout.Name = "linkLblAbout";
+            this.linkLblAbout.Size = new System.Drawing.Size(100, 29);
+            this.linkLblAbout.TabIndex = 17;
+            this.linkLblAbout.TabStop = true;
+            this.linkLblAbout.Text = "About Us";
+            this.linkLblAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblAbout_LinkClicked);
             // 
-            // pBoxProfile
+            // panel3
             // 
-            this.pBoxProfile.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
-            this.pBoxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pBoxProfile.Location = new System.Drawing.Point(0, 0);
-            this.pBoxProfile.Name = "pBoxProfile";
-            this.pBoxProfile.Size = new System.Drawing.Size(146, 146);
-            this.pBoxProfile.TabIndex = 12;
-            this.pBoxProfile.TabStop = false;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.linkLblAbout);
+            this.panel3.Controls.Add(this.lblRunning);
+            this.panel3.Location = new System.Drawing.Point(-2, 673);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1065, 31);
+            this.panel3.TabIndex = 18;
+            // 
+            // tickText
+            // 
+            this.tickText.Interval = 10;
+            this.tickText.Tick += new System.EventHandler(this.tickText_Tick);
+            // 
+            // lblRunning
+            // 
+            this.lblRunning.AutoSize = true;
+            this.lblRunning.Location = new System.Drawing.Point(877, 0);
+            this.lblRunning.Name = "lblRunning";
+            this.lblRunning.Size = new System.Drawing.Size(174, 29);
+            this.lblRunning.TabIndex = 0;
+            this.lblRunning.Text = "Simply Awesome";
             // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1062, 673);
+            this.ClientSize = new System.Drawing.Size(1062, 703);
             this.Controls.Add(this.btnManage);
             this.Controls.Add(this.manageDropdownLocation);
             this.Controls.Add(this.btnLogout);
@@ -312,6 +352,7 @@
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -321,11 +362,13 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.menuManage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).EndInit();
+            this.menuManage.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -353,6 +396,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem manageAccount;
         private System.Windows.Forms.Button btnManage;
+        private System.Windows.Forms.LinkLabel linkLblAbout;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Timer tickText;
+        private System.Windows.Forms.Label lblRunning;
     }
 }
 

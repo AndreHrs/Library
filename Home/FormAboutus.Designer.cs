@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAboutus));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNotice = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,31 +39,33 @@
             this.btnPrev = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pBoxProfile = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblMotto = new System.Windows.Forms.Label();
+            this.lblNick = new System.Windows.Forms.Label();
+            this.lblNama = new System.Windows.Forms.Label();
+            this.lblNIM = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pBoxProfile = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.lblNotice);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1047, 54);
@@ -82,33 +82,6 @@
             this.lblNotice.TabIndex = 14;
             this.lblNotice.Text = "About Us";
             // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(976, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 30);
-            this.button1.TabIndex = 13;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Home.Properties.Resources.Library_pic;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 59);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 166);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -116,7 +89,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(349, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 39);
+            this.label1.Size = new System.Drawing.Size(193, 38);
             this.label1.TabIndex = 15;
             this.label1.Text = "E - Library";
             // 
@@ -161,6 +134,7 @@
             this.btnNext.TabIndex = 27;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrev
             // 
@@ -170,6 +144,7 @@
             this.btnPrev.TabIndex = 26;
             this.btnPrev.Text = "Previous";
             this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // label4
             // 
@@ -188,10 +163,10 @@
             this.panel3.Controls.Add(this.pBoxProfile);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.lblMotto);
+            this.panel3.Controls.Add(this.lblNick);
+            this.panel3.Controls.Add(this.lblNama);
+            this.panel3.Controls.Add(this.lblNIM);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label12);
@@ -202,14 +177,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1014, 276);
             this.panel3.TabIndex = 17;
-            // 
-            // pBoxProfile
-            // 
-            this.pBoxProfile.Location = new System.Drawing.Point(83, 24);
-            this.pBoxProfile.Name = "pBoxProfile";
-            this.pBoxProfile.Size = new System.Drawing.Size(214, 226);
-            this.pBoxProfile.TabIndex = 0;
-            this.pBoxProfile.TabStop = false;
             // 
             // label8
             // 
@@ -229,53 +196,53 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label7.Location = new System.Drawing.Point(334, 108);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(132, 27);
+            this.label7.Size = new System.Drawing.Size(91, 27);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Nickname";
+            this.label7.Text = "Github";
             // 
-            // label16
+            // lblMotto
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label16.Location = new System.Drawing.Point(593, 155);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(83, 27);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Nama";
+            this.lblMotto.AutoSize = true;
+            this.lblMotto.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMotto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblMotto.Location = new System.Drawing.Point(593, 155);
+            this.lblMotto.Name = "lblMotto";
+            this.lblMotto.Size = new System.Drawing.Size(79, 27);
+            this.lblMotto.TabIndex = 15;
+            this.lblMotto.Text = "Motto";
             // 
-            // label15
+            // lblNick
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label15.Location = new System.Drawing.Point(593, 108);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(83, 27);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Nama";
+            this.lblNick.AutoSize = true;
+            this.lblNick.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNick.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblNick.Location = new System.Drawing.Point(593, 108);
+            this.lblNick.Name = "lblNick";
+            this.lblNick.Size = new System.Drawing.Size(132, 27);
+            this.lblNick.TabIndex = 15;
+            this.lblNick.Text = "Nickname";
             // 
-            // label14
+            // lblNama
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label14.Location = new System.Drawing.Point(593, 64);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(83, 27);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "Nama";
+            this.lblNama.AutoSize = true;
+            this.lblNama.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNama.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblNama.Location = new System.Drawing.Point(593, 64);
+            this.lblNama.Name = "lblNama";
+            this.lblNama.Size = new System.Drawing.Size(83, 27);
+            this.lblNama.TabIndex = 15;
+            this.lblNama.Text = "Nama";
             // 
-            // label13
+            // lblNIM
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(593, 24);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 27);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Nama";
+            this.lblNIM.AutoSize = true;
+            this.lblNIM.Font = new System.Drawing.Font("Lucida Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNIM.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblNIM.Location = new System.Drawing.Point(593, 24);
+            this.lblNIM.Name = "lblNIM";
+            this.lblNIM.Size = new System.Drawing.Size(60, 27);
+            this.lblNIM.TabIndex = 15;
+            this.lblNIM.Text = "NIM";
             // 
             // label6
             // 
@@ -343,6 +310,44 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "NIM";
             // 
+            // pBoxProfile
+            // 
+            this.pBoxProfile.BackgroundImage = global::Home.Properties.Resources.Me;
+            this.pBoxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pBoxProfile.Location = new System.Drawing.Point(83, 24);
+            this.pBoxProfile.Name = "pBoxProfile";
+            this.pBoxProfile.Size = new System.Drawing.Size(214, 226);
+            this.pBoxProfile.TabIndex = 0;
+            this.pBoxProfile.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Home.Properties.Resources.Library_pic;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 59);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(282, 166);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClose.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(976, 13);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(46, 30);
+            this.btnClose.TabIndex = 13;
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FormAboutus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
@@ -365,12 +370,12 @@
             this.Text = "About Us";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,7 +385,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNotice;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -399,9 +404,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblMotto;
+        private System.Windows.Forms.Label lblNick;
+        private System.Windows.Forms.Label lblNama;
+        private System.Windows.Forms.Label lblNIM;
     }
 }

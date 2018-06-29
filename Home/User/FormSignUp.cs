@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace Home
@@ -93,14 +94,20 @@ namespace Home
             if (validasiInput())     
             {
                 string pathFile = "";
+                string filename = "";
 
                 if (!String.IsNullOrEmpty(this.path))
+                {
                     pathFile = fungsi.returnDestPath(this.path, "profil");
+                    filename = Path.GetFileName(pathFile);
+                }
+                    
+                
 
                 string user = txtUsername.Text, pass = txtPassword.Text, tipe = "User", nama = txtName.Text,
                     alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62", "0"), gender = cBoxGender.Text, fine = "0";
                 koneksiSql koneksi = new koneksiSql();
-                if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, pathFile, fine))
+                if (koneksi.InsertIntoUser(user, pass, tipe, nama, alamat, telp, gender, filename, fine))
                 {
                     fungsi.copyKe(path, "profil");
                     this.Close();

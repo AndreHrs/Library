@@ -26,6 +26,25 @@ namespace Home
             return "";
         }
 
+        public string getConString()
+        {
+            StreamReader reader = new StreamReader(@"D:\ProjectC#\Library\Constring.enclib");
+            return reader.ReadLine();
+        }
+
+        public List<string> getSplashList()
+        {
+            List<string> list = new List<string>();
+            string teks;
+            StreamReader reader = new StreamReader(@"D:\ProjectC#\Library\SplashText.enclib");
+            while(!reader.EndOfStream)
+            {
+                teks = reader.ReadLine();
+                list.Add(teks);
+            }
+            return list;
+        }
+
         public void copyKe(string srcPath, string tipe)
         {
             string filename = Path.GetFileName(srcPath);

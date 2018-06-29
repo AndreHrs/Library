@@ -36,6 +36,9 @@
       <HintPath>..\packages\CircularProgressBar.2.5.6403.13419\lib\net35-client\CircularProgressBar.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\About.cs" />
     <Compile Include="FormAboutus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +135,12 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LendingReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LendingReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserControl\UcNotif1.cs">
       <SubType>UserControl</SubType>
@@ -232,6 +242,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LendingReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LendingReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\hotBook.resx">
       <DependentUpon>hotBook.cs</DependentUpon>
@@ -352,6 +366,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wrongUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enjel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kepin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Me.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ndy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,9 +10,18 @@ namespace Home
 {
     public class koneksiSql
     {
-        private string ConnectionString = @"Data Source=BEAST\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True";
-        protected SqlConnection sqlConn = new SqlConnection(@"Data Source=BEAST\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True");
+
+        Utility utilitas = new Utility();
+        private string ConnectionString;//@"Data Source=andre-msi\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True";
+        protected SqlConnection sqlConn;// = new SqlConnection(@"Data Source=BEAST\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True");
         string query = "";
+
+        public koneksiSql()
+        {
+            string constring = utilitas.getConString();
+            ConnectionString = constring;
+            sqlConn = new SqlConnection(constring);
+        }
 
         public string getSqlConn()
         {
