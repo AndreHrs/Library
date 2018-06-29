@@ -31,7 +31,7 @@ namespace Home
                 listId.Add(id);
                 if (stock == 0)
                 {
-                    listLabel[counter].Visible = true;
+                 listLabel[counter].Visible = true;
                 }
             }
         }
