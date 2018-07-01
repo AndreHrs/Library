@@ -18,14 +18,63 @@ namespace Home
 
         Utility fungsi = new Utility();
         ControlForm kontrol = new ControlForm();
+        ValidasiSignUp validasi;
+
+        public void setErr(Control objek, string message)
+        {
+            ErrProv.Clear();
+            CorrProv.Clear();
+            ErrProv.SetError(objek, message);
+        }
+        public void setCorr(Control objek)
+        {
+            ErrProv.Clear();
+            CorrProv.Clear();
+            CorrProv.SetError(objek, "Done");
+        }
 
         private bool validasiInput()
         {
+            /*FormSignUp formini = this;
+            validasi = new ValidasiSignUp(formini);
+
             List<bool> listValidasi = new List<bool>();
             bool valid = true;
 
-            listValidasi.Add(kontrol.validasi(txtUsername, "Username", 8, 21));
-            listValidasi.Add(kontrol.validasi(txtPassword, "Password", 8, 21));
+            listValidasi.Add(validasi.validasi(txtUsername, "Username", 8, 21));
+            listValidasi.Add(validasi.validasi(txtPassword, "Password", 8, 21));
+            listValidasi.Add(validasi.validasi(txtName, "Name", "teks", 1, 51));
+            listValidasi.Add(validasi.validasi(rtbAddress, "Address", 1, 100));
+            listValidasi.Add(validasi.validasi(cBoxGender, "Gender"));
+            listValidasi.Add(validasi.validasi(mtbTelephone, "Telephone", 10, 13));
+            if (chkBoxAgree.Checked)
+            {
+                listValidasi.Add(true);
+                formini.setCorr(chkBoxAgree);
+            }
+            else
+            {
+                formini.setErr(chkBoxAgree, "Please check agree fist");
+                listValidasi.Add(false);
+            }
+
+            foreach (bool b in listValidasi)
+            {
+                if (b == false)
+                {
+                    valid = false;
+                    break;
+                }
+            }
+
+            return valid;*/
+            
+            List<bool> listValidasi = new List<bool>();
+            bool valid = true;
+
+            kontrol.clear();
+            listValidasi.Add(kontrol.validasi(txtUsername, "Username", 4, 21));
+            listValidasi.Add(kontrol.validasi(txtPassword, "Password", 6, 21));
             listValidasi.Add(kontrol.validasi(txtName, "Name", "teks", 1, 51));
             listValidasi.Add(kontrol.validasi(rtbAddress, "Address", 1, 100));
             listValidasi.Add(kontrol.validasi(cBoxGender, "Gender"));
@@ -36,7 +85,9 @@ namespace Home
             }    
             else
             {
-                errProv.SetError(chkBoxAgree, "Please check agree fist");
+                ErrProv.Clear();
+                CorrProv.Clear();
+                ErrProv.SetError(chkBoxAgree, "Please check agree fist");
                 listValidasi.Add(false);
             }
             
@@ -102,8 +153,6 @@ namespace Home
                     filename = Path.GetFileName(pathFile);
                 }
                     
-                
-
                 string user = txtUsername.Text, pass = txtPassword.Text, tipe = "User", nama = txtName.Text,
                     alamat = rtbAddress.Text, telp = mtbTelephone.Text.Replace("+62", "0"), gender = cBoxGender.Text, fine = "0";
                 koneksiSql koneksi = new koneksiSql();
@@ -146,6 +195,11 @@ namespace Home
         private void mtbTelephone_TextChanged(object sender, EventArgs e)
         {
             mtbTelephone.Text = mtbTelephone.Text.ToString().Replace(' ', '\0');
+        }
+
+        private void FormSignUp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

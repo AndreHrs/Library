@@ -30,14 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSignUp));
-            this.minimizeBtn = new System.Windows.Forms.Button();
-            this.closeBtn = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pBoxShow = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblTelephone = new System.Windows.Forms.Label();
@@ -47,7 +44,6 @@
             this.cBoxGender = new System.Windows.Forms.ComboBox();
             this.lblGender = new System.Windows.Forms.Label();
             this.chkBoxAgree = new System.Windows.Forms.CheckBox();
-            this.pictBoxPhoto = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,51 +51,19 @@
             this.btnPickPhoto = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.errProv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrProv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CorrProv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictBoxPhoto = new System.Windows.Forms.PictureBox();
+            this.pBoxShow = new System.Windows.Forms.PictureBox();
+            this.minimizeBtn = new System.Windows.Forms.Button();
+            this.closeBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).BeginInit();
             this.pnlInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errProv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrProv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CorrProv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).BeginInit();
             this.SuspendLayout();
-            // 
-            // minimizeBtn
-            // 
-            this.minimizeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.minimizeBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.minimizeBtn.FlatAppearance.BorderSize = 0;
-            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeBtn.ForeColor = System.Drawing.Color.White;
-            this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(506, 12);
-            this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
-            this.minimizeBtn.TabIndex = 12;
-            this.minimizeBtn.TabStop = false;
-            this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.minimizeBtn.UseVisualStyleBackColor = false;
-            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.closeBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.closeBtn.FlatAppearance.BorderSize = 0;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(558, 12);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(46, 30);
-            this.closeBtn.TabIndex = 13;
-            this.closeBtn.TabStop = false;
-            this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.closeBtn.UseVisualStyleBackColor = false;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // lblUsername
             // 
@@ -150,19 +114,6 @@
             this.panel1.Size = new System.Drawing.Size(542, 111);
             this.panel1.TabIndex = 15;
             // 
-            // pBoxShow
-            // 
-            this.pBoxShow.BackColor = System.Drawing.Color.Silver;
-            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
-            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBoxShow.Location = new System.Drawing.Point(486, 64);
-            this.pBoxShow.Name = "pBoxShow";
-            this.pBoxShow.Size = new System.Drawing.Size(36, 35);
-            this.pBoxShow.TabIndex = 17;
-            this.pBoxShow.TabStop = false;
-            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
-            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
-            // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(158, 64);
@@ -198,7 +149,7 @@
             // mtbTelephone
             // 
             this.mtbTelephone.Location = new System.Drawing.Point(198, 491);
-            this.mtbTelephone.Mask = "+6200000000000";
+            this.mtbTelephone.Mask = "+62000000000000";
             this.mtbTelephone.Name = "mtbTelephone";
             this.mtbTelephone.Size = new System.Drawing.Size(364, 35);
             this.mtbTelephone.TabIndex = 6;
@@ -243,16 +194,6 @@
             this.chkBoxAgree.TabIndex = 8;
             this.chkBoxAgree.Text = "I agree with the terms and conditions";
             this.chkBoxAgree.UseVisualStyleBackColor = true;
-            // 
-            // pictBoxPhoto
-            // 
-            this.pictBoxPhoto.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
-            this.pictBoxPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictBoxPhoto.Location = new System.Drawing.Point(39, 169);
-            this.pictBoxPhoto.Name = "pictBoxPhoto";
-            this.pictBoxPhoto.Size = new System.Drawing.Size(160, 160);
-            this.pictBoxPhoto.TabIndex = 23;
-            this.pictBoxPhoto.TabStop = false;
             // 
             // label7
             // 
@@ -326,9 +267,76 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // errProv
+            // ErrProv
             // 
-            this.errProv.ContainerControl = this;
+            this.ErrProv.ContainerControl = this;
+            this.ErrProv.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrProv.Icon")));
+            // 
+            // CorrProv
+            // 
+            this.CorrProv.ContainerControl = this;
+            this.CorrProv.Icon = ((System.Drawing.Icon)(resources.GetObject("CorrProv.Icon")));
+            // 
+            // pictBoxPhoto
+            // 
+            this.pictBoxPhoto.BackgroundImage = global::Home.Properties.Resources.Default_Pic_box_;
+            this.pictBoxPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictBoxPhoto.Location = new System.Drawing.Point(39, 169);
+            this.pictBoxPhoto.Name = "pictBoxPhoto";
+            this.pictBoxPhoto.Size = new System.Drawing.Size(160, 160);
+            this.pictBoxPhoto.TabIndex = 23;
+            this.pictBoxPhoto.TabStop = false;
+            // 
+            // pBoxShow
+            // 
+            this.pBoxShow.BackColor = System.Drawing.Color.Silver;
+            this.pBoxShow.BackgroundImage = global::Home.Properties.Resources.eye_icon;
+            this.pBoxShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBoxShow.Location = new System.Drawing.Point(486, 64);
+            this.pBoxShow.Name = "pBoxShow";
+            this.pBoxShow.Size = new System.Drawing.Size(36, 35);
+            this.pBoxShow.TabIndex = 17;
+            this.pBoxShow.TabStop = false;
+            this.pBoxShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseDown);
+            this.pBoxShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pBoxShow_MouseUp);
+            // 
+            // minimizeBtn
+            // 
+            this.minimizeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minimizeBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.minimizeBtn.FlatAppearance.BorderSize = 0;
+            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeBtn.ForeColor = System.Drawing.Color.White;
+            this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
+            this.minimizeBtn.Location = new System.Drawing.Point(506, 12);
+            this.minimizeBtn.Name = "minimizeBtn";
+            this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
+            this.minimizeBtn.TabIndex = 12;
+            this.minimizeBtn.TabStop = false;
+            this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.minimizeBtn.UseVisualStyleBackColor = false;
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.closeBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.closeBtn.FlatAppearance.BorderSize = 0;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
+            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
+            this.closeBtn.Location = new System.Drawing.Point(558, 12);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(46, 30);
+            this.closeBtn.TabIndex = 13;
+            this.closeBtn.TabStop = false;
+            this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // FormSignUp
             // 
@@ -362,13 +370,15 @@
             this.Name = "FormSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSignUp";
+            this.Load += new System.EventHandler(this.FormSignUp_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errProv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrProv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CorrProv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxShow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,6 +411,7 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.PictureBox pBoxShow;
-        private System.Windows.Forms.ErrorProvider errProv;
+        private System.Windows.Forms.ErrorProvider ErrProv;
+        private System.Windows.Forms.ErrorProvider CorrProv;
     }
 }

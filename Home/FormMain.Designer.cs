@@ -44,6 +44,10 @@
             this.manageBook = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.manageAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkLblAbout = new System.Windows.Forms.LinkLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblRunning = new System.Windows.Forms.Label();
+            this.tickText = new System.Windows.Forms.Timer(this.components);
             this.btnManage = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
@@ -51,10 +55,6 @@
             this.btnBooks = new System.Windows.Forms.Button();
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.linkLblAbout = new System.Windows.Forms.LinkLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tickText = new System.Windows.Forms.Timer(this.components);
-            this.lblRunning = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -183,6 +183,41 @@
             this.manageAccount.Text = "Account";
             this.manageAccount.Click += new System.EventHandler(this.manageAccount_Click);
             // 
+            // linkLblAbout
+            // 
+            this.linkLblAbout.AutoSize = true;
+            this.linkLblAbout.Location = new System.Drawing.Point(966, 0);
+            this.linkLblAbout.Name = "linkLblAbout";
+            this.linkLblAbout.Size = new System.Drawing.Size(100, 29);
+            this.linkLblAbout.TabIndex = 17;
+            this.linkLblAbout.TabStop = true;
+            this.linkLblAbout.Text = "About Us";
+            this.linkLblAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblAbout_LinkClicked);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.linkLblAbout);
+            this.panel3.Controls.Add(this.lblRunning);
+            this.panel3.Location = new System.Drawing.Point(-2, 673);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1065, 31);
+            this.panel3.TabIndex = 18;
+            // 
+            // lblRunning
+            // 
+            this.lblRunning.AutoSize = true;
+            this.lblRunning.Location = new System.Drawing.Point(877, 0);
+            this.lblRunning.Name = "lblRunning";
+            this.lblRunning.Size = new System.Drawing.Size(174, 29);
+            this.lblRunning.TabIndex = 0;
+            this.lblRunning.Text = "Simply Awesome";
+            // 
+            // tickText
+            // 
+            this.tickText.Interval = 10;
+            this.tickText.Tick += new System.EventHandler(this.tickText_Tick);
+            // 
             // btnManage
             // 
             this.btnManage.BackgroundImage = global::Home.Properties.Resources.manage;
@@ -298,41 +333,6 @@
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // linkLblAbout
-            // 
-            this.linkLblAbout.AutoSize = true;
-            this.linkLblAbout.Location = new System.Drawing.Point(966, 0);
-            this.linkLblAbout.Name = "linkLblAbout";
-            this.linkLblAbout.Size = new System.Drawing.Size(100, 29);
-            this.linkLblAbout.TabIndex = 17;
-            this.linkLblAbout.TabStop = true;
-            this.linkLblAbout.Text = "About Us";
-            this.linkLblAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblAbout_LinkClicked);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.linkLblAbout);
-            this.panel3.Controls.Add(this.lblRunning);
-            this.panel3.Location = new System.Drawing.Point(-2, 673);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1065, 31);
-            this.panel3.TabIndex = 18;
-            // 
-            // tickText
-            // 
-            this.tickText.Interval = 10;
-            this.tickText.Tick += new System.EventHandler(this.tickText_Tick);
-            // 
-            // lblRunning
-            // 
-            this.lblRunning.AutoSize = true;
-            this.lblRunning.Location = new System.Drawing.Point(877, 0);
-            this.lblRunning.Name = "lblRunning";
-            this.lblRunning.Size = new System.Drawing.Size(174, 29);
-            this.lblRunning.TabIndex = 0;
-            this.lblRunning.Text = "Simply Awesome";
             // 
             // formMain
             // 
