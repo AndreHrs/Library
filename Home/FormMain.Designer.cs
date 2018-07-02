@@ -53,8 +53,8 @@
             this.closeBtn = new System.Windows.Forms.Button();
             this.linkLblAbout = new System.Windows.Forms.LinkLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tickText = new System.Windows.Forms.Timer(this.components);
             this.lblRunning = new System.Windows.Forms.Label();
+            this.tickText = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -302,6 +302,7 @@
             // linkLblAbout
             // 
             this.linkLblAbout.AutoSize = true;
+            this.linkLblAbout.LinkColor = System.Drawing.Color.Cyan;
             this.linkLblAbout.Location = new System.Drawing.Point(966, 0);
             this.linkLblAbout.Name = "linkLblAbout";
             this.linkLblAbout.Size = new System.Drawing.Size(100, 29);
@@ -320,19 +321,20 @@
             this.panel3.Size = new System.Drawing.Size(1065, 31);
             this.panel3.TabIndex = 18;
             // 
-            // tickText
-            // 
-            this.tickText.Interval = 10;
-            this.tickText.Tick += new System.EventHandler(this.tickText_Tick);
-            // 
             // lblRunning
             // 
             this.lblRunning.AutoSize = true;
+            this.lblRunning.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblRunning.Location = new System.Drawing.Point(877, 0);
             this.lblRunning.Name = "lblRunning";
             this.lblRunning.Size = new System.Drawing.Size(174, 29);
             this.lblRunning.TabIndex = 0;
             this.lblRunning.Text = "Simply Awesome";
+            // 
+            // tickText
+            // 
+            this.tickText.Interval = 10;
+            this.tickText.Tick += new System.EventHandler(this.tickText_Tick);
             // 
             // formMain
             // 
