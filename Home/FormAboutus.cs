@@ -39,7 +39,7 @@ namespace Home
             temp.nim = "16.111.0439";
             temp.nama = "Anthony";
             temp.nick = "runningman225";
-            temp.motto = "Mati kau jeng!";
+            temp.motto = "Live as if it's your last";
             temp.gambar = Properties.Resources.Ant;
             listAnggota.Add(temp);
 
@@ -48,7 +48,7 @@ namespace Home
             temp.nim = "16.111.1027";
             temp.nama = "Enjelin";
             temp.nick = "[Offline] Data Provider";
-            temp.motto = "Coming soon";
+            temp.motto = "I Can do it !!! \nYou can do it !!! \nWe can do it !!!";
             temp.gambar = Properties.Resources.Enjel;
             listAnggota.Add(temp);
 
@@ -57,7 +57,7 @@ namespace Home
             temp.nim = "16.111.3273";
             temp.nama = "Kevin";
             temp.nick = "Hyjet";
-            temp.motto = "Coming soon";
+            temp.motto = "Why everyone quoted about live ?";
             temp.gambar = Properties.Resources.Kepin;
             listAnggota.Add(temp);
 
@@ -66,7 +66,7 @@ namespace Home
             temp.nim = "16.111.0609";
             temp.nama = "Vivi Wijaya";
             temp.nick = "[Offline] Data Provider";
-            temp.motto = "Coming soon";
+            temp.motto = "Surpass yourself !";
             temp.gambar = Properties.Resources.Vi;
             listAnggota.Add(temp);
 
