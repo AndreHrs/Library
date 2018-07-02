@@ -53,8 +53,8 @@
             this.closeBtn = new System.Windows.Forms.Button();
             this.linkLblAbout = new System.Windows.Forms.LinkLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tickText = new System.Windows.Forms.Timer(this.components);
             this.lblRunning = new System.Windows.Forms.Label();
+            this.tickText = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -65,6 +65,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblWelcome);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -132,6 +133,7 @@
             // 
             // panelSupport
             // 
+            this.panelSupport.BackColor = System.Drawing.Color.Transparent;
             this.panelSupport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelSupport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSupport.Location = new System.Drawing.Point(12, 131);
@@ -141,6 +143,7 @@
             // 
             // panelHotlist
             // 
+            this.panelHotlist.BackColor = System.Drawing.Color.Transparent;
             this.panelHotlist.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelHotlist.Location = new System.Drawing.Point(12, 385);
             this.panelHotlist.Name = "panelHotlist";
@@ -185,6 +188,7 @@
             // 
             // btnManage
             // 
+            this.btnManage.BackColor = System.Drawing.Color.Transparent;
             this.btnManage.BackgroundImage = global::Home.Properties.Resources.manage;
             this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnManage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -195,12 +199,13 @@
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(120, 50);
             this.btnManage.TabIndex = 5;
-            this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.UseVisualStyleBackColor = false;
             this.btnManage.Visible = false;
             this.btnManage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnManage_MouseClick);
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
             this.btnLogout.BackgroundImage = global::Home.Properties.Resources.logout;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -211,11 +216,12 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(120, 50);
             this.btnLogout.TabIndex = 4;
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnProfile
             // 
+            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
             this.btnProfile.BackgroundImage = global::Home.Properties.Resources.profileDisabled;
             this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnProfile.Enabled = false;
@@ -227,11 +233,12 @@
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(120, 50);
             this.btnProfile.TabIndex = 3;
-            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnLend
             // 
+            this.btnLend.BackColor = System.Drawing.Color.Transparent;
             this.btnLend.BackgroundImage = global::Home.Properties.Resources.lendDisabled;
             this.btnLend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLend.Enabled = false;
@@ -243,11 +250,12 @@
             this.btnLend.Name = "btnLend";
             this.btnLend.Size = new System.Drawing.Size(120, 50);
             this.btnLend.TabIndex = 2;
-            this.btnLend.UseVisualStyleBackColor = true;
+            this.btnLend.UseVisualStyleBackColor = false;
             this.btnLend.Click += new System.EventHandler(this.btnLend_Click);
             // 
             // btnBooks
             // 
+            this.btnBooks.BackColor = System.Drawing.Color.Transparent;
             this.btnBooks.BackgroundImage = global::Home.Properties.Resources.books;
             this.btnBooks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBooks.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -258,13 +266,13 @@
             this.btnBooks.Name = "btnBooks";
             this.btnBooks.Size = new System.Drawing.Size(120, 50);
             this.btnBooks.TabIndex = 1;
-            this.btnBooks.UseVisualStyleBackColor = true;
+            this.btnBooks.UseVisualStyleBackColor = false;
             this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
             // minimizeBtn
             // 
             this.minimizeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.minimizeBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.minimizeBtn.BackColor = System.Drawing.Color.Transparent;
             this.minimizeBtn.FlatAppearance.BorderSize = 0;
             this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,7 +291,7 @@
             // closeBtn
             // 
             this.closeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.closeBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.closeBtn.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.FlatAppearance.BorderSize = 0;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -302,6 +310,7 @@
             // linkLblAbout
             // 
             this.linkLblAbout.AutoSize = true;
+            this.linkLblAbout.LinkColor = System.Drawing.Color.Aqua;
             this.linkLblAbout.Location = new System.Drawing.Point(966, 0);
             this.linkLblAbout.Name = "linkLblAbout";
             this.linkLblAbout.Size = new System.Drawing.Size(100, 29);
@@ -320,25 +329,27 @@
             this.panel3.Size = new System.Drawing.Size(1065, 31);
             this.panel3.TabIndex = 18;
             // 
-            // tickText
-            // 
-            this.tickText.Interval = 10;
-            this.tickText.Tick += new System.EventHandler(this.tickText_Tick);
-            // 
             // lblRunning
             // 
             this.lblRunning.AutoSize = true;
+            this.lblRunning.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblRunning.Location = new System.Drawing.Point(877, 0);
             this.lblRunning.Name = "lblRunning";
             this.lblRunning.Size = new System.Drawing.Size(174, 29);
             this.lblRunning.TabIndex = 0;
             this.lblRunning.Text = "Simply Awesome";
             // 
+            // tickText
+            // 
+            this.tickText.Interval = 10;
+            this.tickText.Tick += new System.EventHandler(this.tickText_Tick);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::Home.Properties.Resources.twice_tzuyu_whatislove;
             this.ClientSize = new System.Drawing.Size(1062, 703);
             this.Controls.Add(this.btnManage);
             this.Controls.Add(this.manageDropdownLocation);
