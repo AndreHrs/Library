@@ -20,6 +20,7 @@ namespace Home
 
         private bool validasiInput()
         {
+            kontrol.clear();
             List<bool> listValidasi = new List<bool>();
             bool valid = true;
 
@@ -175,8 +176,14 @@ namespace Home
                         txtBookId.Focus();
                 }
             }
-            
-            
+            else
+            {
+                FormKosong dialog = new FormKosong();
+                dialog.loadUC(new UcNotif1(dialog));
+                dialog.ShowDialog();
+            }
+
+
         }
     }
 }

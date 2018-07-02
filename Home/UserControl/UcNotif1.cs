@@ -23,5 +23,10 @@ namespace Home
         {
             form.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            form.Close();
+        }
     }
 }

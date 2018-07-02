@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLending));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.minimizeBtn = new System.Windows.Forms.Button();
-            this.closeBtn = new System.Windows.Forms.Button();
-            this.btnReturn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnReturnBook = new System.Windows.Forms.Button();
@@ -58,10 +56,27 @@
             this.kolomIdBuku = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolomLend = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolomDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.PrintThis = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.PrintAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.DroplocPrint = new System.Windows.Forms.Label();
+            this.DroplocView = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.minimizeBtn = new System.Windows.Forms.Button();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.ViewMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ViewThis = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ViewAll = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
+            this.printMenu.SuspendLayout();
+            this.ViewMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,60 +117,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(100, 97);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            // 
-            // minimizeBtn
-            // 
-            this.minimizeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.minimizeBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.minimizeBtn.FlatAppearance.BorderSize = 0;
-            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeBtn.ForeColor = System.Drawing.Color.White;
-            this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
-            this.minimizeBtn.Location = new System.Drawing.Point(914, 12);
-            this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
-            this.minimizeBtn.TabIndex = 12;
-            this.minimizeBtn.TabStop = false;
-            this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.minimizeBtn.UseVisualStyleBackColor = false;
-            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.closeBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.closeBtn.FlatAppearance.BorderSize = 0;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(966, 12);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(46, 30);
-            this.closeBtn.TabIndex = 13;
-            this.closeBtn.TabStop = false;
-            this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.closeBtn.UseVisualStyleBackColor = false;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.BackgroundImage = global::Home.Properties.Resources.iconReturn;
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReturn.FlatAppearance.BorderSize = 0;
-            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Location = new System.Drawing.Point(862, 48);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(150, 60);
-            this.btnReturn.TabIndex = 6;
-            this.btnReturn.TabStop = false;
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // label1
             // 
@@ -365,15 +326,185 @@
             this.kolomDue.ReadOnly = true;
             this.kolomDue.Width = 300;
             // 
+            // printMenu
+            // 
+            this.printMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.printMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.PrintThis,
+            this.toolStripSeparator2,
+            this.PrintAll});
+            this.printMenu.Name = "menuManage";
+            this.printMenu.Size = new System.Drawing.Size(241, 58);
+            // 
+            // PrintThis
+            // 
+            this.PrintThis.Name = "PrintThis";
+            this.PrintThis.Size = new System.Drawing.Size(240, 24);
+            this.PrintThis.Text = "Print this user\'s lend only";
+            this.PrintThis.Click += new System.EventHandler(this.PrintThis_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(237, 6);
+            // 
+            // PrintAll
+            // 
+            this.PrintAll.Name = "PrintAll";
+            this.PrintAll.Size = new System.Drawing.Size(240, 24);
+            this.PrintAll.Text = "Print all lends";
+            this.PrintAll.Click += new System.EventHandler(this.PrintAll_Click);
+            // 
+            // DroplocPrint
+            // 
+            this.DroplocPrint.AutoSize = true;
+            this.DroplocPrint.Location = new System.Drawing.Point(711, 102);
+            this.DroplocPrint.Name = "DroplocPrint";
+            this.DroplocPrint.Size = new System.Drawing.Size(162, 27);
+            this.DroplocPrint.TabIndex = 26;
+            this.DroplocPrint.Text = "LokasiDrop1";
+            this.DroplocPrint.Visible = false;
+            // 
+            // DroplocView
+            // 
+            this.DroplocView.AutoSize = true;
+            this.DroplocView.Location = new System.Drawing.Point(555, 102);
+            this.DroplocView.Name = "DroplocView";
+            this.DroplocView.Size = new System.Drawing.Size(162, 27);
+            this.DroplocView.TabIndex = 26;
+            this.DroplocView.Text = "LokasiDrop2";
+            this.DroplocView.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::Home.Properties.Resources.btnView;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(550, 48);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 60);
+            this.button2.TabIndex = 6;
+            this.button2.TabStop = false;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Home.Properties.Resources.Print_Btn;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(706, 48);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 60);
+            this.button1.TabIndex = 6;
+            this.button1.TabStop = false;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackgroundImage = global::Home.Properties.Resources.iconReturn;
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReturn.FlatAppearance.BorderSize = 0;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Location = new System.Drawing.Point(862, 48);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(150, 60);
+            this.btnReturn.TabIndex = 6;
+            this.btnReturn.TabStop = false;
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // minimizeBtn
+            // 
+            this.minimizeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minimizeBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.minimizeBtn.FlatAppearance.BorderSize = 0;
+            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeBtn.ForeColor = System.Drawing.Color.White;
+            this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
+            this.minimizeBtn.Location = new System.Drawing.Point(914, 12);
+            this.minimizeBtn.Name = "minimizeBtn";
+            this.minimizeBtn.Size = new System.Drawing.Size(46, 30);
+            this.minimizeBtn.TabIndex = 12;
+            this.minimizeBtn.TabStop = false;
+            this.minimizeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.minimizeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.minimizeBtn.UseVisualStyleBackColor = false;
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.closeBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.closeBtn.FlatAppearance.BorderSize = 0;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
+            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
+            this.closeBtn.Location = new System.Drawing.Point(966, 12);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(46, 30);
+            this.closeBtn.TabIndex = 13;
+            this.closeBtn.TabStop = false;
+            this.closeBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // ViewMenu
+            // 
+            this.ViewMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ViewMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ViewThis,
+            this.toolStripSeparator1,
+            this.ViewAll});
+            this.ViewMenu.Name = "menuManage";
+            this.ViewMenu.Size = new System.Drawing.Size(203, 58);
+            this.ViewMenu.Opening += new System.ComponentModel.CancelEventHandler(this.ViewMenu_Opening);
+            // 
+            // ViewThis
+            // 
+            this.ViewThis.Name = "ViewThis";
+            this.ViewThis.Size = new System.Drawing.Size(202, 24);
+            this.ViewThis.Text = "View this user Only";
+            this.ViewThis.Click += new System.EventHandler(this.ViewThis_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(199, 6);
+            // 
+            // ViewAll
+            // 
+            this.ViewAll.Name = "ViewAll";
+            this.ViewAll.Size = new System.Drawing.Size(202, 24);
+            this.ViewAll.Text = "View all Lends";
+            this.ViewAll.Click += new System.EventHandler(this.ViewAll_Click);
+            // 
             // FormLending
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1024, 720);
+            this.Controls.Add(this.DroplocView);
+            this.Controls.Add(this.DroplocPrint);
             this.Controls.Add(this.dgvBooks);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.minimizeBtn);
@@ -392,6 +523,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
+            this.printMenu.ResumeLayout(false);
+            this.ViewMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,5 +561,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kolomIdBuku;
         private System.Windows.Forms.DataGridViewTextBoxColumn kolomLend;
         private System.Windows.Forms.DataGridViewTextBoxColumn kolomDue;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ContextMenuStrip printMenu;
+        private System.Windows.Forms.ToolStripMenuItem PrintThis;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem PrintAll;
+        private System.Windows.Forms.Label DroplocPrint;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label DroplocView;
+        private System.Windows.Forms.ContextMenuStrip ViewMenu;
+        private System.Windows.Forms.ToolStripMenuItem ViewThis;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem ViewAll;
     }
 }

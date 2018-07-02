@@ -116,6 +116,17 @@ namespace Home
             executeSQLnoMsg($"UPDATE Booklist SET Stock='{newStock.ToString()}' WHERE BookId='{bookId}'");
         }
 
+        public DataSet setData()
+        {
+            DataSet set = new DataSet();
+            query = $"SELECT * FROM Lendings ";
+            SqlCommand command = new SqlCommand(query, sqlConn);
+            sqlConn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(command);
+            sda.Fill(set, "Lendings");
+            return set;            
+        }
+
         public Peminjaman returnLend(string username, string lendId)
         {
             Peminjaman temp = new Peminjaman();

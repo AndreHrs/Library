@@ -211,5 +211,6 @@ namespace Home
                 lblRunning.Text = listSplash[rand.Next(0, listSplash.Count)];
             }
         }
+
     }
 }

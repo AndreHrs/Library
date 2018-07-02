@@ -9,7 +9,7 @@ namespace Home
 {
     public class Utility
     {
-        string folderStructTxt = @"D:\ProjectC#\Library\folderStruct.enclib";
+        string folderStructTxt = @"..\..\..\folderStruct.enclib";
         public string strukturFolder(string tipe)
         {
             List<string> listPath = new List<string>();
@@ -28,7 +28,7 @@ namespace Home
 
         public string getConString()
         {
-            StreamReader reader = new StreamReader(@"D:\ProjectC#\Library\Constring.enclib");
+            StreamReader reader = new StreamReader(@"..\..\..\Constring.enclib");
             return reader.ReadLine();
         }
 
@@ -36,7 +36,7 @@ namespace Home
         {
             List<string> list = new List<string>();
             string teks;
-            StreamReader reader = new StreamReader(@"D:\ProjectC#\Library\SplashText.enclib");
+            StreamReader reader = new StreamReader(@"..\..\..\SplashText.enclib");
             while(!reader.EndOfStream)
             {
                 teks = reader.ReadLine();
