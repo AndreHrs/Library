@@ -179,7 +179,16 @@ namespace Home
 
         private void button1_Click(object sender, EventArgs e)
         {
-            printMenu.Show(PointToScreen(DroplocPrint.Location));
+            if(Program.userSekarang.tipe == "Admin")
+            {
+                printMenu.Show(PointToScreen(DroplocPrint.Location));
+            }
+            else
+            {
+                Blank_Borderless1 form = new Blank_Borderless1(ds);
+                form.ShowDialog();
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
