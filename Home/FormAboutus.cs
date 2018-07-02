@@ -39,7 +39,7 @@ namespace Home
             temp.nim = "16.111.0439";
             temp.nama = "Anthony";
             temp.nick = "runningman225";
-            temp.motto = "Hidup seperti Larryy D'Lobster";
+            temp.motto = "Mati kau jeng!";
             temp.gambar = Properties.Resources.Ant;
             listAnggota.Add(temp);
 
