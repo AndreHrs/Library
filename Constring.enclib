@@ -1,1 +1,1 @@
-Data Source=andre-msi\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True
+Data Source=BEAST\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True
