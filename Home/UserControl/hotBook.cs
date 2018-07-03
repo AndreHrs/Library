@@ -27,12 +27,12 @@ namespace Home
                 string[] thumbnailList = dsOverdue.Tables["Hotlist"].Rows[i]["PicturePath"].ToString().Split('|');
                 int stock = Convert.ToInt32(dsOverdue.Tables["Hotlist"].Rows[i]["Stock"]);
                 kontrol.setFotoBuku(listPbox[counter], thumbnailList[0]);
-                counter += 1;
-                listId.Add(id);
                 if (stock == 0)
                 {
-                 listLabel[counter].Visible = true;
+                    listLabel[counter].Visible = true;
                 }
+                counter += 1;
+                listId.Add(id);          
             }
         }
 

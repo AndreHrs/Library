@@ -45,6 +45,10 @@ namespace Home
 
         private bool checkOverdue()
         {
+            if(Program.userSekarang.tipe == "Guest")
+            {
+                return false;
+            }
             bool overdue = false;
             koneksi = new koneksiSql();
             SqlConnection conn = new SqlConnection(koneksi.getSqlConn());
@@ -212,5 +216,11 @@ namespace Home
             }
         }
 
+        private void printDatabaseLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataSet data = koneksi.setData();
+            Blank_Borderless1 form = new Blank_Borderless1(data);
+            form.ShowDialog();
+        }
     }
 }

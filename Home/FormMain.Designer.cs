@@ -55,6 +55,8 @@
             this.btnBooks = new System.Windows.Forms.Button();
             this.minimizeBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.printDatabaseLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -160,26 +162,28 @@
             this.menuManage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageBook,
             this.toolStripSeparator2,
-            this.manageAccount});
+            this.manageAccount,
+            this.toolStripSeparator1,
+            this.printDatabaseLogToolStripMenuItem});
             this.menuManage.Name = "menuManage";
-            this.menuManage.Size = new System.Drawing.Size(133, 58);
+            this.menuManage.Size = new System.Drawing.Size(205, 116);
             // 
             // manageBook
             // 
             this.manageBook.Name = "manageBook";
-            this.manageBook.Size = new System.Drawing.Size(132, 24);
+            this.manageBook.Size = new System.Drawing.Size(204, 24);
             this.manageBook.Text = "Books";
             this.manageBook.Click += new System.EventHandler(this.manageBook_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(129, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(201, 6);
             // 
             // manageAccount
             // 
             this.manageAccount.Name = "manageAccount";
-            this.manageAccount.Size = new System.Drawing.Size(132, 24);
+            this.manageAccount.Size = new System.Drawing.Size(204, 24);
             this.manageAccount.Text = "Account";
             this.manageAccount.Click += new System.EventHandler(this.manageAccount_Click);
             // 
@@ -207,6 +211,7 @@
             // lblRunning
             // 
             this.lblRunning.AutoSize = true;
+            this.lblRunning.ForeColor = System.Drawing.Color.White;
             this.lblRunning.Location = new System.Drawing.Point(877, 0);
             this.lblRunning.Name = "lblRunning";
             this.lblRunning.Size = new System.Drawing.Size(174, 29);
@@ -334,6 +339,18 @@
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(201, 6);
+            // 
+            // printDatabaseLogToolStripMenuItem
+            // 
+            this.printDatabaseLogToolStripMenuItem.Name = "printDatabaseLogToolStripMenuItem";
+            this.printDatabaseLogToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
+            this.printDatabaseLogToolStripMenuItem.Text = "Print Database Log";
+            this.printDatabaseLogToolStripMenuItem.Click += new System.EventHandler(this.printDatabaseLogToolStripMenuItem_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
@@ -400,6 +417,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Timer tickText;
         private System.Windows.Forms.Label lblRunning;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem printDatabaseLogToolStripMenuItem;
     }
 }
 

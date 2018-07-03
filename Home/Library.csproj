@@ -64,6 +64,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatasetLog.cs">
+      <DependentUpon>DatasetLog.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetLog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetLog.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportLog.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ShowLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowLog.Designer.cs">
+      <DependentUpon>ShowLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viewer Lend.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +249,13 @@
     <Compile Include="Dialogs\Splashscreen.Designer.cs">
       <DependentUpon>Splashscreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportLog.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportLog.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowLog.resx">
+      <DependentUpon>ShowLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Viewer Lend.resx">
       <DependentUpon>Viewer Lend.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +352,17 @@
     </None>
     <None Include="DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetLog.xsc">
+      <DependentUpon>DatasetLog.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetLog.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetLog.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatasetLog.xss">
+      <DependentUpon>DatasetLog.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

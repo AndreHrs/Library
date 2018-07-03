@@ -119,11 +119,11 @@ namespace Home
         public DataSet setData()
         {
             DataSet set = new DataSet();
-            query = $"SELECT * FROM Lendings ";
+            query = $"SELECT * FROM AppLog ";
             SqlCommand command = new SqlCommand(query, sqlConn);
             sqlConn.Open();
             SqlDataAdapter sda = new SqlDataAdapter(command);
-            sda.Fill(set, "Lendings");
+            sda.Fill(set, "logDatabase");
             return set;            
         }
 
